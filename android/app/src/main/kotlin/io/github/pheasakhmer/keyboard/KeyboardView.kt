@@ -2,6 +2,7 @@ package io.github.pheasakhmer.keyboard
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
@@ -51,7 +52,9 @@ class KeyboardView(context: Context, private val listener: KeyListener) : FrameL
     private enum class Shift { OFF, ONCE, LOCKED }
 
     private val palette = Palette(context)
-    private val keyHeight = palette.dp(52f)
+    private val landscape =
+        resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+    private val keyHeight = palette.dp(if (landscape) 40f else 52f)
     private val gap = palette.dp(3f)
     val bar = SuggestionBarView(context, palette, listener::onPick, listener::onKeepTyped)
     private val keys = LinearLayout(context).apply { orientation = LinearLayout.VERTICAL }
@@ -301,6 +304,12 @@ class KeyboardView(context: Context, private val listener: KeyListener) : FrameL
         preview.x = (keyAt[0] - selfAt[0] - gap).toFloat()
         preview.y = top.coerceAtLeast(0f)
         preview.visibility = VISIBLE
+    }
+
+    // The insets are not sent again to a keyboard rebuilt after the screen turns, so ask.
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        requestApplyInsets()
     }
 
     override fun onDetachedFromWindow() {

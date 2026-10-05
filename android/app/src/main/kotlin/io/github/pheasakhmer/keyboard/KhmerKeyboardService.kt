@@ -27,6 +27,10 @@ class KhmerKeyboardService : InputMethodService(), KeyListener {
 
     override fun onCreateInputView(): View = KeyboardView(this, this).also { view = it }
 
+    // In landscape Android would otherwise cover the app with a full-screen text box; the
+    // suggestion bar already shows what is being typed.
+    override fun onEvaluateFullscreenMode() = false
+
     override fun onStartInputView(info: EditorInfo, restarting: Boolean) {
         super.onStartInputView(info, restarting)
         composer.reset()
