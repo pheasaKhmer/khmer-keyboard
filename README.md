@@ -16,7 +16,7 @@ your phone.
 | 1. Shared core with tests and a desktop CLI | **done** |
 | 2. Android keyboard, romanized mode | **done**: runs on an Android 17 emulator; not yet tried on a phone |
 | 3. iOS keyboard | needs Xcode |
-| 4. Khmer layout mode | |
+| 4. Khmer layout mode | **done** on Android: NiDA-based, switched with the ក key |
 | 5. Reverse mode and learning in the apps | **done** on Android: select Khmer to romanize it; picks are learned by previous word |
 | 6. Store listings, privacy policy | |
 
@@ -121,8 +121,9 @@ from the compiled library, so there is no interface file to keep in step.
 
 ## Android
 
-The keyboard is an input method service with a QWERTY layout for romanized Khmer and a page of
-digits and symbols. Letters are composed in the field, underlined, and the suggestion bar works
+The keyboard is an input method service with a QWERTY layout for romanized Khmer, a page of
+digits and symbols, and a Khmer script layout after the NiDA standard keyboard (the ក key
+switches to it, abc back). Letters are composed in the field, underlined, and the suggestion bar works
 like the iPhone's:
 
 - left: what you typed, in quotes; tap it to keep it in Latin letters
