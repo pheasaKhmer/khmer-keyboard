@@ -6,6 +6,7 @@
 
 pub mod data;
 pub mod decode;
+pub mod engine;
 pub mod fuzzy;
 pub mod keys;
 pub mod matcher;
@@ -13,6 +14,10 @@ pub mod model;
 pub mod score;
 pub mod transliterate;
 pub mod tsv;
+
+pub use data::Data;
+pub use decode::{Choice, Conversion, Origin, Token};
+pub use engine::{Engine, Suggestion};
 
 /// The version of this crate.
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
