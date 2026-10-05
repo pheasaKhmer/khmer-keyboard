@@ -14,10 +14,12 @@ pub mod model;
 pub mod score;
 pub mod transliterate;
 pub mod tsv;
+pub mod user;
 
 pub use data::Data;
 pub use decode::{Choice, Conversion, Origin, Token};
 pub use engine::{Engine, Suggestion};
+pub use user::UserDictionary;
 
 /// The version of this crate.
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");

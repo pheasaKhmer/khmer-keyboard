@@ -9,6 +9,7 @@ use crate::decode::{Choice, Conversion, Decoder, Origin};
 use crate::matcher;
 use crate::score::descending;
 use crate::transliterate::transliterate;
+use crate::user::UserDictionary;
 
 /// Span readings kept between calls: a keyboard asks on every keystroke, and most spans
 /// of the input are the same as last time.
@@ -36,15 +37,35 @@ fn origin(source: Source) -> Origin {
 
 pub struct Engine {
     pub data: Data,
+    user: UserDictionary,
     cache: RefCell<HashMap<(String, bool), Vec<Choice>>>,
 }
 
 impl Engine {
+    /// An engine whose learned picks stay in memory.
     pub fn new(data: Data) -> Self {
+        Self::with_user(data, UserDictionary::in_memory())
+    }
+
+    /// An engine that learns into `user` (for example a file in the app's storage).
+    pub fn with_user(data: Data, user: UserDictionary) -> Self {
         Engine {
             data,
+            user,
             cache: RefCell::new(HashMap::new()),
         }
+    }
+
+    /// Record that the user picked `word` for `typed`, so it ranks higher next time.
+    pub fn learn(&mut self, typed: &str, word: &str) -> std::io::Result<()> {
+        self.cache.get_mut().clear();
+        self.user.learn(typed, word)
+    }
+
+    /// Forget everything learned.
+    pub fn forget(&mut self) -> std::io::Result<()> {
+        self.cache.get_mut().clear();
+        self.user.clear()
     }
 
     /// Every reading of one span of typed text, with its emission score. A piece of a typed
@@ -103,7 +124,46 @@ impl Engine {
                 spelling: typed.to_owned(),
             });
         }
-        out
+        if whole {
+            self.with_picks(typed, out)
+        } else {
+            out
+        }
+    }
+
+    /// Raise readings picked before for this key, and offer picked words nothing else did.
+    fn with_picks(&self, typed: &str, mut choices: Vec<Choice>) -> Vec<Choice> {
+        let picks = self.user.picks(typed);
+        if picks.is_empty() {
+            return choices;
+        }
+        let settings = &self.data.settings;
+        let count = |text: &str| picks.iter().find(|(w, _)| w == text).map(|(_, n)| *n);
+        for choice in &mut choices {
+            if let Some(n) = count(&choice.text) {
+                choice.emission += settings.learned_weight * f64::from(n).ln_1p();
+            }
+        }
+        for (word, n) in picks {
+            if choices.iter().any(|c| &c.text == word) {
+                continue;
+            }
+            let mut bonus = settings.learned_weight * f64::from(*n).ln_1p();
+            if !self
+                .data
+                .word_id(word)
+                .is_some_and(|id| self.data.known(id))
+            {
+                bonus += settings.learned_unknown_bonus;
+            }
+            choices.push(Choice {
+                text: word.clone(),
+                emission: bonus,
+                origin: Origin::Learned,
+                spelling: typed.to_lowercase(),
+            });
+        }
+        choices
     }
 
     fn decoder(&self) -> Decoder<'_, impl FnMut(&str, bool) -> Vec<Choice> + '_> {
@@ -180,6 +240,29 @@ mod tests {
         assert_eq!(engine.convert("ot mean wifi te?"), "អត់មាន wifi ទេ?");
         assert_eq!(engine.convert("soksabayte"), "សុខសប្បាយទេ");
         assert_eq!(engine.convert(""), "");
+    }
+
+    #[test]
+    fn a_picked_word_ranks_higher_next_time() {
+        let mut engine = Engine::new(sample());
+        assert_eq!(engine.suggest("bong", 5)[0].text, "បង");
+        engine.learn("bong", "បង់").unwrap();
+        engine.learn("bong", "បង់").unwrap();
+        assert_eq!(engine.suggest("bong", 5)[0].text, "បង់");
+        assert_eq!(engine.suggest("borng", 5)[0].text, "បង់"); // same key
+        engine.forget().unwrap();
+        assert_eq!(engine.suggest("bong", 5)[0].text, "បង");
+    }
+
+    #[test]
+    fn a_picked_word_the_lexicon_lacks_is_offered() {
+        let mut engine = Engine::new(sample());
+        engine.learn("dararith", "ដារ៉ារិទ្ធ").unwrap();
+        let first = &engine.suggest("knhom chmous dararith", 5)[0];
+        assert_eq!(
+            (first.text.as_str(), first.origin),
+            ("ដារ៉ារិទ្ធ", Origin::Learned)
+        );
     }
 
     #[test]
