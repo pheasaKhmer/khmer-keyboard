@@ -8,7 +8,9 @@
 //! rule-based romanizers, which the core does not have yet.
 
 use crate::data::Data;
-use crate::segment::{Segmenter, Word, is_alnum, is_khmer_letter, merge_unknown, normalize};
+use crate::segment::{
+    LEK_TOO, Segmenter, Word, is_alnum, is_khmer_letter, merge_unknown, normalize,
+};
 
 /// The romanization style: how people type in chat, or the UNGEGN standard.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -16,8 +18,6 @@ pub enum Style {
     Chat,
     Ungegn,
 }
-
-const REPEAT: char = 'ៗ';
 
 fn punctuation(ch: char) -> Option<&'static str> {
     Some(match ch {
@@ -55,7 +55,7 @@ fn word(data: &Data, word: &Word, style: Style) -> String {
 /// ៗ repeats; anything but a space ends it.
 fn between(out: &mut String, text: &str, last_word: &mut String) {
     for (i, ch) in text.chars().enumerate() {
-        if ch == REPEAT && !last_word.is_empty() {
+        if ch == LEK_TOO && !last_word.is_empty() {
             append(out, &format!(" {}", *last_word));
         } else if let Some(mapped) = punctuation(ch) {
             out.push_str(mapped);

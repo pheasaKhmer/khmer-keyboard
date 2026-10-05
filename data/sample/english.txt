@@ -24,7 +24,6 @@ cash
 chat
 check
 class
-coffee
 comment
 computer
 cool

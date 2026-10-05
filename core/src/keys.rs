@@ -9,7 +9,7 @@
 //! - a final i after another vowel, which is the glide y: "sabai" is "sabay"
 //! - r after a vowel, which chat uses to lengthen it: "orkun", "khmer"
 //! - h or s at the end of a word, which are both pronounced h: "preah", "pros"
-//! - doubled letters: "sabbay"
+//! - doubled letters: "sabbay", and a vowel letter typed twice: "tgnaii" is "tgnai"
 //! - diacritics and apostrophes: "Kâmpŭchéa", "l'â"
 //!
 //! Keys are lowercase consonants and uppercase vowel groups.
@@ -60,10 +60,9 @@ fn consonant(unit: &str) -> char {
 /// The vowel group of a run of vowel letters, if the run is one of the listed spellings.
 fn vowel_group(run: &str) -> Option<char> {
     Some(match run {
-        "a" | "aa" => 'A',
-        "o" | "oo" | "ou" | "u" | "uu" | "uo" | "ua" | "uoa" | "ao" | "au" => 'O',
-        "e" | "ee" | "ae" | "eae" | "i" | "ii" | "eu" | "oe" | "ue" | "oeu" | "ueu" | "aeu"
-        | "oea" => 'E',
+        "a" => 'A',
+        "o" | "ou" | "u" | "uo" | "ua" | "uoa" | "ao" | "au" => 'O',
+        "e" | "ae" | "eae" | "i" | "eu" | "oe" | "ue" | "oeu" | "ueu" | "aeu" | "oea" => 'E',
         "ea" | "ia" | "ie" | "iea" | "eia" => 'J',
         "oa" => 'Q',
         _ => return None,
@@ -79,7 +78,15 @@ fn is_vowel_key(symbol: char) -> bool {
 }
 
 fn vowel_run(run: &str, out: &mut Vec<char>) {
-    let glide = run.len() > 1 && run.ends_with('i') && !run.ends_with("ii");
+    // A letter typed twice counts once: "aii" is "ai".
+    let mut collapsed = String::with_capacity(run.len());
+    for ch in run.chars() {
+        if !collapsed.ends_with(ch) {
+            collapsed.push(ch);
+        }
+    }
+    let run = collapsed.as_str();
+    let glide = run.len() > 1 && run.ends_with('i');
     let run = if glide { &run[..run.len() - 1] } else { run };
     match vowel_group(run) {
         Some(group) => out.push(group),
@@ -150,7 +157,9 @@ mod tests {
             &["sous dey", "suosdey", "sursdey", "suos'dei"][..],
             &["chong", "jong"],
             &["orkun", "okun", "or kun"],
-            &["sabbay", "sabay", "sabai"],
+            &["sabbay", "sabay", "sabai", "sabaii"],
+            &["tgnai", "tgnaii"],
+            &["sok", "sook"],
             &["kampuchea", "Kâmpŭchéa"],
         ] {
             let first = key(group[0], true);

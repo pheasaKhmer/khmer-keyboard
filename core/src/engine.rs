@@ -34,6 +34,8 @@ fn origin(source: Source) -> Origin {
         Source::Spelling => Origin::Spelling,
         Source::Ungegn => Origin::Ungegn,
         Source::Curated => Origin::Curated,
+        Source::Consonants => Origin::Consonants,
+        Source::Minor => Origin::Minor,
     }
 }
 

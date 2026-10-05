@@ -1,11 +1,13 @@
 # name	value
 engine	0.1.0.dev0
-total	6101928
-vocabulary	3008
+total	6102037
+vocabulary	3009
 alphabet	AEJNOQYbcdfhklmnprstvyz
 weights.key_edit	5.0
 weights.spelling	5.0
 weights.curated	1.5
+weights.abbreviation	2.0
+weights.minor	2.0
 weights.frequency	0.5
 weights.completion	2.0
 weights.missing	0.5

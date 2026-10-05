@@ -12,6 +12,7 @@ use std::collections::HashMap;
 use crate::data::Data;
 use crate::model::{bigram_logprob, logprob};
 use crate::score::{descending, sort_by_score};
+use crate::segment::LEK_TOO;
 
 /// Where a reading comes from. The names match the engine's `source` strings.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -20,6 +21,8 @@ pub enum Origin {
     Spelling,
     Ungegn,
     Curated,
+    Consonants,
+    Minor,
     English,
     Fallback,
     Typed,
@@ -34,6 +37,8 @@ impl Origin {
             Origin::Spelling => "spelling",
             Origin::Ungegn => "ungegn",
             Origin::Curated => "curated",
+            Origin::Consonants => "consonants",
+            Origin::Minor => "minor",
             Origin::English => "english",
             Origin::Fallback => "fallback",
             Origin::Typed => "typed",
@@ -190,10 +195,22 @@ pub(crate) fn segments(text: &str) -> Vec<Segment> {
 }
 
 /// Khmer words are written together; English and typed words get a space on each side.
+/// A Khmer word chosen twice in a row is written once with ៗ, as Khmer writes repetition.
 pub fn join(choices: &[&Choice]) -> String {
     let mut out = String::new();
     for (i, choice) in choices.iter().enumerate() {
-        if i > 0 && (!choice.is_khmer() || !choices[i - 1].is_khmer()) {
+        let previous = i.checked_sub(1).map(|j| choices[j]);
+        if let Some(previous) = previous
+            && choice.is_khmer()
+            && previous.is_khmer()
+            && choice.text == previous.text
+        {
+            if !out.ends_with(LEK_TOO) {
+                out.push(LEK_TOO);
+            }
+            continue;
+        }
+        if previous.is_some_and(|p| !choice.is_khmer() || !p.is_khmer()) {
             out.push(' ');
         }
         out.push_str(&choice.text);
@@ -534,6 +551,22 @@ mod tests {
             choice("ទេ", Origin::Pronunciation),
         ];
         assert_eq!(join(&words.iter().collect::<Vec<_>>()), "អត់មាន wifi ទេ");
+    }
+
+    #[test]
+    fn a_repeated_word_is_written_with_lek_too() {
+        let choice = |text: &str, origin| Choice {
+            text: text.to_owned(),
+            emission: 0.0,
+            origin,
+            spelling: String::new(),
+        };
+        let ban = choice("បាន", Origin::Curated);
+        let haey = choice("ហើយ", Origin::Curated);
+        assert_eq!(join(&[&ban, &haey, &haey]), "បានហើយៗ");
+        assert_eq!(join(&[&haey, &haey, &haey]), "ហើយៗ");
+        let ok = choice("ok", Origin::English);
+        assert_eq!(join(&[&ok, &ok]), "ok ok");
     }
 
     #[test]

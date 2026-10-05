@@ -16,7 +16,7 @@ use fst::{IntoStreamer, Map, MapBuilder, Set, SetBuilder, Streamer};
 use crate::tsv;
 
 const MAGIC: &[u8; 4] = b"KHKB";
-const VERSION: u32 = 1;
+const VERSION: u32 = 2; // 2: consonants and minor sources
 
 /// Where a romanization in the index comes from (khmer-engine's `Form.source`).
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -25,6 +25,10 @@ pub enum Source {
     Spelling,
     Ungegn,
     Curated,
+    /// The consonants of a common word's chat spelling: "tv" for ទៅ.
+    Consonants,
+    /// A chat spelling without the vowel of an unstressed first syllable: "sbay".
+    Minor,
 }
 
 impl Source {
@@ -34,6 +38,8 @@ impl Source {
             Source::Spelling => "spelling",
             Source::Ungegn => "ungegn",
             Source::Curated => "curated",
+            Source::Consonants => "consonants",
+            Source::Minor => "minor",
         }
     }
 
@@ -43,6 +49,8 @@ impl Source {
             "spelling" => Source::Spelling,
             "ungegn" => Source::Ungegn,
             "curated" => Source::Curated,
+            "consonants" => Source::Consonants,
+            "minor" => Source::Minor,
             _ => return None,
         })
     }
@@ -52,7 +60,9 @@ impl Source {
             0 => Source::Pronunciation,
             1 => Source::Spelling,
             2 => Source::Ungegn,
-            _ => Source::Curated,
+            3 => Source::Curated,
+            4 => Source::Consonants,
+            _ => Source::Minor,
         }
     }
 }
@@ -71,6 +81,8 @@ pub struct Settings {
     pub key_edit: f64,
     pub spelling: f64,
     pub curated: f64,
+    pub abbreviation: f64,
+    pub minor: f64,
     pub frequency: f64,
     pub completion: f64,
     pub missing: f64,
@@ -118,6 +130,8 @@ impl Settings {
             key_edit: float("weights.key_edit")?,
             spelling: float("weights.spelling")?,
             curated: float("weights.curated")?,
+            abbreviation: float("weights.abbreviation")?,
+            minor: float("weights.minor")?,
             frequency: float("weights.frequency")?,
             completion: float("weights.completion")?,
             missing: float("weights.missing")?,
@@ -685,7 +699,7 @@ mod tests {
     #[test]
     fn words_and_counts() {
         let data = sample();
-        assert_eq!(data.len(), 3008);
+        assert_eq!(data.len(), 3009);
         assert_eq!((data.word(0), data.count(0)), ("បាន", 136_888));
         let id = data.word_id("ខ្ញុំ").unwrap();
         assert_eq!(data.word(id), "ខ្ញុំ");
@@ -704,6 +718,21 @@ mod tests {
         assert_eq!(forms[0], ("បាន", "ban", Source::Pronunciation));
         assert!(forms.len() > 1);
         assert_eq!(data.forms("no such key").count(), 0);
+    }
+
+    #[test]
+    fn consonant_and_minor_forms() {
+        let data = sample();
+        let tv: Vec<_> = data
+            .forms("tv")
+            .map(|f| (data.word(f.word), f.source))
+            .collect();
+        assert!(tv.contains(&("ទៅ", Source::Consonants)));
+        let sbay: Vec<_> = data
+            .forms("sbAy")
+            .map(|f| (data.word(f.word), f.source))
+            .collect();
+        assert!(sbay.contains(&("សប្បាយ", Source::Minor)));
     }
 
     #[test]
@@ -751,7 +780,8 @@ mod tests {
         let data = sample();
         assert_eq!(data.settings.beam, 8);
         assert!((data.settings.key_edit - 5.0).abs() < f64::EPSILON);
-        assert_eq!(data.vocabulary, 3008);
+        assert_eq!(data.vocabulary, 3009);
+        assert!((data.settings.abbreviation - 2.0).abs() < f64::EPSILON);
         assert_eq!(data.alphabet, b"AEJNOQYbcdfhklmnprstvyz");
     }
 

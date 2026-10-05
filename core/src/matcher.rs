@@ -63,8 +63,11 @@ pub fn emissions<'a>(data: &'a Data, text: &str, fuzzy_keys: bool) -> Vec<Emissi
         let longest = typed_length.max(form.spelling.chars().count());
         let mut score = -settings.key_edit * key_edits as f64;
         score -= settings.spelling * letters as f64 / longest as f64;
-        if form.source == Source::Curated {
-            score += settings.curated;
+        match form.source {
+            Source::Curated => score += settings.curated,
+            Source::Consonants => score -= settings.abbreviation,
+            Source::Minor => score -= settings.minor,
+            Source::Pronunciation | Source::Spelling | Source::Ungegn => {}
         }
         best.offer(Emission {
             word: form.word,
