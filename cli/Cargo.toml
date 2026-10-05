@@ -1,0 +1,15 @@
+[package]
+name = "khmer-kbd"
+description = "Try the keyboard core from the command line."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+khmer-core = { path = "../core" }
+
+[lints]
+workspace = true
