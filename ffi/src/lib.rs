@@ -125,7 +125,7 @@ impl Keyboard {
 
     /// Record that the user picked `word` for `typed`, so it ranks higher next time.
     pub fn learn(&self, typed: String, word: String) -> Result<(), KeyboardError> {
-        self.engine().learn(&typed, &word).map_err(storage)
+        self.engine().learn(&typed, &word, None).map_err(storage)
     }
 
     /// Forget every learned pick, and delete the file that kept them.

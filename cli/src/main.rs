@@ -105,7 +105,8 @@ fn style(name: Option<&str>) -> Result<Style, String> {
 
 fn repl(engine: &mut Engine) -> Result<(), String> {
     println!("Type romanized Khmer. :N picks suggestion N, :k KHMER romanizes, :q quits.");
-    let mut last: Option<(String, Vec<String>)> = None;
+    // The last suggestions: the text before the word they read, the word, and the words.
+    let mut last: Option<(String, String, Vec<String>)> = None;
     let stdin = io::stdin();
     loop {
         print!("> ");
@@ -131,9 +132,9 @@ fn repl(engine: &mut Engine) -> Result<(), String> {
         }
         if let Some(number) = line.strip_prefix(':').and_then(|n| n.parse::<usize>().ok()) {
             match &last {
-                Some((typed, words)) if (1..=words.len()).contains(&number) => {
+                Some((context, typed, words)) if (1..=words.len()).contains(&number) => {
                     engine
-                        .learn(typed, &words[number - 1])
+                        .learn_in_context(context, typed, &words[number - 1])
                         .map_err(|e| e.to_string())?;
                     println!("  learned {} for {typed}", words[number - 1]);
                 }
@@ -160,7 +161,8 @@ fn repl(engine: &mut Engine) -> Result<(), String> {
                 .map(|(i, w)| format!("{}.{w}", i + 1))
                 .collect();
             println!("    {typed}: {}", shown.join("  "));
-            last = Some((typed, words));
+            let before: String = line.chars().take(first.start).collect();
+            last = Some((engine.convert(&before), typed, words));
         }
     }
 }

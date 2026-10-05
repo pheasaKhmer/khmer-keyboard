@@ -228,9 +228,14 @@ struct Hypothesis {
 
 struct Span {
     range: (usize, usize),
+    typed: String,
     choices: Vec<Choice>,
     cost: f64,
 }
+
+/// A bonus for what the user picked before, given the previous Khmer word (`None` at the
+/// start), the typed text of a span and a choice for it; zero for nothing picked.
+pub type LearnedBonus<'a> = Box<dyn Fn(Option<&str>, &str, &Choice) -> f64 + 'a>;
 
 /// Searches with readings from `choices(typed, whole)`: the typed text of a span (several
 /// typed words keep their spaces), and whether it is made of whole typed words. Pieces of
@@ -239,6 +244,7 @@ struct Span {
 pub struct Decoder<'a, F: FnMut(&str, bool) -> Vec<Choice>> {
     pub data: &'a Data,
     pub choices: F,
+    pub learned: Option<LearnedBonus<'a>>,
 }
 
 impl<F: FnMut(&str, bool) -> Vec<Choice>> Decoder<'_, F> {
@@ -255,10 +261,29 @@ impl<F: FnMut(&str, bool) -> Vec<Choice>> Decoder<'_, F> {
         settings.language_model * score
     }
 
+    fn learned(&self, previous: Option<&str>, typed: &str, choice: &Choice) -> f64 {
+        self.learned
+            .as_ref()
+            .map_or(0.0, |bonus| bonus(previous, typed, choice))
+    }
+
+    /// The score of `choice` for `typed` that depends on the word before it: the language
+    /// model, and what the user picked before after that word.
+    pub fn context(&self, previous: Option<&str>, typed: &str, choice: &Choice) -> f64 {
+        self.language_model(previous, choice) + self.learned(previous, typed, choice)
+    }
+
+    /// The span's best choices without context, so the search only weighs those. Words the
+    /// user picked for this text are kept too: after the right word they may win.
     fn ranked(&mut self, typed: &str, whole: bool) -> Vec<Choice> {
         let choices = (self.choices)(typed, whole);
         let mut ranked = sort_by_score(choices, |c| c.emission + self.language_model(None, c));
-        ranked.truncate(self.data.settings.choices_per_span);
+        let cut = self.data.settings.choices_per_span.min(ranked.len());
+        let rest = ranked.split_off(cut);
+        ranked.extend(
+            rest.into_iter()
+                .filter(|c| self.learned(None, typed, c) > 0.0),
+        );
         ranked
     }
 
@@ -278,6 +303,7 @@ impl<F: FnMut(&str, bool) -> Vec<Choice>> Decoder<'_, F> {
                 let cost = settings.join * (j - i - 1) as f64;
                 out.push(Span {
                     range: (offsets[i], offsets[j]),
+                    typed,
                     choices,
                     cost,
                 });
@@ -299,6 +325,7 @@ impl<F: FnMut(&str, bool) -> Vec<Choice>> Decoder<'_, F> {
                     let choices = self.ranked(&piece, false);
                     out.push(Span {
                         range: (offsets[i] + a, offsets[i] + b),
+                        typed: piece,
                         choices,
                         cost,
                     });
@@ -440,7 +467,7 @@ impl<F: FnMut(&str, bool) -> Vec<Choice>> Decoder<'_, F> {
                 for h in current {
                     for choice in &span.choices {
                         let mut score = arena[h].score + choice.emission - span.cost;
-                        score += self.language_model(arena[h].previous.as_deref(), choice);
+                        score += self.context(arena[h].previous.as_deref(), &span.typed, choice);
                         let previous = choice.is_khmer().then(|| choice.text.clone());
                         arena.push(Hypothesis {
                             score,
@@ -480,14 +507,15 @@ impl<F: FnMut(&str, bool) -> Vec<Choice>> Decoder<'_, F> {
                 .clone()
                 .expect("steps on a path have choices");
             let (start, end) = hypothesis.span;
-            let others: Vec<Choice> = by_range[&(start, end)]
+            let span = by_range[&(start, end)];
+            let others: Vec<Choice> = span
                 .choices
                 .iter()
                 .filter(|c| **c != chosen)
                 .cloned()
                 .collect();
             let others = sort_by_score(others, |c| {
-                c.emission + self.language_model(previous.as_deref(), c)
+                c.emission + self.context(previous.as_deref(), &span.typed, c)
             });
             let mut choices = vec![chosen];
             choices.extend(others);
@@ -590,6 +618,7 @@ mod tests {
         let mut decoder = Decoder {
             data: &data,
             choices,
+            learned: None,
         };
         // The sample has the pairs បងប្រុស (older brother) and បង់លុយ (pay money).
         assert_eq!(decoder.convert("bong pros", 5).text, "បងប្រុស");
@@ -603,5 +632,38 @@ mod tests {
         assert_eq!(first.choices[1].text, "បង");
         // Text no reading covers is kept.
         assert_eq!(decoder.convert("xyz bong", 5).text, "xyz bong");
+    }
+
+    #[test]
+    fn a_learned_bonus_can_depend_on_the_previous_word() {
+        use super::Decoder;
+        use crate::data::sample;
+
+        let data = sample();
+        let reading = |text: &str| Choice {
+            text: text.to_owned(),
+            emission: -0.5,
+            origin: Origin::Pronunciation,
+            spelling: String::new(),
+        };
+        let choices = |typed: &str, _whole: bool| match typed {
+            "bong" => vec![reading("បង"), reading("បង់")],
+            "luy" => vec![reading("លុយ")],
+            _ => vec![],
+        };
+        let learned = |previous: Option<&str>, typed: &str, choice: &Choice| {
+            if (previous, typed, choice.text.as_str()) == (Some("លុយ"), "bong", "បង") {
+                10.0
+            } else {
+                0.0
+            }
+        };
+        let mut decoder = Decoder {
+            data: &data,
+            choices,
+            learned: Some(Box::new(learned)),
+        };
+        assert_eq!(decoder.convert("luy bong", 5).text, "លុយបង");
+        assert_eq!(decoder.convert("bong luy", 5).text, "បង់លុយ");
     }
 }
