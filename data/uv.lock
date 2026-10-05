@@ -5,7 +5,7 @@ requires-python = ">=3.11"
 [[package]]
 name = "khmer-engine"
 version = "0.1.0.dev0"
-source = { git = "https://github.com/pheasaKhmer/khmer-engine?rev=12ca9ba22fc8f399e44f7d60dcf9f00b6f93c326#12ca9ba22fc8f399e44f7d60dcf9f00b6f93c326" }
+source = { git = "https://github.com/pheasaKhmer/khmer-engine?rev=73b5984588da5b64de65ffcef3b093fd544c30f3#73b5984588da5b64de65ffcef3b093fd544c30f3" }
 dependencies = [
     { name = "pheasa" },
 ]
@@ -26,7 +26,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "khmer-engine", git = "https://github.com/pheasaKhmer/khmer-engine?rev=12ca9ba22fc8f399e44f7d60dcf9f00b6f93c326" },
+    { name = "khmer-engine", git = "https://github.com/pheasaKhmer/khmer-engine?rev=73b5984588da5b64de65ffcef3b093fd544c30f3" },
     { name = "pheasa", git = "https://github.com/pheasaKhmer/pheasa?rev=31c5b83d3685a82be53dc87fbd6c3a72a1299040" },
 ]
 

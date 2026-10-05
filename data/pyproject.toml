@@ -16,7 +16,7 @@ package = false
 # to main once the engine PRs are merged. pheasa is listed because uv only reads sources
 # for direct dependencies.
 [tool.uv.sources]
-khmer-engine = { git = "https://github.com/pheasaKhmer/khmer-engine", rev = "12ca9ba22fc8f399e44f7d60dcf9f00b6f93c326" }
+khmer-engine = { git = "https://github.com/pheasaKhmer/khmer-engine", rev = "73b5984588da5b64de65ffcef3b093fd544c30f3" }
 pheasa = { git = "https://github.com/pheasaKhmer/pheasa", rev = "31c5b83d3685a82be53dc87fbd6c3a72a1299040" }
 
 [tool.ruff]
