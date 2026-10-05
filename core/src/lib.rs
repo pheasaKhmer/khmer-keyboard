@@ -4,6 +4,7 @@
 //! The core ports khmer-engine's matching and search. Everything slow (romanizing every
 //! word, building the index, tuning) is done by the engine and exported (see `data/`).
 
+pub mod fuzzy;
 pub mod keys;
 pub mod tsv;
 
