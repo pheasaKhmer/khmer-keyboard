@@ -5,3 +5,8 @@ local.properties
 *.iml
 .idea/
 captures/
+
+# The upload key and its passwords never go in the repository.
+keystore.properties
+*.jks
+*.keystore
