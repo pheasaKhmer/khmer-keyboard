@@ -155,10 +155,19 @@ impl Engine {
 
     /// Offer every word picked for `typed` before, after any word. How much a pick counts
     /// depends on the previous word, so the decoder adds that ([`Engine::learned_bonus`]).
+    ///
+    /// A picked word the lexicon lacks replaces any guess that spells it the same way: the
+    /// syllable-by-syllable guess for "dararith" can be the very name the user picked, and
+    /// as a guess it would keep the guess's low emission.
     fn with_picks(&self, typed: &str, mut choices: Vec<Choice>) -> Vec<Choice> {
-        let mut picked: Vec<&str> = self
-            .user
-            .picks(typed)
+        let picks = self.user.picks(typed);
+        let known = |word: &str| {
+            self.data
+                .word_id(word)
+                .is_some_and(|id| self.data.known(id))
+        };
+        choices.retain(|c| known(&c.text) || !picks.iter().any(|p| p.word == c.text));
+        let mut picked: Vec<&str> = picks
             .iter()
             .map(|p| p.word.as_str())
             .filter(|word| !choices.iter().any(|c| c.text == *word))
@@ -166,10 +175,7 @@ impl Engine {
         picked.sort_unstable();
         picked.dedup();
         for word in picked {
-            let known = self
-                .data
-                .word_id(word)
-                .is_some_and(|id| self.data.known(id));
+            let known = known(word);
             choices.push(Choice {
                 text: word.to_owned(),
                 emission: if known {
@@ -405,5 +411,26 @@ mod tests {
         assert!(engine.learned_bonus(Some("ចាំ"), "te", &te) > once);
         engine.learn_in_context("ខ្ញុំហៅ", "te", "តេ").unwrap();
         assert!(engine.learned_bonus(Some("មាន"), "te", &te) > once);
+    }
+
+    #[test]
+    fn a_picked_word_spelled_like_the_guess_is_still_learned() {
+        let mut engine = Engine::new(sample());
+        let guess = crate::transliterate::transliterate(&engine.data, "dararith").unwrap();
+        assert!(
+            engine
+                .data
+                .word_id(&guess)
+                .is_none_or(|id| !engine.data.known(id))
+        );
+        engine.learn("dararith", &guess, Some("ឈ្មោះ")).unwrap();
+        let readings: Vec<Origin> = engine
+            .choices("dararith", true)
+            .into_iter()
+            .filter(|c| c.text == guess)
+            .map(|c| c.origin)
+            .collect();
+        assert_eq!(readings, [Origin::Learned]);
+        assert_eq!(engine.suggest("knhom chmous dararith", 5)[0].text, guess);
     }
 }
