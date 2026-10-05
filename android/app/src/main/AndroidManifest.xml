@@ -4,6 +4,20 @@
     <!-- No permissions: the keyboard has no network access, and what is typed stays on the phone. -->
     <application
         android:allowBackup="false"
-        android:label="Khmer Keyboard" />
+        android:label="@string/app_name">
+
+        <service
+            android:name=".KhmerKeyboardService"
+            android:exported="true"
+            android:label="@string/ime_name"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+        </service>
+    </application>
 
 </manifest>

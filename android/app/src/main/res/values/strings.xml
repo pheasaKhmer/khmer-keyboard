@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Khmer Keyboard</string>
+    <string name="ime_name">Khmer (romanized)</string>
+    <string name="subtype_romanized">Khmer, typed in Latin letters</string>
+
     <string name="space">space</string>
     <string name="shift">Shift</string>
     <string name="delete">Delete</string>
