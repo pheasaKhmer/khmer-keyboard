@@ -18,7 +18,7 @@ your phone.
 | 3. iOS keyboard | needs Xcode |
 | 4. Khmer layout mode | **done** on Android: NiDA-based, switched with the ក key |
 | 5. Reverse mode and learning in the apps | **done** on Android: select Khmer to romanize it; picks are learned by previous word |
-| 6. Store listings, privacy policy | |
+| 6. Store listings, privacy policy | release build, privacy policy and listing text ready; graphics and the Play Console account to do |
 
 ## Layout
 
@@ -149,6 +149,37 @@ adb install app/build/outputs/apk/debug/app-debug.apk
 The build compiles the core for arm64-v8a, armeabi-v7a and x86_64 (Android 7 and up),
 generates the Kotlin bindings, and packs `data/build` if it was exported, else `data/sample`.
 Open the app to turn the keyboard on. The debug APK with the full lexicon is 14 MB.
+
+### Release builds
+
+A release needs the full lexicon in `data/build` (the build stops if it would pack the
+sample) and is shrunk with R8. To sign it for the Play Store, create an upload key once,
+keep it and its passwords safe, and never commit them:
+
+```bash
+cd android
+keytool -genkeypair -v -keystore upload.jks -alias upload -keyalg RSA -keysize 4096 -validity 10000
+```
+
+Then write `android/keystore.properties` (ignored by git):
+
+```
+storeFile=upload.jks
+storePassword=...
+keyAlias=upload
+keyPassword=...
+```
+
+and build the bundle to upload:
+
+```bash
+./gradlew bundleRelease    # app/build/outputs/bundle/release/app-release.aab, 6.6 MB
+```
+
+Without `keystore.properties`, release builds are signed with the debug key: fine for
+installing and testing (`./gradlew assembleRelease`, 13.4 MB), refused by the Play Store.
+[PRIVACY.md](PRIVACY.md) is the privacy policy, and
+[android/store-listing.md](android/store-listing.md) drafts the store listing.
 
 ## Privacy
 
