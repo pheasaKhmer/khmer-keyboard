@@ -1,0 +1,6 @@
+[bindings.kotlin]
+package_name = "io.github.pheasakhmer.keyboard.core"
+cdylib_name = "khmer_ffi"
+
+[bindings.swift]
+module_name = "KhmerCore"
