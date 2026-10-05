@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="space">space</string>
+    <string name="shift">Shift</string>
+    <string name="delete">Delete</string>
+    <string name="enter">Enter</string>
+    <string name="switch_keyboard">Next keyboard</string>
+    <string name="more_suggestions">More suggestions</string>
+</resources>
