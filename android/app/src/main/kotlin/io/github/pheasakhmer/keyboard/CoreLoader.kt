@@ -20,9 +20,9 @@ class NativeCore(val keyboard: Keyboard) : Core {
 
     override fun convert(text: String): String = keyboard.convert(text)
 
-    override fun learn(typed: String, word: String) {
+    override fun learn(context: String, typed: String, word: String) {
         try {
-            keyboard.learn(typed, word)
+            keyboard.learn(context, typed, word)
         } catch (error: KeyboardException) {
             Log.w(TAG, "could not save a learned word", error)
         }

@@ -50,7 +50,8 @@ up and runs the search:
   without them ("soksabayte")
 - English words stay as typed; unknown words are spelled syllable by syllable; a word
   typed twice is written once with ៗ (`ban hz hz` → បានហើយៗ)
-- **learning**: picked candidates rank higher next time
+- **learning**: picked candidates rank higher next time, most after the same previous word,
+  so picking តេ for `te` after ចាំ does not push ទេ down everywhere
 - **romanizing** Khmer back to Latin letters, in chat style or UNGEGN
 
 Golden tests hold the core to the engine: on the exported sample, all 18,254 matching keys,
@@ -126,7 +127,8 @@ like the iPhone's:
 - middle: the best reading, which space commits
 - right: the next reading, and an arrow that opens the rest (`te` can be ទេ, តែ, ទី or តេ)
 
-A tapped reading is learned and ranks higher next time. ។ sits next to space. In password,
+A tapped reading is learned with the word before it and ranks higher next time, most
+after that word. ។ sits next to space. In password,
 email, web address and number fields the keys type what they show, and nothing is converted,
 suggested or learned. The app has no permissions at all, so it cannot reach the network.
 

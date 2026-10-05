@@ -60,10 +60,28 @@ impl Engine {
         }
     }
 
-    /// Record that the user picked `word` for `typed`, so it ranks higher next time.
-    pub fn learn(&mut self, typed: &str, word: &str) -> std::io::Result<()> {
+    /// Record that the user picked `word` for `typed` after the Khmer word `previous`
+    /// (`None` at the start of the text), so it ranks higher next time.
+    pub fn learn(
+        &mut self,
+        typed: &str,
+        word: &str,
+        previous: Option<&str>,
+    ) -> std::io::Result<()> {
         self.cache.get_mut().clear();
-        self.user.learn(typed, word)
+        self.user.learn(typed, word, previous)
+    }
+
+    /// Like [`Engine::learn`], after `context`: the text in the field before what was
+    /// typed, whose last Khmer word is the previous word.
+    pub fn learn_in_context(
+        &mut self,
+        context: &str,
+        typed: &str,
+        word: &str,
+    ) -> std::io::Result<()> {
+        let previous = self.last_khmer_word(context);
+        self.learn(typed, word, previous.as_deref())
     }
 
     /// Forget everything learned.
@@ -135,34 +153,30 @@ impl Engine {
         }
     }
 
-    /// Raise readings picked before for this key, and offer picked words nothing else did.
+    /// Offer every word picked for `typed` before, after any word. How much a pick counts
+    /// depends on the previous word, so the decoder adds that ([`Engine::learned_bonus`]).
     fn with_picks(&self, typed: &str, mut choices: Vec<Choice>) -> Vec<Choice> {
-        let picks = self.user.picks(typed);
-        if picks.is_empty() {
-            return choices;
-        }
-        let settings = &self.data.settings;
-        let count = |text: &str| picks.iter().find(|(w, _)| w == text).map(|(_, n)| *n);
-        for choice in &mut choices {
-            if let Some(n) = count(&choice.text) {
-                choice.emission += settings.learned_weight * f64::from(n).ln_1p();
-            }
-        }
-        for (word, n) in picks {
-            if choices.iter().any(|c| &c.text == word) {
-                continue;
-            }
-            let mut bonus = settings.learned_weight * f64::from(*n).ln_1p();
-            if !self
+        let mut picked: Vec<&str> = self
+            .user
+            .picks(typed)
+            .iter()
+            .map(|p| p.word.as_str())
+            .filter(|word| !choices.iter().any(|c| c.text == *word))
+            .collect();
+        picked.sort_unstable();
+        picked.dedup();
+        for word in picked {
+            let known = self
                 .data
                 .word_id(word)
-                .is_some_and(|id| self.data.known(id))
-            {
-                bonus += settings.learned_unknown_bonus;
-            }
+                .is_some_and(|id| self.data.known(id));
             choices.push(Choice {
-                text: word.clone(),
-                emission: bonus,
+                text: word.to_owned(),
+                emission: if known {
+                    0.0
+                } else {
+                    self.data.settings.learned_unknown_bonus
+                },
                 origin: Origin::Learned,
                 spelling: typed.to_lowercase(),
             });
@@ -170,10 +184,35 @@ impl Engine {
         choices
     }
 
+    /// The bonus for `choice` from what the user picked for `typed`: picks after the Khmer
+    /// word `previous` count fully; after other words, each word counts once.
+    pub fn learned_bonus(&self, previous: Option<&str>, typed: &str, choice: &Choice) -> f64 {
+        let picks = self.user.picks(typed);
+        if picks.is_empty() || !choice.is_khmer() {
+            return 0.0;
+        }
+        let context = previous.unwrap_or("");
+        let mut here = 0;
+        let mut elsewhere = 0;
+        for pick in picks.iter().filter(|p| p.word == choice.text) {
+            if pick.previous == context {
+                here += pick.count;
+            } else {
+                elsewhere += 1;
+            }
+        }
+        let settings = &self.data.settings;
+        settings.learned_weight * f64::from(here).ln_1p()
+            + settings.learned_elsewhere_weight * f64::from(elsewhere).ln_1p()
+    }
+
     fn decoder(&self) -> Decoder<'_, impl FnMut(&str, bool) -> Vec<Choice> + '_> {
         Decoder {
             data: &self.data,
             choices: |typed: &str, whole: bool| self.choices(typed, whole),
+            learned: Some(Box::new(|previous, typed, choice| {
+                self.learned_bonus(previous, typed, choice)
+            })),
         }
     }
 
@@ -244,7 +283,7 @@ impl Engine {
         }
         let mut best: Vec<Suggestion> = Vec::new();
         for choice in &candidates {
-            let score = choice.emission + decoder.language_model(previous, choice);
+            let score = choice.emission + decoder.context(previous, &last.typed, choice);
             let suggestion = Suggestion {
                 text: choice.text.clone(),
                 score,
@@ -284,8 +323,8 @@ mod tests {
     fn a_picked_word_ranks_higher_next_time() {
         let mut engine = Engine::new(sample());
         assert_eq!(engine.suggest("bong", 5)[0].text, "បង");
-        engine.learn("bong", "បង់").unwrap();
-        engine.learn("bong", "បង់").unwrap();
+        engine.learn("bong", "បង់", None).unwrap();
+        engine.learn("bong", "បង់", None).unwrap();
         assert_eq!(engine.suggest("bong", 5)[0].text, "បង់");
         assert_eq!(engine.suggest("borng", 5)[0].text, "បង់"); // same key
         engine.forget().unwrap();
@@ -295,7 +334,7 @@ mod tests {
     #[test]
     fn a_picked_word_the_lexicon_lacks_is_offered() {
         let mut engine = Engine::new(sample());
-        engine.learn("dararith", "ដារ៉ារិទ្ធ").unwrap();
+        engine.learn("dararith", "ដារ៉ារិទ្ធ", None).unwrap();
         let first = &engine.suggest("knhom chmous dararith", 5)[0];
         assert_eq!(
             (first.text.as_str(), first.origin),
@@ -330,5 +369,41 @@ mod tests {
             ("អរគុណ", Origin::Completion, 0, 4)
         );
         assert_eq!(engine.suggest("", 5), []);
+    }
+
+    #[test]
+    fn a_pick_counts_most_after_the_same_word() {
+        let mut engine = Engine::new(sample());
+        for _ in 0..3 {
+            engine.learn("te", "តេ", Some("ចាំ")).unwrap();
+        }
+        assert_eq!(engine.convert("jam te tv vinh"), "ចាំតេទៅវិញ");
+        assert_eq!(engine.convert("ot mean te"), "អត់មានទេ");
+        // With ចាំ already in the field, as in a keyboard.
+        assert_eq!(engine.suggest_in_context("ចាំ", "te", 3)[0].text, "តេ");
+        assert_eq!(engine.suggest_in_context("អត់មាន", "te", 3)[0].text, "ទេ");
+    }
+
+    #[test]
+    fn elsewhere_each_previous_word_counts_once() {
+        use crate::{Choice, Origin};
+
+        let mut engine = Engine::new(sample());
+        let te = Choice {
+            text: "តេ".to_owned(),
+            emission: 0.0,
+            origin: Origin::Pronunciation,
+            spelling: String::new(),
+        };
+        engine.learn("te", "តេ", Some("ចាំ")).unwrap();
+        let once = engine.learned_bonus(Some("មាន"), "te", &te);
+        for _ in 0..4 {
+            engine.learn("te", "តេ", Some("ចាំ")).unwrap();
+        }
+        assert!(once > 0.0);
+        assert!((engine.learned_bonus(Some("មាន"), "te", &te) - once).abs() < 1e-12);
+        assert!(engine.learned_bonus(Some("ចាំ"), "te", &te) > once);
+        engine.learn_in_context("ខ្ញុំហៅ", "te", "តេ").unwrap();
+        assert!(engine.learned_bonus(Some("មាន"), "te", &te) > once);
     }
 }

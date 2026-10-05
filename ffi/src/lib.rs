@@ -124,8 +124,12 @@ impl Keyboard {
     }
 
     /// Record that the user picked `word` for `typed`, so it ranks higher next time.
-    pub fn learn(&self, typed: String, word: String) -> Result<(), KeyboardError> {
-        self.engine().learn(&typed, &word).map_err(storage)
+    /// `context` is the text before `typed`, as for [`Keyboard::suggest`]: a pick counts
+    /// most after the same Khmer word.
+    pub fn learn(&self, context: String, typed: String, word: String) -> Result<(), KeyboardError> {
+        self.engine()
+            .learn_in_context(&context, &typed, &word)
+            .map_err(storage)
     }
 
     /// Forget every learned pick, and delete the file that kept them.
@@ -185,11 +189,32 @@ mod tests {
                 .clone()
         };
         assert_eq!(after("ការ"), "បង់");
-        keyboard.learn("bong".into(), "បង់".into()).unwrap();
-        keyboard.learn("bong".into(), "បង់".into()).unwrap();
+        keyboard
+            .learn(String::new(), "bong".into(), "បង់".into())
+            .unwrap();
+        keyboard
+            .learn(String::new(), "bong".into(), "បង់".into())
+            .unwrap();
         assert_eq!(after(""), "បង់");
         keyboard.forget().unwrap();
         assert_eq!(after(""), "បង");
+    }
+
+    #[test]
+    fn a_pick_counts_after_the_same_word() {
+        let keyboard = Keyboard::from_bytes(sample(), None).unwrap();
+        for _ in 0..3 {
+            keyboard
+                .learn("ខ្ញុំចាំ".into(), "te".into(), "តេ".into())
+                .unwrap();
+        }
+        let first = |context: &str| {
+            keyboard.suggest(context.into(), "te".into(), 3)[0]
+                .text
+                .clone()
+        };
+        assert_eq!(first("ខ្ញុំចាំ"), "តេ");
+        assert_eq!(first("អត់មាន"), "ទេ");
     }
 
     #[test]

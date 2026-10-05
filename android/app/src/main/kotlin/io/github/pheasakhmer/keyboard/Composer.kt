@@ -16,15 +16,16 @@ interface Core {
     /** The best conversion of [text]. */
     fun convert(text: String): String
 
-    /** The user picked [word] for [typed]. */
-    fun learn(typed: String, word: String)
+    /** The user picked [word] for [typed], after [context]. A pick counts most after the
+     *  same Khmer word. */
+    fun learn(context: String, typed: String, word: String)
 }
 
 /** A core that knows nothing yet, while the real one loads. */
 object NoCore : Core {
     override fun suggest(context: String, typed: String, count: Int) = emptyList<Reading>()
     override fun convert(text: String) = text
-    override fun learn(typed: String, word: String) {}
+    override fun learn(context: String, typed: String, word: String) {}
 }
 
 /** A candidate in the suggestion bar. */
@@ -35,6 +36,8 @@ data class Candidate(
     /** The typed letters the candidate reads, and the word learned for them if picked. */
     val typed: String,
     val word: String,
+    /** The text before those letters, including any of the typed text converted in front. */
+    val context: String = "",
 )
 
 /** The suggestion bar's content: the typed text, the best candidate (what space commits)
@@ -80,7 +83,7 @@ class Composer(var core: Core = NoCore, private val count: Int = 8) {
 
     /** The user tapped [candidate]. A Khmer pick is learned, so it ranks higher next time. */
     fun pick(candidate: Candidate): Candidate {
-        if (!candidate.isLatin) core.learn(candidate.typed, candidate.word)
+        if (!candidate.isLatin) core.learn(candidate.context, candidate.typed, candidate.word)
         reset()
         return candidate
     }
@@ -109,9 +112,10 @@ class Composer(var core: Core = NoCore, private val count: Int = 8) {
                 core.convert(typed.substring(0, start))
             }
             val text = prefix + reading.text + typed.substring(end)
+            val read = typed.substring(start, end)
             candidates.putIfAbsent(
                 text,
-                Candidate(text, reading.isLatin, typed.substring(start, end), reading.text),
+                Candidate(text, reading.isLatin, read, reading.text, context = context + prefix),
             )
         }
         val ranked = candidates.values.toList()

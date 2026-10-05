@@ -9,7 +9,7 @@ private class FakeCore(
     private val readings: Map<String, List<Reading>>,
     private val conversions: Map<String, String> = emptyMap(),
 ) : Core {
-    val learned = mutableListOf<Pair<String, String>>()
+    val learned = mutableListOf<Triple<String, String, String>>()
     val contexts = mutableListOf<String>()
 
     override fun suggest(context: String, typed: String, count: Int): List<Reading> {
@@ -19,8 +19,8 @@ private class FakeCore(
 
     override fun convert(text: String) = conversions[text] ?: text
 
-    override fun learn(typed: String, word: String) {
-        learned += typed to word
+    override fun learn(context: String, typed: String, word: String) {
+        learned += Triple(context, typed, word)
     }
 }
 
@@ -50,7 +50,7 @@ class ComposerTest {
         composer.type("te", "")
         assertEquals("ទេ", composer.accept()?.text)
         assertEquals("", composer.typed)
-        assertEquals(emptyList<Pair<String, String>>(), core.learned)
+        assertEquals(emptyList<Triple<String, String, String>>(), core.learned)
         assertNull(composer.accept())
     }
 
@@ -61,7 +61,7 @@ class ComposerTest {
         composer.type("te", "ចាំ")
         val picked = composer.pick(composer.bar.others[1])
         assertEquals("តេ", picked.text)
-        assertEquals(listOf("te" to "តេ"), core.learned)
+        assertEquals(listOf(Triple("ចាំ", "te", "តេ")), core.learned)
     }
 
     @Test
@@ -71,7 +71,7 @@ class ComposerTest {
         composer.type("ok", "")
         val kept = composer.keepTyped()
         assertEquals(Candidate("ok", isLatin = true, typed = "ok", word = "ok"), kept)
-        assertEquals(emptyList<Pair<String, String>>(), core.learned)
+        assertEquals(emptyList<Triple<String, String, String>>(), core.learned)
     }
 
     @Test
@@ -81,10 +81,13 @@ class ComposerTest {
             mapOf("soksabay" to "សុខសប្បាយ"),
         )
         val composer = Composer(core)
-        composer.type("soksabayte", "")
+        composer.type("soksabayte", "ខ្ញុំ")
         val best = composer.bar.best!!
         assertEquals("សុខសប្បាយទេ", best.text)
         assertEquals("te" to "ទេ", best.typed to best.word)
+        // A pick of it is learned after the converted words in front.
+        composer.pick(best)
+        assertEquals(listOf(Triple("ខ្ញុំសុខសប្បាយ", "te", "ទេ")), core.learned)
     }
 
     @Test

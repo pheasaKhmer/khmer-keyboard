@@ -70,7 +70,13 @@ def settings() -> list[list[object]]:
         (match, ["MIN_FUZZY_KEY", "MIN_COMPLETION_KEY", "MAX_COMPLETION_SCAN"]),
         (
             engine,
-            ["FALLBACK_EMISSION", "TYPED_EMISSION", "LEARNED_WEIGHT", "LEARNED_UNKNOWN_BONUS"],
+            [
+                "FALLBACK_EMISSION",
+                "TYPED_EMISSION",
+                "LEARNED_WEIGHT",
+                "LEARNED_ELSEWHERE_WEIGHT",
+                "LEARNED_UNKNOWN_BONUS",
+            ],
         ),
         (transliterate, ["MAX_SYLLABLE_LETTERS", "VOWEL_ONSET_COST"]),
     ):
