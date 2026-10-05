@@ -29,6 +29,7 @@ golden_khmer.txt, which the Rust tests must reproduce:
 
 import argparse
 import dataclasses
+import inspect
 from pathlib import Path
 
 import khmer_engine
@@ -63,6 +64,8 @@ def settings() -> list[list[object]]:
     ):
         for f in dataclasses.fields(values):
             rows.append([f"{prefix}.{f.name}", getattr(values, f.name)])
+    weight = inspect.signature(Lexicon.bigram_logprob).parameters["weight"].default
+    rows.append(["lexicon.bigram_weight", weight])
     for module, names in (
         (match, ["MIN_FUZZY_KEY", "MIN_COMPLETION_KEY", "MAX_COMPLETION_SCAN"]),
         (

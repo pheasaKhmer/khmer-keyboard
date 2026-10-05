@@ -18,6 +18,7 @@ settings.min_split_length	4
 settings.max_piece_length	12
 settings.choices_per_span	8
 settings.beam	8
+lexicon.bigram_weight	0.7
 match.MIN_FUZZY_KEY	3
 match.MIN_COMPLETION_KEY	2
 match.MAX_COMPLETION_SCAN	5000
