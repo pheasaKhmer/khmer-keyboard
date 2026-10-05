@@ -46,7 +46,7 @@ from khmer_engine.keys import key
 from khmer_engine.lexicon import Lexicon
 from khmer_engine.romanize import merge_unknown
 from khmer_engine.rules import romanize_word
-from khmer_engine.script import COENG, DEPENDENT_VOWELS
+from khmer_engine.script import DEPENDENT_VOWELS
 from khmer_engine.segment import KHMER_RUN
 from pheasa import normalize
 
@@ -180,21 +180,6 @@ def read_inputs(name: str) -> list[str]:
     return [line for line in lines if line and not line.startswith("#")]
 
 
-_CORE_TABLE = {0x17E0 + d: str(d) for d in range(10)} | {0x200B: " "}
-
-
-def core_normalize(text: str) -> str:
-    """The part of pheasa's normalization the core has (core/src/segment.rs)."""
-    return text.translate(_CORE_TABLE).replace(COENG + "ដ", COENG + "ត")
-
-
-def check_normalized(texts: list[str]) -> None:
-    """Stop if the core would normalize a golden input differently from the engine."""
-    differ = [t for t in texts if normalize(t, digits="ascii", zwsp="space") != core_normalize(t)]
-    if differ:
-        raise SystemExit(f"golden inputs the core cannot normalize like pheasa: {differ}")
-
-
 def rule_words(eng: Engine, khmer: list[str]) -> list[str]:
     """Words for golden/rules.tsv: the lexicon, each word of the golden Khmer text as the
     romanizer segments it, RULE_CASES, and every vowel and sign on an a-series and an
@@ -244,7 +229,6 @@ def export_golden(eng: Engine, out: Path) -> None:
 
     khmer = read_inputs("golden_khmer.txt")
     words = rule_words(eng, khmer)
-    check_normalized(khmer + words)
     styles = ("chat", "ungegn")
     romanize = [[text, style, eng.romanize(text, style)] for text in khmer for style in styles]
     write(out / "golden" / "romanize.tsv", "khmer\tstyle\toutput", romanize)

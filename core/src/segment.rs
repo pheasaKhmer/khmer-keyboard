@@ -1,6 +1,7 @@
 //! Split Khmer text into words, ported from khmer-engine's `segment.py`, and the light
 //! normalization the core applies before segmenting.
 
+use pheasa::{Digits, Options, Zwsp, normalize_with};
 use unicode_normalization::char::is_combining_mark;
 
 use crate::data::Data;
@@ -10,23 +11,16 @@ use crate::script::COENG;
 /// ៗ repeats the word before it.
 pub const LEK_TOO: char = '\u{17d7}';
 
-/// A subset of pheasa's normalization: Khmer digits become ASCII digits, zero-width spaces
-/// become spaces, and coeng da becomes coeng ta (pheasa rule 3.8), which the lexicon uses.
-/// Reordering marks typed out of order is not done yet.
+/// Khmer text normalized as the engine's romanizer does it: pheasa's normalization (marks
+/// typed out of order are put in order, coeng da becomes coeng ta), with Khmer digits as
+/// ASCII digits and zero-width spaces as spaces.
 pub fn normalize(text: &str) -> String {
-    let mut out = String::with_capacity(text.len());
-    let mut after_coeng = false;
-    for ch in text.chars() {
-        let ch = match ch {
-            '\u{17e0}'..='\u{17e9}' => char::from(b'0' + (ch as u32 - 0x17e0) as u8),
-            '\u{200b}' => ' ',
-            '\u{178a}' if after_coeng => '\u{178f}',
-            other => other,
-        };
-        after_coeng = ch == COENG;
-        out.push(ch);
-    }
-    out
+    let options = Options {
+        digits: Digits::Ascii,
+        zwsp: Zwsp::Space,
+        ..Options::default()
+    };
+    normalize_with(text, options)
 }
 
 /// Whether `ch` belongs to a Khmer word: letters, vowels, signs and joiners.
@@ -197,9 +191,11 @@ mod tests {
     }
 
     #[test]
-    fn normalizes_digits_spaces_and_coeng_da() {
+    fn normalizes_like_the_engine() {
         assert_eq!(normalize("ឆ្នាំ២០២៦\u{200b}សួស្ដី"), "ឆ្នាំ2026 សួស្តី");
         assert_eq!(normalize("ដ"), "ដ"); // only after a coeng
+        // Marks typed out of order: the vowel before the subscript.
+        assert_eq!(normalize("ខែ\u{17d2}មរ"), "ខ្មែរ");
     }
 
     #[test]

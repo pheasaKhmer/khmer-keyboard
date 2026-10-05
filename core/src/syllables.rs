@@ -19,7 +19,7 @@ use crate::script::{
     TRIISAP, VIRIAM, YUUKALEAPINTU, is_consonant, is_dependent_vowel, is_independent_vowel,
     is_series_neutral, is_shifter, is_sign, is_vocalic_sign,
 };
-use crate::segment::{is_khmer_letter, normalize};
+use crate::segment::is_khmer_letter;
 
 /// One written cluster. `base` is `None` when vowel signs appear without a letter.
 #[derive(Clone, Debug, Default, PartialEq, Eq)]
@@ -346,10 +346,10 @@ fn close(syllable: &mut Syllable, letters: &[char], text: &str, signs: &str) {
     }
 }
 
-/// Split a Khmer word into syllables. The word is normalized first, with the core's
-/// subset of pheasa (see [`normalize`]).
+/// Split a Khmer word into syllables. The word is normalized first with pheasa's defaults,
+/// as in the engine.
 pub fn syllables(word: &str) -> Vec<Syllable> {
-    let clusters = clusters(&normalize(word));
+    let clusters = clusters(&pheasa::normalize(word));
     let mut out: Vec<Syllable> = Vec::new();
     for (cluster, action) in clusters.iter().zip(best_actions(&clusters)) {
         // Only an open syllable takes a final or a split base, so `out` has one.
