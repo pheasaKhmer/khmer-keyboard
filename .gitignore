@@ -4,3 +4,11 @@
 
 # Rust build output
 /target/
+
+# Python environments and caches (data/)
+.venv/
+__pycache__/
+.ruff_cache/
+
+# The full exported index (cd data && uv run python export.py --lexicon ... --out build)
+/data/build/
