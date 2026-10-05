@@ -21,3 +21,12 @@ missing_errors_doc = "allow"
 missing_panics_doc = "allow"
 cast_possible_truncation = "allow"
 cast_precision_loss = "allow"
+
+# Smaller, faster libraries for the apps. Panics still unwind: UniFFI turns them into
+# errors on the Kotlin and Swift side instead of crashing the keyboard. Only debug info is
+# stripped: the binding generator reads UniFFI's metadata from the library's symbols, and
+# the Android build strips the rest when it packages the app.
+[profile.release]
+lto = true
+codegen-units = 1
+strip = "debuginfo"

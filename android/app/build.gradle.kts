@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
 }
@@ -39,6 +41,14 @@ val keyboardData: File = providers.gradleProperty("khmer.data").orNull?.let(repo
     ?: repository.resolve("data/build").takeIf { it.isDirectory }
     ?: repository.resolve("data/sample")
 
+// The upload key for release builds, kept outside the repository in keystore.properties
+// (storeFile, storePassword, keyAlias, keyPassword; see the README). Without it, release
+// builds are signed with the debug key, which is enough to install and test them but is
+// refused by the Play Store.
+val keystore = rootProject.file("keystore.properties").takeIf { it.isFile }?.let { file ->
+    Properties().apply { file.inputStream().use(::load) }
+}
+
 android {
     namespace = "io.github.pheasakhmer.keyboard"
     compileSdk = 37
@@ -51,6 +61,26 @@ android {
         versionCode = 1
         versionName = "0.1.0"
         ndk { abiFilters += abis }
+    }
+
+    signingConfigs {
+        if (keystore != null) {
+            create("upload") {
+                storeFile = rootProject.file(keystore.getProperty("storeFile"))
+                storePassword = keystore.getProperty("storePassword")
+                keyAlias = keystore.getProperty("keyAlias")
+                keyPassword = keystore.getProperty("keyPassword")
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig = signingConfigs.findByName("upload") ?: signingConfigs.getByName("debug")
+        }
     }
 
     compileOptions {
@@ -105,9 +135,19 @@ androidComponents {
             }
         }
 
+        val release = variant.buildType == "release"
         val data = tasks.register<Cargo>("compileKeyboardData$name") {
             description = "Compiles the exported lexicon into the keyboard's data file."
             val out = outputDirectory
+            // A release with the 3,000-word sample would read far less than the engine does.
+            doFirst {
+                if (release && dataDirectory.endsWith("data/sample")) {
+                    throw GradleException(
+                        "A release needs the full lexicon: export it to data/build (see " +
+                            "data/README.md) or pass -Pkhmer.data=DIR.",
+                    )
+                }
+            }
             workingDir(repository)
             environment("PATH", searchPath)
             inputs.dir(dataDirectory)
