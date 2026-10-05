@@ -40,23 +40,28 @@ up and runs the search:
 
 - **matching keys** fold chat spellings together ("sous dey" = "suosdey" = "sursdey"),
   plus every key one edit away
+- **abbreviations** the way a native speaker types them: common words by their consonants
+  (`tv` ទៅ, `dg` ដឹង), words without an unstressed first vowel (`sbay` សប្បាយ), and a
+  curated list (`nh` ខ្ញុំ, `hz` ហើយ)
 - **scoring** by key edits, letter distance, word frequency and curated spellings
 - **a Viterbi search** over word sequences with word-pair probabilities, so context picks
   between words that sound alike (បង / បង់), with words typed across spaces ("or kun") or
   without them ("soksabayte")
-- English words stay as typed; unknown words are spelled syllable by syllable
+- English words stay as typed; unknown words are spelled syllable by syllable; a word
+  typed twice is written once with ៗ (`ban hz hz` → បានហើយៗ)
 - **learning**: picked candidates rank higher next time
 - **romanizing** Khmer back to Latin letters, in chat style or UNGEGN
 
-Golden tests hold the core to the engine: on the exported sample, all 11,152 matching keys,
-239 conversions with their alternatives, 1,292 keystroke suggestion lists and 262
-romanizations are identical to the Python engine's.
+Golden tests hold the core to the engine: on the exported sample, all 18,254 matching keys,
+294 conversions with their alternatives (including 65 phrases typed by a native speaker),
+2,611 keystroke suggestion lists and 262 romanizations are identical to the Python
+engine's.
 
 | Full lexicon (61,980 words) | |
 |---|---|
-| Data file | 10.0 MB (the spec allows 15 MB) |
-| Load | 1.4 ms |
-| `suggest` per keystroke, 5-word input | 0.29 ms median, 1.6 ms worst (desktop, release build) |
+| Data file | 10.4 MB (the spec allows 15 MB) |
+| Load | 1.1 ms |
+| `suggest` per keystroke, 5-word input | 0.36 ms median, 1.6 ms worst (desktop, release build) |
 
 The spec's budget is 30 ms per keystroke on a mid-range Android phone.
 
@@ -80,7 +85,7 @@ cargo run -p khmer-kbd -- romanize --style ungegn "សុខសប្បាយ�
 cargo run -p khmer-kbd -- repl
 ```
 
-By default the CLI uses `data/sample` (3,008 words). For the full lexicon, build it in a
+By default the CLI uses `data/sample` (3,009 words). For the full lexicon, build it in a
 khmer-engine checkout (`make data`), then export and compile it:
 
 ```bash
