@@ -14,5 +14,5 @@ workspace = true
 [dependencies]
 fst = "0.4.7"
 # pheasa's Rust normalizer, which gives the same output as the Python package the engine uses.
-pheasa = { git = "https://github.com/pheasaKhmer/pheasa", rev = "d7ca56c9d761bf5517936ec8ca3efb55bb385802" }
+pheasa = { git = "https://github.com/pheasaKhmer/pheasa", rev = "7f66edf8773b268b469bd96aa4d97416a5cd284d" }
 unicode-normalization = "0.1.25"
