@@ -325,6 +325,13 @@ impl<F: FnMut(&str, bool) -> Vec<Choice>> Decoder<'_, F> {
 
     /// Convert `text`, keeping the n best readings of each span and of the whole.
     pub fn convert(&mut self, text: &str, n: usize) -> Conversion {
+        self.convert_after(None, text, n)
+    }
+
+    /// Like [`Decoder::convert`], with `previous` as the Khmer word before `text`: the
+    /// first phrase is scored in its context, as if it continued it.
+    pub fn convert_after(&mut self, previous: Option<&str>, text: &str, n: usize) -> Conversion {
+        let mut seed = previous.map(str::to_owned);
         let mut pieces: Vec<Vec<String>> = Vec::new();
         let mut tokens = Vec::new();
         for segment in segments(text) {
@@ -336,7 +343,8 @@ impl<F: FnMut(&str, bool) -> Vec<Choice>> Decoder<'_, F> {
                 Segment::Phrase(phrase) => phrase,
             };
             let spans = self.spans(&phrase);
-            let (arena, finals) = self.search(&phrase, &spans);
+            let phrase_seed = seed.take();
+            let (arena, finals) = self.search(&phrase, &spans, phrase_seed.clone());
             if finals.is_empty() {
                 pieces.push(vec![phrase.joined()]);
                 continue;
@@ -355,7 +363,7 @@ impl<F: FnMut(&str, bool) -> Vec<Choice>> Decoder<'_, F> {
             }
             readings.truncate(n);
             pieces.push(readings);
-            tokens.extend(self.tokens(&phrase, &arena, finals[0], &spans, n));
+            tokens.extend(self.tokens(&phrase, &arena, finals[0], &spans, n, phrase_seed));
         }
         pieces.retain(|p| !p.is_empty());
         let best: String = pieces.iter().map(|p| p[0].as_str()).collect();
@@ -385,7 +393,12 @@ impl<F: FnMut(&str, bool) -> Vec<Choice>> Decoder<'_, F> {
         }
     }
 
-    fn search(&self, phrase: &Phrase, spans: &[Span]) -> (Vec<Hypothesis>, Vec<usize>) {
+    fn search(
+        &self,
+        phrase: &Phrase,
+        spans: &[Span],
+        previous: Option<String>,
+    ) -> (Vec<Hypothesis>, Vec<usize>) {
         let mut starting: HashMap<usize, Vec<usize>> = HashMap::new();
         for (i, span) in spans.iter().enumerate() {
             starting.entry(span.range.0).or_default().push(i);
@@ -393,7 +406,7 @@ impl<F: FnMut(&str, bool) -> Vec<Choice>> Decoder<'_, F> {
         let length = phrase.offsets()[phrase.words.len()];
         let mut arena = vec![Hypothesis {
             score: 0.0,
-            previous: None,
+            previous,
             back: None,
             span: (0, 0),
             choice: None,
@@ -438,10 +451,11 @@ impl<F: FnMut(&str, bool) -> Vec<Choice>> Decoder<'_, F> {
         last: usize,
         spans: &[Span],
         n: usize,
+        seed: Option<String>,
     ) -> Vec<Token> {
         let by_range: HashMap<(usize, usize), &Span> = spans.iter().map(|s| (s.range, s)).collect();
         let mut tokens = Vec::new();
-        let mut previous: Option<String> = None;
+        let mut previous: Option<String> = seed;
         for step in Self::path(arena, last) {
             let hypothesis = &arena[step];
             let chosen = hypothesis
