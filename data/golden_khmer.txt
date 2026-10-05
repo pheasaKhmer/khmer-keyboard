@@ -1,5 +1,5 @@
 # Khmer inputs for the golden romanize cases: khmer-engine's eval/testset.tsv and
-# extra cases. Only those whose words are all in the lexicon are exported.
+# extra cases, the last ones with words the lexicon does not know.
 សួស្តី
 សួស្តីបង
 អរគុណ
@@ -131,3 +131,17 @@ ok បង
 ផ្សេងៗ
 ខ្ញុំ love អូន
 ភ្នំពេញ​កម្ពុជា
+ហ្ឫទ័យ ចក្រពត្តិ សុខសប្បាយទេ
+សួស្តី! អម្ឫត?
+ហ្ឫទ័យៗ
+ចក្រពត្តិៗ។
+ឆ្នាំ២០២៦ ចក្រពត្តិ
+ព្រហ្មញ្ញសាសនា
+ខ្ញុំមើលយូធ្យូប
+ប៉ាតៅ
+ពោធិ៍ ច័ក ពិះ
+កន្ត្រាប់ ក្អែក ចង្អៀត ខ្ពង ប្លែង
+ហ៊ាង ញ៉ង ប៉ង
+វ័ង្គ ភ័ព្វ សុហ្ឫទ
+សួស្តី៙ចក្រពត្តិ
+ok៍a

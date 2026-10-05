@@ -1,16 +1,15 @@
 //! Romanize Khmer text, ported from khmer-engine's `Romanizer.romanize`.
 //!
-//! Text is normalized (see [`crate::segment::normalize`]), each run of Khmer letters is
-//! segmented into words, and each lexicon word is replaced by the romanization the engine
-//! exported for it, in the chat style or UNGEGN. Words are separated by spaces, Khmer
-//! punctuation becomes Latin punctuation, and ៗ repeats the word before it. Words the
-//! lexicon does not know stay in Khmer script: spelling them needs the engine's
-//! rule-based romanizers, which the core does not have yet.
+//! Text is normalized (see [`crate::segment::normalize`]) and each run of Khmer letters is
+//! segmented into words. A word the data has is replaced by the romanization the engine
+//! exported for it, in the chat style or UNGEGN; in the chat style that is spelled from
+//! the lexicon's pronunciation when it has one. Any other word is romanized from its
+//! spelling by the rules in [`crate::rules`], as the engine does. Words are separated by
+//! spaces, Khmer punctuation becomes Latin punctuation, and ៗ repeats the word before it.
 
 use crate::data::Data;
-use crate::segment::{
-    LEK_TOO, Segmenter, Word, is_alnum, is_khmer_letter, merge_unknown, normalize,
-};
+use crate::rules::romanize_word;
+use crate::segment::{LEK_TOO, Segmenter, is_alnum, is_khmer_letter, merge_unknown, normalize};
 
 /// The romanization style: how people type in chat, or the UNGEGN standard.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -57,11 +56,14 @@ impl Output {
     }
 }
 
-fn word(data: &Data, word: &Word, style: Style) -> String {
-    match data.word_id(&word.text).filter(|_| word.known) {
+/// The engine's `Romanizer.word`. The export holds its answer for every word in the data,
+/// so only other words need the rules. An unknown piece merged with the letters around it
+/// can spell a lexicon word; it gets the lexicon's romanization, as in the engine.
+fn word(data: &Data, word: &str, style: Style) -> String {
+    match data.word_id(word) {
         Some(id) if style == Style::Chat => data.chat(id).to_owned(),
         Some(id) => data.ungegn(id).to_owned(),
-        None => word.text.clone(),
+        None => romanize_word(word, style),
     }
 }
 
@@ -112,7 +114,7 @@ pub fn romanize(data: &Data, text: &str, style: Style) -> String {
         let run: String = chars[start..i].iter().collect();
         let words: Vec<String> = merge_unknown(segmenter.segment(&run))
             .iter()
-            .map(|w| word(data, w, style))
+            .map(|w| word(data, &w.text, style))
             .collect();
         out.append(&words.join(" "));
         last_word = words.last().cloned().unwrap_or_default();
@@ -162,8 +164,18 @@ mod tests {
     }
 
     #[test]
-    fn unknown_words_stay_in_khmer() {
+    fn unknown_words_are_romanized_by_the_rules() {
         let data = sample();
-        assert_eq!(romanize(&data, "ហ្ឫទ័យ", Style::Chat), "ហ្ឫទ័យ");
+        assert_eq!(romanize(&data, "ហ្ឫទ័យ", Style::Chat), "hruetey");
+        assert_eq!(romanize(&data, "ហ្ឫទ័យ", Style::Ungegn), "hrœ\u{306}toăy");
+    }
+
+    #[test]
+    fn unknown_words_absorb_the_bare_letters_around_them() {
+        let data = sample();
+        assert_eq!(
+            romanize(&data, "ចក្រពត្តិ សុខសប្បាយទេ", Style::Chat),
+            "chakropotde soksabay te"
+        );
     }
 }
