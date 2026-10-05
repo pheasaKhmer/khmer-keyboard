@@ -92,6 +92,8 @@ pub struct Settings {
     pub learned_unknown_bonus: f64,
     pub max_syllable_letters: usize,
     pub vowel_onset_cost: f64,
+    /// How much a word-pair probability counts against the single-word probability.
+    pub bigram_weight: f64,
 }
 
 impl Settings {
@@ -137,6 +139,7 @@ impl Settings {
             learned_unknown_bonus: float("engine.LEARNED_UNKNOWN_BONUS")?,
             max_syllable_letters: count("transliterate.MAX_SYLLABLE_LETTERS")?,
             vowel_onset_cost: float("transliterate.VOWEL_ONSET_COST")?,
+            bigram_weight: float("lexicon.bigram_weight")?,
         })
     }
 }
@@ -668,16 +671,16 @@ impl Data {
     }
 }
 
+/// The exported sample, compiled, for the unit tests of every module.
+#[cfg(test)]
+pub(crate) fn sample() -> Data {
+    let directory = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../data/sample");
+    Data::from_bytes(compile(&directory).unwrap()).unwrap()
+}
+
 #[cfg(test)]
 mod tests {
-    use std::path::PathBuf;
-
-    use super::{Data, Source, compile};
-
-    fn sample() -> Data {
-        let directory = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../data/sample");
-        Data::from_bytes(compile(&directory).unwrap()).unwrap()
-    }
+    use super::{Data, Source, sample};
 
     #[test]
     fn words_and_counts() {
