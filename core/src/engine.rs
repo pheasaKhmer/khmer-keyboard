@@ -7,7 +7,9 @@ use std::collections::HashMap;
 use crate::data::{Data, Source};
 use crate::decode::{Choice, Conversion, Decoder, Origin};
 use crate::matcher;
+use crate::romanize::{Style, romanize};
 use crate::score::descending;
+use crate::segment::{Segmenter, is_khmer_letter, normalize};
 use crate::transliterate::transliterate;
 use crate::user::UserDictionary;
 
@@ -173,6 +175,27 @@ impl Engine {
         }
     }
 
+    /// The last word of `context` if it ends in Khmer (spaces after it are fine).
+    fn last_khmer_word(&self, context: &str) -> Option<String> {
+        let context = normalize(context);
+        let trimmed = context.trim_end();
+        let run_start = trimmed
+            .char_indices()
+            .rev()
+            .take_while(|&(_, ch)| is_khmer_letter(ch))
+            .last()
+            .map(|(i, _)| i)?;
+        Segmenter::new(&self.data)
+            .segment(&trimmed[run_start..])
+            .pop()
+            .map(|w| w.text)
+    }
+
+    /// Romanize Khmer text, in the chat style people type or the UNGEGN standard.
+    pub fn romanize(&self, khmer: &str, style: Style) -> String {
+        romanize(&self.data, khmer, style)
+    }
+
     /// The best conversion, the n best alternatives, and ranked readings per span.
     pub fn analyze(&self, text: &str, n: usize) -> Conversion {
         self.decoder().convert(text, n)
@@ -187,13 +210,25 @@ impl Engine {
     /// While the last word is still being typed (no space or punctuation after it), words
     /// it could be the start of are suggested too.
     pub fn suggest(&self, text: &str, n: usize) -> Vec<Suggestion> {
+        self.suggest_in_context("", text, n)
+    }
+
+    /// Like [`Engine::suggest`], after `context`: the text already in the field before what
+    /// is being typed. If it ends with a Khmer word, that word is the previous word, so
+    /// after ការ typing "bong" suggests បង់ (ការបង់, payment) first.
+    pub fn suggest_in_context(&self, context: &str, text: &str, n: usize) -> Vec<Suggestion> {
+        let seed = self.last_khmer_word(context);
         let mut decoder = self.decoder();
-        let tokens = decoder.convert(text, n).tokens;
+        let tokens = decoder.convert_after(seed.as_deref(), text, n).tokens;
         let Some(last) = tokens.last() else {
             return Vec::new();
         };
-        let before = tokens.len().checked_sub(2).map(|i| &tokens[i].choices[0]);
-        let previous = before.filter(|c| c.is_khmer()).map(|c| c.text.as_str());
+        let previous = match tokens.len().checked_sub(2) {
+            Some(i) => Some(&tokens[i].choices[0])
+                .filter(|c| c.is_khmer())
+                .map(|c| c.text.as_str()),
+            None => seed.as_deref(),
+        };
         let mut candidates = last.choices.clone();
         if last.end == text.chars().count() {
             for e in matcher::completions(&self.data, &last.typed, 20) {
@@ -232,6 +267,7 @@ mod tests {
     use super::Engine;
     use crate::Origin;
     use crate::data::sample;
+    use crate::romanize::Style;
 
     #[test]
     fn converts_phrases() {
@@ -263,6 +299,24 @@ mod tests {
             (first.text.as_str(), first.origin),
             ("ដារ៉ារិទ្ធ", Origin::Learned)
         );
+    }
+
+    #[test]
+    fn the_word_before_in_the_field_is_context() {
+        let engine = Engine::new(sample());
+        assert_eq!(engine.suggest("bong", 5)[0].text, "បង");
+        // ការបង់ (payment) is common; nothing in the sample comes before បង.
+        assert_eq!(engine.suggest_in_context("ការ", "bong", 5)[0].text, "បង់");
+        assert_eq!(engine.suggest_in_context("ការ ", "bong", 5)[0].text, "បង់");
+        // Punctuation ends the context.
+        assert_eq!(engine.suggest_in_context("ការ។", "bong", 5)[0].text, "បង");
+    }
+
+    #[test]
+    fn romanizes() {
+        let engine = Engine::new(sample());
+        assert_eq!(engine.romanize("សុខសប្បាយទេ", Style::Chat), "soksabay te");
+        assert_eq!(engine.romanize("សុខសប្បាយទេ", Style::Ungegn), "sŏkhsâbbay té");
     }
 
     #[test]
