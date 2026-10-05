@@ -1,0 +1,27 @@
+[project]
+name = "khmer-keyboard-data"
+version = "0.1.0"
+description = "Exports khmer-engine's index for the keyboard core."
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["khmer-engine>=0.1.0.dev0", "pheasa>=0.1.0"]
+
+[dependency-groups]
+dev = ["ruff>=0.16.9"]
+
+[tool.uv]
+package = false
+
+# Neither is on PyPI yet. The engine is pinned to the tip of its open PR #7; move the pin
+# to main once the engine PRs are merged. pheasa is listed because uv only reads sources
+# for direct dependencies.
+[tool.uv.sources]
+khmer-engine = { git = "https://github.com/pheasaKhmer/khmer-engine", rev = "6f903334782eed2e8f4897ad2f317b3e4e941872" }
+pheasa = { git = "https://github.com/pheasaKhmer/pheasa", rev = "31c5b83d3685a82be53dc87fbd6c3a72a1299040" }
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]

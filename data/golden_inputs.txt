@@ -1,0 +1,241 @@
+# Romanized inputs for the golden convert and suggest cases: khmer-engine's
+# eval/testset.tsv, the same phrases without spaces, and extra cases.
+sous dey
+suosdey
+sousdey bong
+orkun
+arkun bong
+orkun chraen
+sok sabay te
+soksabay
+sok sabay jea te
+knhom sok sabay
+lea sen hoy
+som tos
+ot ey te
+chas
+bat
+ot te
+nham bai
+nham bay hoy nov
+klean bai
+chhnganh nas
+nham ey
+tov nham bai
+teuk
+kafe
+bay cha
+ot mean te
+mean te
+knhom ot deng te
+jg tov
+chong tov na
+tov na
+mok pi na
+nov na
+nov pteah
+tov sala
+tov rean
+tveu ey
+kompung tveu ey
+tveu ka
+chol chet
+srolanh oun
+bong srolanh oun
+nek oun
+nek bong nas
+min deng te
+ban hoy
+ot ban te
+ban te
+cham bontech
+mok leng
+tov leng
+deng te
+yol te
+knhom yol hoy
+chea mouy
+mdong tiet
+pel na
+tngai nis
+saek
+msel minh
+yub nis
+pel prik
+arun sous dey
+reatrey sous dey
+kom kheng
+kom pibak chet
+pibak chet
+sabay chet
+ot ey te bong
+luy
+ponman
+tlai ponman
+tlai nas
+thok
+kom tlai pek
+chit
+chngay
+srok khmer
+phnom penh
+siem reap
+kampuchea
+khmer
+pheasa khmer
+niyay khmer
+ches niyay khmer te
+ot ches te
+bong pros
+bong srey
+pa mak
+mae
+kmeng
+mit pheak
+songsa
+saat
+srey saat
+saat nas
+lor
+lor nas
+ot lor te
+chkuot
+chos aeng
+aeng
+ke
+yeung
+neak
+louk
+ot mean luy te
+tov psar
+tinh
+lok
+tinh ey
+ot toan
+mok vinh
+tov pteah
+cham
+ot cham te
+kom plech
+chnam thmey
+sous dey chnam thmey
+rean khmer
+tngai saek
+mouy
+pi
+bei
+ot mean wifi te
+ok bong
+sousdey
+sousdeybong
+arkunbong
+orkunchraen
+soksabayte
+soksabayjeate
+knhomsoksabay
+leasenhoy
+somtos
+oteyte
+otte
+nhambai
+nhambayhoynov
+kleanbai
+chhnganhnas
+nhamey
+tovnhambai
+baycha
+otmeante
+meante
+knhomotdengte
+jgtov
+chongtovna
+tovna
+mokpina
+novna
+novpteah
+tovsala
+tovrean
+tveuey
+kompungtveuey
+tveuka
+cholchet
+srolanhoun
+bongsrolanhoun
+nekoun
+nekbongnas
+mindengte
+banhoy
+otbante
+bante
+chambontech
+mokleng
+tovleng
+dengte
+yolte
+knhomyolhoy
+cheamouy
+mdongtiet
+pelna
+tngainis
+mselminh
+yubnis
+pelprik
+arunsousdey
+reatreysousdey
+komkheng
+kompibakchet
+pibakchet
+sabaychet
+oteytebong
+tlaiponman
+tlainas
+komtlaipek
+srokkhmer
+phnompenh
+siemreap
+pheasakhmer
+niyaykhmer
+chesniyaykhmerte
+otcheste
+bongpros
+bongsrey
+pamak
+mitpheak
+sreysaat
+saatnas
+lornas
+otlorte
+chosaeng
+otmeanluyte
+tovpsar
+tinhey
+ottoan
+mokvinh
+tovpteah
+otchamte
+komplech
+chnamthmey
+sousdeychnamthmey
+reankhmer
+tngaisaek
+otmeanwifite
+okbong
+sok sabay te?
+Orkun Bong!
+send photo mok
+iPhone thmey
+knhom chmous sreymom
+xyzq bong
+or kun
+orkunbong
+bong luy
+Kâmpŭchéa
+l'or nas
+123 te
+te, te. te
+sok saba
+orku
+hello?
+jg tov na
+sous dey bong, sok sabay te?
+nham bai hoy nov bong
