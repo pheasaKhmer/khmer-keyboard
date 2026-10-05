@@ -4,7 +4,18 @@
     <!-- No permissions: the keyboard has no network access, and what is typed stays on the phone. -->
     <application
         android:allowBackup="false"
-        android:label="@string/app_name">
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.KhmerKeyboard">
+
+        <activity
+            android:name=".SetupActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <service
             android:name=".KhmerKeyboardService"

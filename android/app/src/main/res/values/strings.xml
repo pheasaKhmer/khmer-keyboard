@@ -10,4 +10,16 @@
     <string name="enter">Enter</string>
     <string name="switch_keyboard">Next keyboard</string>
     <string name="more_suggestions">More suggestions</string>
+
+    <string name="setup_intro">Type Khmer with Latin letters, the way you would in a chat: sok sabay te gives សុខសប្បាយទេ. Pick another reading from the bar above the keys, or tap the quoted text to keep it in Latin letters.</string>
+    <string name="setup_step_enable">1. Turn on Khmer (romanized) in your keyboard settings.</string>
+    <string name="open_settings">Open keyboard settings</string>
+    <string name="setup_step_switch">2. Switch to it.</string>
+    <string name="choose_keyboard">Choose keyboard</string>
+    <string name="setup_step_try">3. Try it here.</string>
+    <string name="try_hint">nh sok sabay te</string>
+    <string name="privacy">The keyboard has no internet access. What you type and the words it learns stay on this phone.</string>
+    <string name="forget_learned">Forget learned words</string>
+    <string name="forgot_learned">Learned words forgotten</string>
+    <string name="forget_failed">Couldn\'t forget learned words. Try again.</string>
 </resources>

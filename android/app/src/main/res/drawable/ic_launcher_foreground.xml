@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A keyboard, centred in the adaptive icon's safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path android:fillColor="#FFFFFF" android:pathData="M34,40h40a4,4 0 0 1 4,4v22a4,4 0 0 1 -4,4h-40a4,4 0 0 1 -4,-4v-22a4,4 0 0 1 4,-4z" />
+    <path android:fillColor="@color/icon_background" android:pathData="M35,45h6v5h-6z M43,45h6v5h-6z M51,45h6v5h-6z M59,45h6v5h-6z M67,45h6v5h-6z M35,52h6v5h-6z M43,52h6v5h-6z M51,52h6v5h-6z M59,52h6v5h-6z M67,52h6v5h-6z M43,60h22v5h-22z" />
+</vector>
