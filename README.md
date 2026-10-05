@@ -13,20 +13,21 @@ your phone.
 
 | Milestone | State |
 |---|---|
-| 1. Shared core with tests and a desktop CLI | **done** (this repository) |
-| 2. Android keyboard, romanized mode | next; needs Android Studio and a JDK |
+| 1. Shared core with tests and a desktop CLI | **done** |
+| 2. Android keyboard, romanized mode | **done**: runs on an Android 17 emulator; not yet tried on a phone |
 | 3. iOS keyboard | needs Xcode |
 | 4. Khmer layout mode | |
-| 5. Reverse mode and learning in the apps | the core already learns and romanizes known words |
+| 5. Reverse mode and learning in the apps | Android learns picks; the core romanizes known words |
 | 6. Store listings, privacy policy | |
 
 ## Layout
 
 ```
-core/      khmer-core: the Rust library both keyboards will call
+core/      khmer-core: the Rust library both keyboards call
+ffi/       khmer-ffi: the core's Kotlin and Swift bindings, made by UniFFI
 cli/       khmer-kbd: the core on the command line
 data/      the export from khmer-engine, a sample, and the engine's golden answers
-android/   the Android keyboard (milestone 2)
+android/   the Android keyboard
 ios/       the iOS keyboard (milestone 3)
 ```
 
@@ -111,7 +112,37 @@ engine.romanize("សុខសប្បាយទេ", Style::Chat); // "soksabay 
 engine.forget()?;                     // the settings screen's "clear learned words"
 ```
 
-Bindings for Swift and Kotlin (UniFFI) come with the first app.
+From Kotlin and Swift, `khmer-ffi` wraps the same calls in one `Keyboard` object (`open` or
+`fromBytes`, `suggest`, `learn`, `forget`, `convert`, `romanize`). Its bindings are generated
+from the compiled library, so there is no interface file to keep in step.
+
+## Android
+
+The keyboard is an input method service with a QWERTY layout for romanized Khmer and a page of
+digits and symbols. Letters are composed in the field, underlined, and the suggestion bar works
+like the iPhone's:
+
+- left: what you typed, in quotes; tap it to keep it in Latin letters
+- middle: the best reading, which space commits
+- right: the next reading, and an arrow that opens the rest (`te` can be ទេ, តែ, ទី or តេ)
+
+A tapped reading is learned and ranks higher next time. ។ sits next to space. In password,
+email, web address and number fields the keys type what they show, and nothing is converted,
+suggested or learned. The app has no permissions at all, so it cannot reach the network.
+
+To build it you need Java 21, the Android SDK with platform 37, build tools 37.0.0 and NDK
+29.0.14206865, the Android Rust targets and cargo-ndk:
+
+```bash
+rustup target add aarch64-linux-android armv7-linux-androideabi x86_64-linux-android
+cargo install cargo-ndk
+cd android && ./gradlew assembleDebug
+adb install app/build/outputs/apk/debug/app-debug.apk
+```
+
+The build compiles the core for arm64-v8a, armeabi-v7a and x86_64 (Android 7 and up),
+generates the Kotlin bindings, and packs `data/build` if it was exported, else `data/sample`.
+Open the app to turn the keyboard on. The debug APK with the full lexicon is 14 MB.
 
 ## Privacy
 
