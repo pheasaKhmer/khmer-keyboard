@@ -19,3 +19,24 @@ jobs:
       # rustup is on the runner; rust-toolchain.toml picks the version and components.
       - run: rustup show active-toolchain || rustup toolchain install
       - run: make check
+
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+      - run: rustup show active-toolchain || rustup toolchain install
+      - run: rustup target add aarch64-linux-android armv7-linux-androideabi x86_64-linux-android
+      - uses: taiki-e/install-action@e407f7bafb71fd004bc5c2da3032e5470cbb6ef0 # v2.87.24
+        with:
+          tool: cargo-ndk
+      # The runner has the SDK but not necessarily this platform and NDK. `yes` ends with
+      # SIGPIPE when sdkmanager stops reading, which pipefail would count as a failure.
+      - run: >
+          (yes || true) | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          "platforms;android-37.0" "build-tools;37.0.0" "ndk;29.0.14206865" > /dev/null
+      - run: ./gradlew --no-daemon assembleDebug testDebugUnitTest
+        working-directory: android
