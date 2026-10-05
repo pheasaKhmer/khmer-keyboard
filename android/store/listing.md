@@ -34,12 +34,15 @@ before publishing.
 
 **Privacy policy**: https://github.com/pheasaKhmer/khmer-keyboard/blob/main/PRIVACY.md
 
-## Graphics still needed
+## Graphics
 
-- App icon, 512 × 512 PNG (the launcher icon, drawn larger)
-- Feature graphic, 1024 × 500
-- At least two phone screenshots: romanized typing with the suggestion bar, the Khmer
-  layout, and Khmer text selected and romanized
+In this folder, redrawn with `swift android/store/graphics.swift android/store`:
+
+- `icon-512.png`: the app icon, 512 × 512
+- `feature-graphic.png`: 1024 × 500
+- `screenshot-1-romanized.png`, `screenshot-2-khmer-layout.png`,
+  `screenshot-3-reverse-mode.png`: phone screenshots, 1080 × 1810, of romanized typing
+  with the suggestion bar, the Khmer layout, and selected Khmer shown in Latin letters
 
 ## App content answers
 
