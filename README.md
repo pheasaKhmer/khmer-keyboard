@@ -17,7 +17,7 @@ your phone.
 | 2. Android keyboard, romanized mode | **done**: runs on an Android 17 emulator; not yet tried on a phone |
 | 3. iOS keyboard | needs Xcode |
 | 4. Khmer layout mode | |
-| 5. Reverse mode and learning in the apps | Android learns picks; the core romanizes Khmer text |
+| 5. Reverse mode and learning in the apps | **done** on Android: select Khmer to romanize it; picks are learned by previous word |
 | 6. Store listings, privacy policy | |
 
 ## Layout
@@ -130,7 +130,8 @@ like the iPhone's:
 - right: the next reading, and an arrow that opens the rest (`te` can be ទេ, តែ, ទី or តេ)
 
 A tapped reading is learned with the word before it and ranks higher next time, most
-after that word. ។ sits next to space. In password,
+after that word. Selecting Khmer text shows it in Latin letters in the bar (reverse mode),
+chat style in the middle and UNGEGN on the right; a tap replaces the selection. ។ sits next to space. In password,
 email, web address and number fields the keys type what they show, and nothing is converted,
 suggested or learned. The app has no permissions at all, so it cannot reach the network.
 
