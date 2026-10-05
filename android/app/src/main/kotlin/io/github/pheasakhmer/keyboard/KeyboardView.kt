@@ -32,6 +32,9 @@ interface KeyListener {
     fun onEnter()
     fun onSwitchKeyboard()
 
+    /** The ក / abc key: switch between the Khmer script layout and romanized typing. */
+    fun onSwitchLayout(khmer: Boolean)
+
     /** Show the system's list of keyboards (a long press on the globe). */
     fun onChooseKeyboard()
     fun onPick(candidate: Candidate)
@@ -42,6 +45,9 @@ interface KeyListener {
  * The keyboard: the suggestion bar over a QWERTY layout for romanized Khmer, and a page of
  * digits and symbols. The bottom row has ។ next to space, since Khmer ends sentences
  * with it.
+ *
+ * The ក key switches to a Khmer script layout ([KhmerLayout]), whose keys type Khmer as it
+ * is, and abc switches back.
  *
  * Pressing a character key shows it enlarged above the finger. Holding a key on the top
  * row types its digit (shown small in the corner), and holding ។ types ៕. Shift tapped
@@ -70,6 +76,7 @@ class KeyboardView(context: Context, private val listener: KeyListener) : FrameL
     private val hidePreview = Runnable { preview.visibility = GONE }
 
     private var symbols = false
+    private var khmer = false
     private var shift = Shift.OFF
     private var lastShiftTap = 0L
     private var showSwitchKey = true
@@ -98,10 +105,11 @@ class KeyboardView(context: Context, private val listener: KeyListener) : FrameL
         layoutKeys()
     }
 
-    /** Set up for a new field: letters, no shift, and the field's enter label. */
-    fun reset(enterLabel: String, showSwitchKey: Boolean, startWithSymbols: Boolean) {
+    /** Set up for a new field: letters (Khmer or Latin), no shift, and the field's enter label. */
+    fun reset(enterLabel: String, showSwitchKey: Boolean, startWithSymbols: Boolean, khmer: Boolean) {
         this.enterLabel = enterLabel
         this.showSwitchKey = showSwitchKey
+        this.khmer = khmer
         symbols = startWithSymbols
         shift = Shift.OFF
         layoutKeys()
@@ -109,23 +117,51 @@ class KeyboardView(context: Context, private val listener: KeyListener) : FrameL
 
     private fun layoutKeys() {
         keys.removeAllViews()
-        if (symbols) {
-            row("1234567890".map { symbolKey(it.toString()) })
-            row("-/:;()៛&@\"".map { symbolKey(it.toString()) })
-            row(".,?!'%+=".map { symbolKey(it.toString()) } + deleteKey())
-        } else {
-            row("qwertyuiop".zip("1234567890").map { (letter, digit) -> letterKey(letter, digit) })
-            row(listOf(spacer(0.5f)) + "asdfghjkl".map { letterKey(it) } + spacer(0.5f))
-            row(listOf(shiftKey()) + "zxcvbnm".map { letterKey(it) } + deleteKey())
+        when {
+            symbols && khmer -> {
+                row(KhmerLayout.symbols[0].map(::symbolKey))
+                row(KhmerLayout.symbols[1].map(::symbolKey))
+                row(KhmerLayout.symbols[2].map(::symbolKey) + deleteKey())
+            }
+            symbols -> {
+                row("1234567890".map { symbolKey(it.toString()) })
+                row("-/:;()៛&@\"".map { symbolKey(it.toString()) })
+                row(".,?!'%+=".map { symbolKey(it.toString()) } + deleteKey())
+            }
+            khmer -> {
+                val rows = if (shift == Shift.OFF) KhmerLayout.rows else KhmerLayout.shifted
+                val digits = KhmerLayout.DIGITS.map(Char::toString)
+                row(rows[0].mapIndexed { i, text -> khmerKey(text, digits.getOrNull(i)) })
+                row(rows[1].map { khmerKey(it) })
+                row(listOf(shiftKey()) + rows[2].map { khmerKey(it) } + deleteKey())
+            }
+            else -> {
+                row("qwertyuiop".zip("1234567890").map { (letter, digit) -> letterKey(letter, digit) })
+                row(listOf(spacer(0.5f)) + "asdfghjkl".map { letterKey(it) } + spacer(0.5f))
+                row(listOf(shiftKey()) + "zxcvbnm".map { letterKey(it) } + deleteKey())
+            }
+        }
+        val page = when {
+            khmer && symbols -> "កខគ"
+            khmer -> "១២៣"
+            symbols -> "ABC"
+            else -> "123"
         }
         val bottom = mutableListOf(
-            key(if (symbols) "ABC" else "123", 1.5f, special = true) {
+            key(page, 1.5f, special = true) {
                 symbols = !symbols
+                layoutKeys()
+            },
+            key(if (khmer) "abc" else "ក", 1f, special = true, label = R.string.switch_layout) {
+                khmer = !khmer
+                symbols = false
+                shift = Shift.OFF
+                listener.onSwitchLayout(khmer)
                 layoutKeys()
             },
         )
         if (showSwitchKey) bottom += globeKey()
-        bottom += key(context.getString(R.string.space), 4.5f) { listener.onSpace() }
+        bottom += key(context.getString(R.string.space), 3.5f) { listener.onSpace() }
         bottom += key("។", 1f, hint = "៕", preview = true) { listener.onSymbol("។") }
             .holding("៕") { listener.onSymbol("៕") }
         bottom += key(enterLabel, 1.5f, special = true, label = R.string.enter) {
@@ -154,7 +190,19 @@ class KeyboardView(context: Context, private val listener: KeyListener) : FrameL
     }
 
     private fun symbolKey(symbol: String) =
-        key(symbol, 1f, preview = true) { listener.onSymbol(symbol) }
+        key(KhmerLayout.label(symbol), 1f, preview = true) { listener.onSymbol(symbol) }
+
+    /** A key of the Khmer layout, which types its text as it is. */
+    private fun khmerKey(text: String, digit: String? = null): View {
+        val view = key(KhmerLayout.label(text), 1f, hint = digit, preview = true) {
+            listener.onSymbol(text)
+            if (shift == Shift.ONCE) {
+                shift = Shift.OFF
+                layoutKeys()
+            }
+        }
+        return if (digit == null) view else view.holding(digit) { listener.onSymbol(digit) }
+    }
 
     private fun shiftKey(): View {
         val label = when (shift) {
@@ -239,7 +287,8 @@ class KeyboardView(context: Context, private val listener: KeyListener) : FrameL
         val main = TextView(context).apply {
             this.text = text
             gravity = Gravity.CENTER
-            textSize = if (text.length > 1) 16f else 22f
+            // Words such as "space" are smaller than a key's character.
+            textSize = if (text.length > 1 && text.all { it.code < 128 }) 16f else 22f
             setTextColor(palette.text)
         }
         val cell = cell(main, weight, special)

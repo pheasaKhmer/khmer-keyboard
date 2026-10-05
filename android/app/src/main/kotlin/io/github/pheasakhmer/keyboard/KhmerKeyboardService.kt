@@ -26,6 +26,9 @@ class KhmerKeyboardService : InputMethodService(), KeyListener {
     /** The romanizations offered for selected Khmer text, while it stays selected. */
     private var reverse: Bar? = null
 
+    /** The layout last used, Khmer script or romanized, kept between fields and restarts. */
+    private val settings by lazy { getSharedPreferences("keyboard", MODE_PRIVATE) }
+
     override fun onCreate() {
         super.onCreate()
         CoreLoader.load(this) { composer.core = it }
@@ -46,7 +49,8 @@ class KhmerKeyboardService : InputMethodService(), KeyListener {
             inputClass == InputType.TYPE_CLASS_PHONE ||
             inputClass == InputType.TYPE_CLASS_DATETIME
         literal = numeric || inputClass == InputType.TYPE_CLASS_TEXT && variation in LITERAL_VARIATIONS
-        view?.reset(enterLabel(info), showSwitchKey(), startWithSymbols = numeric)
+        val khmer = !literal && settings.getBoolean(KHMER_LAYOUT, false)
+        view?.reset(enterLabel(info), showSwitchKey(), startWithSymbols = numeric, khmer = khmer)
         showBar()
     }
 
@@ -140,6 +144,11 @@ class KhmerKeyboardService : InputMethodService(), KeyListener {
         }
     }
 
+    override fun onSwitchLayout(khmer: Boolean) {
+        commit(composer.accept())
+        settings.edit().putBoolean(KHMER_LAYOUT, khmer).apply()
+    }
+
     override fun onChooseKeyboard() {
         getSystemService(InputMethodManager::class.java).showInputMethodPicker()
     }
@@ -197,6 +206,7 @@ class KhmerKeyboardService : InputMethodService(), KeyListener {
         }
 
     private companion object {
+        const val KHMER_LAYOUT = "khmer_layout"
         const val CONTEXT_LENGTH = 64
         val LITERAL_VARIATIONS = setOf(
             InputType.TYPE_TEXT_VARIATION_PASSWORD,
