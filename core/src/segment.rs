@@ -7,6 +7,8 @@ use crate::data::Data;
 use crate::model::logprob;
 
 const COENG: char = '\u{17d2}';
+/// ៗ repeats the word before it.
+pub const LEK_TOO: char = '\u{17d7}';
 
 /// A subset of pheasa's normalization: Khmer digits become ASCII digits, zero-width spaces
 /// become spaces, and coeng da becomes coeng ta (pheasa rule 3.8), which the lexicon uses.
