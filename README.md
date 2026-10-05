@@ -54,10 +54,12 @@ up and runs the search:
   so picking តេ for `te` after ចាំ does not push ទេ down everywhere
 - **romanizing** Khmer back to Latin letters, in chat style or UNGEGN; words the lexicon
   does not know are spelled by the engine's rule-based romanizer, which the core ports
+- **normalization** with [pheasa](https://github.com/pheasaKhmer/pheasa)'s Rust crate, as in the
+  engine: marks typed out of order are put in order, so ខែ្មរ reads as ខ្មែរ
 
 Golden tests hold the core to the engine: on the exported sample, all 18,254 matching keys,
 294 conversions with their alternatives (including 65 phrases typed by a native speaker),
-2,611 keystroke suggestion lists, 290 romanizations of text and 6,740 rule-based
+2,611 keystroke suggestion lists, 298 romanizations of text and 6,740 rule-based
 romanizations of single words are identical to the Python engine's.
 
 | Full lexicon (61,980 words) | |
@@ -73,9 +75,6 @@ The spec's budget is 30 ms per keystroke on a mid-range Android phone.
 - A word the lexicon does not know is romanized from its spelling by the engine's rules. They
   cannot know how the word is pronounced, so its chat spelling can differ from how people type
   it (ចក្រពត្តិ comes out "chakropotde").
-- Input normalization covers Khmer digits, zero-width spaces and coeng da / coeng ta. Reordering
-  marks typed out of order, which [pheasa](https://github.com/pheasaKhmer/pheasa) also does, is
-  not ported yet.
 
 ## Build and try
 

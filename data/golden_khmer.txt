@@ -145,3 +145,9 @@ ok បង
 វ័ង្គ ភ័ព្វ សុហ្ឫទ
 សួស្តី៙ចក្រពត្តិ
 ok៍a
+# Marks typed out of order, which pheasa puts in order: vowel before subscript, shifter
+# after the vowel, and coeng da with a Khmer digit and a zero-width space.
+ខែ្មរ
+សែ្រ ស្រែ
+ប៊ី បី៊
+សួស្ដី​ឆ្នាំ២០២៦
