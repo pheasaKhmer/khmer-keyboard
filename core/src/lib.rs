@@ -10,6 +10,7 @@ pub mod keys;
 pub mod matcher;
 pub mod model;
 pub mod score;
+pub mod transliterate;
 pub mod tsv;
 
 /// The version of this crate.
