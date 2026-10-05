@@ -179,7 +179,8 @@ and build the bundle to upload:
 Without `keystore.properties`, release builds are signed with the debug key: fine for
 installing and testing (`./gradlew assembleRelease`, 13.4 MB), refused by the Play Store.
 [PRIVACY.md](PRIVACY.md) is the privacy policy, and
-[android/store-listing.md](android/store-listing.md) drafts the store listing.
+[android/store/listing.md](android/store/listing.md) drafts the store listing, with its
+graphics in the same folder.
 
 ## Privacy
 
