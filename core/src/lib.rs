@@ -12,6 +12,7 @@ pub mod keys;
 pub mod matcher;
 pub mod model;
 pub mod score;
+pub mod segment;
 pub mod transliterate;
 pub mod tsv;
 pub mod user;
