@@ -30,17 +30,31 @@ fn punctuation(ch: char) -> Option<&'static str> {
     })
 }
 
-/// Add `piece`, with a space if it would otherwise run into the previous word.
-fn append(out: &mut String, piece: &str) {
-    let last = out.chars().next_back();
-    let first = piece.chars().next();
-    if let (Some(last), Some(first)) = (last, first)
-        && is_alnum(last)
-        && is_alnum(first)
-    {
-        out.push(' ');
+/// The output, built piece by piece like the engine's list of strings. Whether a space
+/// goes before a piece depends on the last piece added, which can be empty (៙ is dropped,
+/// and a word can romanize to nothing), so the last character of that piece is kept.
+#[derive(Default)]
+struct Output {
+    text: String,
+    last: Option<char>,
+}
+
+impl Output {
+    fn push(&mut self, piece: &str) {
+        self.text.push_str(piece);
+        self.last = piece.chars().next_back();
     }
-    out.push_str(piece);
+
+    /// Add `piece`, with a space if it would otherwise run into the previous word.
+    fn append(&mut self, piece: &str) {
+        if let (Some(last), Some(first)) = (self.last, piece.chars().next())
+            && is_alnum(last)
+            && is_alnum(first)
+        {
+            self.text.push(' ');
+        }
+        self.push(piece);
+    }
 }
 
 fn word(data: &Data, word: &Word, style: Style) -> String {
@@ -53,19 +67,22 @@ fn word(data: &Data, word: &Word, style: Style) -> String {
 
 /// The text between Khmer runs: punctuation mapped, ៗ expanded. `last_word` is the word
 /// ៗ repeats; anything but a space ends it.
-fn between(out: &mut String, text: &str, last_word: &mut String) {
+fn between(out: &mut Output, text: &str, last_word: &mut String) {
     for (i, ch) in text.chars().enumerate() {
         if ch == LEK_TOO && !last_word.is_empty() {
-            append(out, &format!(" {}", *last_word));
+            out.append(&format!(" {}", *last_word));
         } else if let Some(mapped) = punctuation(ch) {
-            out.push_str(mapped);
+            out.push(mapped);
         } else {
+            let mut buffer = [0; 4];
+            let piece = ch.encode_utf8(&mut buffer);
             if i == 0 {
-                append(out, ch.encode_utf8(&mut [0; 4])); // only the first can touch a word
+                out.append(piece); // only the first can touch a word
             } else {
-                out.push(ch);
+                out.push(piece);
             }
-            if !ch.is_whitespace() {
+            // Python's `isspace` also counts the separators U+001C-001F.
+            if !ch.is_whitespace() && !('\u{1c}'..='\u{1f}').contains(&ch) {
                 last_word.clear();
             }
         }
@@ -77,7 +94,7 @@ pub fn romanize(data: &Data, text: &str, style: Style) -> String {
     let text = normalize(text);
     let chars: Vec<char> = text.chars().collect();
     let segmenter = Segmenter::new(data);
-    let mut out = String::new();
+    let mut out = Output::default();
     let mut last_word = String::new();
     let mut position = 0;
     let mut i = 0;
@@ -97,13 +114,13 @@ pub fn romanize(data: &Data, text: &str, style: Style) -> String {
             .iter()
             .map(|w| word(data, w, style))
             .collect();
-        append(&mut out, &words.join(" "));
+        out.append(&words.join(" "));
         last_word = words.last().cloned().unwrap_or_default();
         position = i;
     }
     let rest: String = chars[position..].iter().collect();
     between(&mut out, &rest, &mut last_word);
-    out
+    out.text
 }
 
 #[cfg(test)]
@@ -127,6 +144,12 @@ mod tests {
         assert_eq!(romanize(&data, "ឆ្នាំ២០២៦", Style::Chat), "chhnam 2026");
         assert_eq!(romanize(&data, "ផ្សេងៗ។", Style::Chat), "phseng phseng.");
         assert_eq!(romanize(&data, "ខ្ញុំ love អូន", Style::Chat), "khnhom love oun");
+        // ៙ is dropped, and the engine then adds no space after it.
+        assert_eq!(romanize(&data, "សួស្តី៙បង", Style::Chat), "suosdeybong");
+        assert_eq!(
+            romanize(&data, "ផ្សេង\u{1c}ៗ", Style::Chat),
+            "phseng\u{1c} phseng"
+        );
     }
 
     #[test]
