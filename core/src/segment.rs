@@ -5,8 +5,8 @@ use unicode_normalization::char::is_combining_mark;
 
 use crate::data::Data;
 use crate::model::logprob;
+use crate::script::COENG;
 
-const COENG: char = '\u{17d2}';
 /// ៗ repeats the word before it.
 pub const LEK_TOO: char = '\u{17d7}';
 
