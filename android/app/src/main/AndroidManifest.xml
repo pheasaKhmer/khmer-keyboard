@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- No permissions: the keyboard has no network access, and what is typed stays on the phone. -->
+    <application
+        android:allowBackup="false"
+        android:label="Khmer Keyboard" />
+
+</manifest>
