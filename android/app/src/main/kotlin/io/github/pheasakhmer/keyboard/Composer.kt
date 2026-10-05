@@ -19,6 +19,9 @@ interface Core {
     /** The user picked [word] for [typed], after [context]. A pick counts most after the
      *  same Khmer word. */
     fun learn(context: String, typed: String, word: String)
+
+    /** [khmer] in Latin letters: the way people type it in chat, or the UNGEGN standard. */
+    fun romanize(khmer: String, ungegn: Boolean): String
 }
 
 /** A core that knows nothing yet, while the real one loads. */
@@ -26,6 +29,7 @@ object NoCore : Core {
     override fun suggest(context: String, typed: String, count: Int) = emptyList<Reading>()
     override fun convert(text: String) = text
     override fun learn(context: String, typed: String, word: String) {}
+    override fun romanize(khmer: String, ungegn: Boolean) = khmer
 }
 
 /** A candidate in the suggestion bar. */

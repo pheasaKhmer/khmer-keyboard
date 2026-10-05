@@ -6,6 +6,7 @@ import android.os.Looper
 import android.util.Log
 import io.github.pheasakhmer.keyboard.core.Keyboard
 import io.github.pheasakhmer.keyboard.core.KeyboardException
+import io.github.pheasakhmer.keyboard.core.RomanizationStyle
 import java.io.File
 import java.util.concurrent.Executors
 
@@ -27,6 +28,9 @@ class NativeCore(val keyboard: Keyboard) : Core {
             Log.w(TAG, "could not save a learned word", error)
         }
     }
+
+    override fun romanize(khmer: String, ungegn: Boolean): String =
+        keyboard.romanize(khmer, if (ungegn) RomanizationStyle.UNGEGN else RomanizationStyle.CHAT)
 
     private companion object {
         val LATIN_SOURCES = setOf("english", "typed")

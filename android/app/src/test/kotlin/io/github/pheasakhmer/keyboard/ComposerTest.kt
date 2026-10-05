@@ -22,6 +22,8 @@ private class FakeCore(
     override fun learn(context: String, typed: String, word: String) {
         learned += Triple(context, typed, word)
     }
+
+    override fun romanize(khmer: String, ungegn: Boolean) = khmer
 }
 
 class ComposerTest {

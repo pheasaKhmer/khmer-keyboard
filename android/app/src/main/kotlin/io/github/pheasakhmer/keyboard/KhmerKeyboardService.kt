@@ -14,11 +14,17 @@ import android.view.inputmethod.InputMethodManager
  *
  * In password, email, web address and number fields, keys type exactly what they show:
  * nothing is converted, suggested or learned there.
+ *
+ * Selecting Khmer text shows it in Latin letters in the bar (reverse mode); a tap replaces
+ * the selection with that reading.
  */
 class KhmerKeyboardService : InputMethodService(), KeyListener {
     private val composer = Composer()
     private var view: KeyboardView? = null
     private var literal = false
+
+    /** The romanizations offered for selected Khmer text, while it stays selected. */
+    private var reverse: Bar? = null
 
     override fun onCreate() {
         super.onCreate()
@@ -63,8 +69,13 @@ class KhmerKeyboardService : InputMethodService(), KeyListener {
         if (composer.typed.isNotEmpty() && moved) {
             composer.reset()
             currentInputConnection?.finishComposingText()
-            showBar()
         }
+        reverse = null
+        if (composer.typed.isEmpty() && newSelStart != newSelEnd && !literal) {
+            val selected = currentInputConnection?.getSelectedText(0)?.toString().orEmpty()
+            reverse = romanizations(composer.core, selected)
+        }
+        showBar()
     }
 
     override fun onLetter(letter: String) {
@@ -133,9 +144,25 @@ class KhmerKeyboardService : InputMethodService(), KeyListener {
         getSystemService(InputMethodManager::class.java).showInputMethodPicker()
     }
 
-    override fun onPick(candidate: Candidate) = commit(composer.pick(candidate))
+    override fun onPick(candidate: Candidate) {
+        if (reverse != null) {
+            // Typing over a selection replaces it; nothing is learned from a romanization.
+            reverse = null
+            currentInputConnection?.commitText(candidate.text, 1)
+            showBar()
+        } else {
+            commit(composer.pick(candidate))
+        }
+    }
 
-    override fun onKeepTyped() = commit(composer.keepTyped())
+    override fun onKeepTyped() {
+        if (reverse != null) {
+            reverse = null
+            showBar()
+        } else {
+            commit(composer.keepTyped())
+        }
+    }
 
     /** Replace the composing text with [candidate]. Latin keeps a space after it. */
     private fun commit(candidate: Candidate?) {
@@ -155,7 +182,7 @@ class KhmerKeyboardService : InputMethodService(), KeyListener {
     }
 
     private fun showBar() {
-        view?.bar?.show(composer.bar)
+        view?.bar?.show(reverse ?: composer.bar)
     }
 
     private fun showSwitchKey(): Boolean =
