@@ -7,6 +7,7 @@
 pub mod data;
 pub mod fuzzy;
 pub mod keys;
+pub mod matcher;
 pub mod model;
 pub mod score;
 pub mod tsv;
