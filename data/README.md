@@ -1,8 +1,8 @@
 # Data for the keyboard core
 
-The keyboard core does not reimplement khmer-engine's romanizers. The engine computes
-everything slow once, here, and the core compiles the exported files into one compact
-file that it only looks things up in:
+The keyboard core does not reimplement khmer-engine's lexicon romanizers. The engine
+computes everything slow once, here, and the core compiles the exported files into one
+compact file that it only looks things up in:
 
 - the matching index: for each matching key, the words and romanizations it can be
 - word counts, word-pair counts, and each word's chat and UNGEGN romanization
@@ -10,15 +10,17 @@ file that it only looks things up in:
 - the English words that stay in Latin letters
 - every weight the engine's scores use, so the core scores exactly like the engine
 
-`export.py` documents each file's columns.
+`export.py` documents each file's columns. The core does port the engine's rule-based
+romanizer, which spells Khmer words the lexicon does not know.
 
 ## The sample
 
 `sample/` is the export of the small lexicon bundled with khmer-engine (3,008 words). It is
 committed so the core's tests run offline. `sample/golden/` holds the engine's own answers
 for the inputs in `golden_inputs.txt` and `golden_khmer.txt`: matching keys, conversions,
-suggestions after every keystroke, and romanizations. The core's tests check that it gives
-the same answers.
+suggestions after every keystroke, romanizations of text, and the rule-based romanization
+of every lexicon word and of extra spellings. The core's tests check that it gives the same
+answers.
 
 Regenerate it after changing the engine pin in `pyproject.toml`:
 

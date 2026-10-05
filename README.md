@@ -17,7 +17,7 @@ your phone.
 | 2. Android keyboard, romanized mode | **done**: runs on an Android 17 emulator; not yet tried on a phone |
 | 3. iOS keyboard | needs Xcode |
 | 4. Khmer layout mode | |
-| 5. Reverse mode and learning in the apps | Android learns picks; the core romanizes known words |
+| 5. Reverse mode and learning in the apps | Android learns picks; the core romanizes Khmer text |
 | 6. Store listings, privacy policy | |
 
 ## Layout
@@ -52,12 +52,13 @@ up and runs the search:
   typed twice is written once with ៗ (`ban hz hz` → បានហើយៗ)
 - **learning**: picked candidates rank higher next time, most after the same previous word,
   so picking តេ for `te` after ចាំ does not push ទេ down everywhere
-- **romanizing** Khmer back to Latin letters, in chat style or UNGEGN
+- **romanizing** Khmer back to Latin letters, in chat style or UNGEGN; words the lexicon
+  does not know are spelled by the engine's rule-based romanizer, which the core ports
 
 Golden tests hold the core to the engine: on the exported sample, all 18,254 matching keys,
 294 conversions with their alternatives (including 65 phrases typed by a native speaker),
-2,611 keystroke suggestion lists and 262 romanizations are identical to the Python
-engine's.
+2,611 keystroke suggestion lists, 290 romanizations of text and 6,740 rule-based
+romanizations of single words are identical to the Python engine's.
 
 | Full lexicon (61,980 words) | |
 |---|---|
@@ -69,8 +70,9 @@ The spec's budget is 30 ms per keystroke on a mid-range Android phone.
 
 ### Known limits
 
-- Romanizing a word the lexicon does not know leaves it in Khmer script. Spelling it needs a port
-  of the engine's rule-based romanizers, planned with reverse mode.
+- A word the lexicon does not know is romanized from its spelling by the engine's rules. They
+  cannot know how the word is pronounced, so its chat spelling can differ from how people type
+  it (ចក្រពត្តិ comes out "chakropotde").
 - Input normalization covers Khmer digits, zero-width spaces and coeng da / coeng ta. Reordering
   marks typed out of order, which [pheasa](https://github.com/pheasaKhmer/pheasa) also does, is
   not ported yet.

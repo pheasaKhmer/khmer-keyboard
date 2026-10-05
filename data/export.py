@@ -6,7 +6,8 @@
 The Python engine does the slow work once: romanizing every word, building the matching
 index and the syllable table, and tuning the weights. The Rust core compiles these files
 into one compact file and only looks things up, so it gives the same results as the
-engine without reimplementing the romanizers.
+engine without reimplementing the lexicon's romanizers. It ports only the rule-based
+romanizer (khmer_engine.rules), for Khmer words the lexicon does not know.
 
 Every file is UTF-8, tab-separated, with a comment line describing the columns. Text
 fields escape backslash, tab and newline as \\\\, \\t and \\n.
@@ -24,7 +25,13 @@ golden_khmer.txt, which the Rust tests must reproduce:
     golden/keys.tsv      text, final (1 or 0), key
     golden/convert.tsv   input, best, alternatives joined with " | "
     golden/suggest.tsv   input, suggestions as text|source|start|end joined with " ; "
-    golden/romanize.tsv  khmer, style, output (only text whose words are all known)
+    golden/romanize.tsv  khmer, style, output for every line of golden_khmer.txt
+    golden/rules.tsv     word, style, rule-based romanization (khmer_engine.rules) of
+                         every lexicon word, every word of golden_khmer.txt, the cases
+                         in RULE_CASES, and every vowel and sign on ក and គ
+
+The core normalizes Khmer with only part of pheasa (Khmer digits, zero-width spaces and
+coeng da), so the export stops if a Khmer golden input needs more than that.
 """
 
 import argparse
@@ -38,9 +45,39 @@ from khmer_engine.engine import Engine
 from khmer_engine.keys import key
 from khmer_engine.lexicon import Lexicon
 from khmer_engine.romanize import merge_unknown
+from khmer_engine.rules import romanize_word
+from khmer_engine.script import COENG, DEPENDENT_VOWELS
 from khmer_engine.segment import KHMER_RUN
+from pheasa import normalize
 
 HERE = Path(__file__).parent
+
+# Words for golden/rules.tsv beyond the lexicon, separated by spaces: khmer-engine's tests
+# of the rule-based romanizer, and spellings that exercise its rarer rules.
+RULE_CASES = [
+    # the engine's tests: province names, Wikipedia's examples, the UNGEGN report's notes
+    "បន្ទាយ បាត់ដំបង កំពង់ចាម កំពង់ឆ្នាំង កំពង់ស្ពឺ កំពង់ធំ កំពត កណ្ដាល កោះកុង",
+    "ក្រចេះ ភ្នំពេញ ព្រៃវែង ពោធិ៍សាត់ សៀមរាប ស្ទឹងត្រែង ស្វាយរៀង តាកែវ កែប ប៉ៃលិន",
+    "ត្បូងឃ្មុំ ឧត្តរ ព្រះ មានជ័យ បន្ទាយមានជ័យ មណ្ឌលគិរី ឧត្តរមានជ័យ អក្សរខ្មែរ",
+    "កម្ពុជា មណ្ឌល ពន្លឺ សន្តិភាព ជំនឿ ទៅ កក អង្គ ខ្ពង ល្អ ស្វាយ ក្ដី កន្ត្រាប់",
+    "ក្អែក ចង្អៀត រអិល អ្វី អាង ខ្ពស់ រពាក់ ធម៌ បុណ្យ ពោធិ៍ ភូមិ ឯក ឪពុក ធ្វើ ពិះ",
+    # subscript independent vowels
+    "ហ្ឫទ័យ សុហ្ឫទ អម្ឫត ក្ឫ ហ្ឬ",
+    # robat, on a final and on an onset
+    "សួគ៌ កម៌ ធម៌ម អារ៌ក",
+    # bantoc, on a final and on an onset
+    "បត់ ចាក់ មាត់ ប្រាប់ ក់ក ក់ ចាក់ក",
+    # muusikatoan and triisap
+    "ហ៊ាង ញ៉ង ប៉ង ប៉ាតៅ ញ៉ាំ ម៉ោង ប៊ិច ប៉ុន្មាន ស៊ី អ៊ុំ",
+    # samyok sannya
+    "ច័ក ជ័យ វ័ង្គ ភ័ព្វ ទ័ព ស័ក្តិ",
+    # toandakhiat, viriam, kakabat, ahsda, yuukaleapintu
+    "ទេសចរណ៍ ព្រហ្ម៍ សម៑ នែ៎ ដ៏ សារៈ លេខ១",
+    # splits, doubled consonants and finals with subscripts
+    "សប្បាយ ទស្សនា បេក្ខជន ស្ត្រី សាស្ត្រ ចក្រពត្តិ ព្រហ្មញ្ញ យូធ្យូប",
+    # text that is not a whole word: a vowel or a coeng without a base, joiners
+    "ា ្ក ិក ក\u200cក ក\u200dក",
+]
 
 
 def escape(text: str) -> str:
@@ -143,6 +180,38 @@ def read_inputs(name: str) -> list[str]:
     return [line for line in lines if line and not line.startswith("#")]
 
 
+_CORE_TABLE = {0x17E0 + d: str(d) for d in range(10)} | {0x200B: " "}
+
+
+def core_normalize(text: str) -> str:
+    """The part of pheasa's normalization the core has (core/src/segment.rs)."""
+    return text.translate(_CORE_TABLE).replace(COENG + "ដ", COENG + "ត")
+
+
+def check_normalized(texts: list[str]) -> None:
+    """Stop if the core would normalize a golden input differently from the engine."""
+    differ = [t for t in texts if normalize(t, digits="ascii", zwsp="space") != core_normalize(t)]
+    if differ:
+        raise SystemExit(f"golden inputs the core cannot normalize like pheasa: {differ}")
+
+
+def rule_words(eng: Engine, khmer: list[str]) -> list[str]:
+    """Words for golden/rules.tsv: the lexicon, each word of the golden Khmer text as the
+    romanizer segments it, RULE_CASES, and every vowel and sign on an a-series and an
+    o-series consonant, open and before the finals that change how they are read."""
+    words = list(eng.lexicon.entries)
+    for text in khmer:
+        text = normalize(text, digits="ascii", zwsp="space")
+        for run in KHMER_RUN.findall(text):
+            words += [w.text for w in merge_unknown(eng.romanizer.segmenter.segment(run))]
+    words += ["", *(word for line in RULE_CASES for word in line.split())]
+    nuclei = [*sorted(DEPENDENT_VOWELS), "ំ", "ុំ", "ាំ", "ះ", "ុះ", "េះ", "ោះ", "ិះ", "ើះ", "ៈ", "័"]
+    for base in "កគ":
+        for nucleus in ["", *nuclei]:
+            words += [base + nucleus + final for final in ("", "ក", "ង", "យ", "ន", "ក់")]
+    return list(dict.fromkeys(words))
+
+
 def export_golden(eng: Engine, out: Path) -> None:
     inputs = read_inputs("golden_inputs.txt")
     texts = list(dict.fromkeys(inputs + [w for line in inputs for w in line.split()]))
@@ -173,16 +242,16 @@ def export_golden(eng: Engine, out: Path) -> None:
         list({r[0]: r for r in suggest}.values()),
     )
 
-    romanize = []
-    for khmer in read_inputs("golden_khmer.txt"):
-        runs = KHMER_RUN.findall(khmer)
-        pieces = [w for run in runs for w in merge_unknown(eng.romanizer.segmenter.segment(run))]
-        if all(w.known for w in pieces):
-            for style in ("chat", "ungegn"):
-                romanize.append([khmer, style, eng.romanize(khmer, style)])
+    khmer = read_inputs("golden_khmer.txt")
+    words = rule_words(eng, khmer)
+    check_normalized(khmer + words)
+    styles = ("chat", "ungegn")
+    romanize = [[text, style, eng.romanize(text, style)] for text in khmer for style in styles]
     write(out / "golden" / "romanize.tsv", "khmer\tstyle\toutput", romanize)
+    rules = [[word, style, romanize_word(word, style)] for word in words for style in styles]
+    write(out / "golden" / "rules.tsv", "word\tstyle\tromanization", rules)
     print(f"golden: {len(texts) * 2} keys, {len(convert)} conversions, {len(suggest)} suggestions,")
-    print(f"        {len(romanize)} romanizations")
+    print(f"        {len(romanize)} romanizations, {len(rules)} rule-based romanizations")
 
 
 def main() -> None:

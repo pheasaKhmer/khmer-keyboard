@@ -1,8 +1,9 @@
 //! Conversion between romanized Khmer and Khmer script, shared by the iOS and Android
 //! keyboards.
 //!
-//! The core ports khmer-engine's matching and search. Everything slow (romanizing every
-//! word, building the index, tuning) is done by the engine and exported (see `data/`).
+//! The core ports khmer-engine's matching and search, and its rule-based romanizer for
+//! Khmer words the lexicon does not know. Everything slow (romanizing every lexicon word,
+//! building the index, tuning) is done by the engine and exported (see `data/`).
 
 pub mod data;
 pub mod decode;
@@ -12,8 +13,11 @@ pub mod keys;
 pub mod matcher;
 pub mod model;
 pub mod romanize;
+pub mod rules;
 pub mod score;
+pub mod script;
 pub mod segment;
+pub mod syllables;
 pub mod transliterate;
 pub mod tsv;
 pub mod user;

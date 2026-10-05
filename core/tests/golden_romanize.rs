@@ -1,4 +1,4 @@
-//! The core must romanize like khmer-engine for text whose words are all in the lexicon.
+//! The core must romanize like khmer-engine, including words the lexicon does not know.
 
 use std::path::PathBuf;
 
