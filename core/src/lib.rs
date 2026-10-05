@@ -5,6 +5,7 @@
 //! word, building the index, tuning) is done by the engine and exported (see `data/`).
 
 pub mod data;
+pub mod decode;
 pub mod fuzzy;
 pub mod keys;
 pub mod matcher;
