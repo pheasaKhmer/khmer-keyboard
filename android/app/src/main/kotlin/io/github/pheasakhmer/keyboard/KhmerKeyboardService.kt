@@ -125,6 +125,10 @@ class KhmerKeyboardService : InputMethodService(), KeyListener {
         }
     }
 
+    override fun onChooseKeyboard() {
+        getSystemService(InputMethodManager::class.java).showInputMethodPicker()
+    }
+
     override fun onPick(candidate: Candidate) = commit(composer.pick(candidate))
 
     override fun onKeepTyped() = commit(composer.keepTyped())
