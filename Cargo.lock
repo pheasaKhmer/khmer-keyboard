@@ -345,7 +345,7 @@ checksum = "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220"
 [[package]]
 name = "pheasa"
 version = "0.1.0"
-source = "git+https://github.com/pheasaKhmer/pheasa?rev=d7ca56c9d761bf5517936ec8ca3efb55bb385802#d7ca56c9d761bf5517936ec8ca3efb55bb385802"
+source = "git+https://github.com/pheasaKhmer/pheasa?rev=7f66edf8773b268b469bd96aa4d97416a5cd284d#7f66edf8773b268b469bd96aa4d97416a5cd284d"
 dependencies = [
  "unicode-normalization",
 ]
