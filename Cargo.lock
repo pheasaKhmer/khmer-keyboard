@@ -345,7 +345,8 @@ checksum = "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220"
 [[package]]
 name = "pheasa"
 version = "0.1.0"
-source = "git+https://github.com/pheasaKhmer/pheasa?rev=7f66edf8773b268b469bd96aa4d97416a5cd284d#7f66edf8773b268b469bd96aa4d97416a5cd284d"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a76114d306e94ef39515bc457372889982e76303d594f1abd907918a0f26bf8d"
 dependencies = [
  "unicode-normalization",
 ]
