@@ -27,7 +27,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "khmer-engine", git = "https://github.com/pheasaKhmer/khmer-engine?rev=73b5984588da5b64de65ffcef3b093fd544c30f3" },
-    { name = "pheasa", git = "https://github.com/pheasaKhmer/pheasa?rev=31c5b83d3685a82be53dc87fbd6c3a72a1299040" },
+    { name = "pheasa", specifier = ">=0.1.0" },
 ]
 
 [package.metadata.requires-dev]
