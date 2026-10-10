@@ -88,7 +88,7 @@ cargo run -p khmer-kbd -- romanize --style ungegn "សុខសប្បាយ�
 cargo run -p khmer-kbd -- repl
 ```
 
-By default the CLI uses `data/sample` (3,009 words). For the full lexicon, build it in a
+By default the CLI uses `data/sample` (3,010 words). For the full lexicon, build it in a
 khmer-engine checkout (`make data`), then export and compile it:
 
 ```bash

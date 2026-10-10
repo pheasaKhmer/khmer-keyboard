@@ -97,7 +97,6 @@ nope
 office
 offline
 ok
-okay
 omg
 online
 passapp

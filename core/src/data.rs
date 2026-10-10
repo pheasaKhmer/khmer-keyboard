@@ -703,7 +703,7 @@ mod tests {
     #[test]
     fn words_and_counts() {
         let data = sample();
-        assert_eq!(data.len(), 3009);
+        assert_eq!(data.len(), 3010);
         assert_eq!((data.word(0), data.count(0)), ("បាន", 136_888));
         let id = data.word_id("ខ្ញុំ").unwrap();
         assert_eq!(data.word(id), "ខ្ញុំ");
@@ -784,7 +784,7 @@ mod tests {
         let data = sample();
         assert_eq!(data.settings.beam, 8);
         assert!((data.settings.key_edit - 5.0).abs() < f64::EPSILON);
-        assert_eq!(data.vocabulary, 3009);
+        assert_eq!(data.vocabulary, 3010);
         assert!((data.settings.abbreviation - 2.0).abs() < f64::EPSILON);
         assert_eq!(data.alphabet, b"AEJNOQYbcdfhklmnprstvyz");
     }
