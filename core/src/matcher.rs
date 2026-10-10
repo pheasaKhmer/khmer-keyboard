@@ -41,7 +41,7 @@ impl<'a> Best<'a> {
 /// log of how likely the typed spelling is for the word.
 pub fn emissions<'a>(data: &'a Data, text: &str, fuzzy_keys: bool) -> Vec<Emission<'a>> {
     let typed = fold(text);
-    let typed_key = key(&typed, true);
+    let typed_key = key(text, true);
     if typed_key.is_empty() {
         return Vec::new();
     }

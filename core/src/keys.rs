@@ -4,12 +4,14 @@
 //! for every input. People spell one Khmer word many ways in Latin letters ("sous dey",
 //! "suosdey", "sursdey"), and the key folds those variants together:
 //!
-//! - consonants: c/ch/j, chh, k/kh/g/gh/q, ph/p, th/t, w/v, nh/ny, x/s
+//! - consonants: c/ch/j, chh, k/kh/g/gh/q, ph/p, th/t, w/v, nh/ny, x/s, and x/ch at the
+//!   end of a word: "plex" is "plech" (ភ្លេច), "mix" is "mech" (ម៉េច)
 //! - vowel spellings that chat uses for one sound: o/ou/u/ao, e/ae/eu/i, ea/ia/ie
 //! - a final i after another vowel, which is the glide y: "sabai" is "sabay"
 //! - r after a vowel, which chat uses to lengthen it: "orkun", "khmer"
 //! - h or s at the end of a word, which are both pronounced h: "preah", "pros"
-//! - doubled letters: "sabbay", and a vowel letter typed twice: "tgnaii" is "tgnai"
+//! - doubled letters: "sabbay", and a vowel letter typed twice: "tgnaii" is "tgnai". Only
+//!   inside a typed word: "yy yuet" keeps the y of "yy", which would otherwise vanish
 //! - diacritics and apostrophes: "Kâmpŭchéa", "l'â"
 //!
 //! Keys are lowercase consonants and uppercase vowel groups.
@@ -103,11 +105,21 @@ fn vowel_run(run: &str, out: &mut Vec<char>) {
 /// continue (a syllable inside a word, or a word still being typed), so the rules for the
 /// end of a word (dropping a last r, h or s) do not apply.
 pub fn key(text: &str, final_: bool) -> String {
-    let folded = fold(text);
-    let units = units(&folded);
+    let words: Vec<String> = text.split_whitespace().map(fold).collect();
+    let mut units: Vec<&str> = Vec::new();
+    // Whether each unit is the first letter of a typed word.
+    let mut word_starts: Vec<bool> = Vec::new();
+    for word in &words {
+        let letters = self::units(word);
+        word_starts.extend((0..letters.len()).map(|j| j == 0));
+        units.extend(letters);
+    }
     let mut symbols: Vec<char> = Vec::with_capacity(units.len());
+    let mut symbol_starts: Vec<bool> = Vec::with_capacity(units.len());
     let mut i = 0;
     while i < units.len() {
+        let first = symbols.len();
+        let starts_word = word_starts[i];
         if is_vowel_letter(units[i]) {
             let start = i;
             while i < units.len() && is_vowel_letter(units[i]) {
@@ -115,9 +127,15 @@ pub fn key(text: &str, final_: bool) -> String {
             }
             vowel_run(&units[start..i].concat(), &mut symbols);
         } else {
-            symbols.push(consonant(units[i]));
+            let word_end = word_starts.get(i + 1).is_none_or(|&next| next);
+            symbols.push(if units[i] == "x" && word_end {
+                'c'
+            } else {
+                consonant(units[i])
+            });
             i += 1;
         }
+        symbol_starts.extend((first..symbols.len()).map(|j| starts_word && j == first));
     }
     let mut out = String::with_capacity(symbols.len());
     let mut last: Option<char> = None;
@@ -132,7 +150,7 @@ pub fn key(text: &str, final_: bool) -> String {
         if (symbol == 'h' || symbol == 's') && after_vowel && word_end {
             continue; // preah, pros
         }
-        if last == Some(symbol) {
+        if last == Some(symbol) && !symbol_starts[i] {
             continue; // sabbay
         }
         out.push(symbol);
@@ -161,12 +179,22 @@ mod tests {
             &["tgnai", "tgnaii"],
             &["sok", "sook"],
             &["kampuchea", "Kâmpŭchéa"],
+            &["plech", "plex"],
+            &["xa", "sa"],
         ] {
             let first = key(group[0], true);
             for spelling in group {
                 assert_eq!(key(spelling, true), first, "{spelling}");
             }
         }
+    }
+
+    #[test]
+    fn a_letter_repeated_across_a_space_is_kept() {
+        // "yy" is និយាយ; collapsing it into the y of "yuet" would drop the word.
+        assert_eq!(key("yy yuet", true), "yyEt");
+        assert_eq!(key("yyyuet", true), "yEt");
+        assert_eq!(key("sab bay", true), "sAbbAy");
     }
 
     #[test]

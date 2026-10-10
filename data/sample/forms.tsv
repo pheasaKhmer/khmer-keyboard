@@ -61,6 +61,7 @@ N	2	ng	consonants
 N	13	ng	consonants
 N	126	ng	consonants
 N	561	ng	consonants
+N	561	ng	curated
 dEl	3	dael	pronunciation
 dEl	3	del	ungegn
 dEl	664	ddael	minor
@@ -106,6 +107,7 @@ nv	6	nv	consonants
 nv	65	nv	consonants
 nv	1058	nv	consonants
 nv	1264	nv	consonants
+nv	6	nv	curated
 rObO	7	roboh	pronunciation
 rObO	486	robuoh	pronunciation
 rObO	486	robuos	spelling
@@ -778,6 +780,7 @@ dk	2298	dk	consonants
 dk	2633	dgk	consonants
 dk	2787	dgh	consonants
 dk	2875	dg	consonants
+dk	165	dg	curated
 cEY	82	chenh	pronunciation
 cY	82	chnh	consonants
 cY	270	chnh	consonants
@@ -924,6 +927,7 @@ cO	1900	chau	spelling
 cO	1986	chhor	minor
 cO	2686	chou	pronunciation
 cO	2686	cho	ungegn
+cO	101	jos	curated
 c	101	chh	consonants
 c	560	chh	consonants
 c	573	chh	consonants
@@ -2302,6 +2306,7 @@ klN	352	klng	consonants
 klN	352	khlng	consonants
 sAt	353	sat	pronunciation
 sAt	566	sat	pronunciation
+sAt	566	sart	curated
 sAtv	353	satv	spelling
 st	353	st	consonants
 st	487	st	consonants
@@ -3241,6 +3246,7 @@ cE	1439	chi	pronunciation
 cE	2057	chheh	pronunciation
 cE	2687	che	pronunciation
 cE	2687	cher	spelling
+cE	643	jes	curated
 kEcprOcOm	574	kechprochum	pronunciation
 kEcAbrOcOm	574	kechchabrochum	spelling
 kcprcm	574	kchprchm	consonants
@@ -3884,6 +3890,7 @@ sEs	736	sess	spelling
 s	736	sss	consonants
 s	1367	ss	consonants
 s	2934	ss	consonants
+s	1916	ss	curated
 NJy	737	ngeay	pronunciation
 ky	737	gy	consonants
 ky	986	ky	consonants
@@ -6098,6 +6105,7 @@ tOn	1854	tun	pronunciation
 tOn	1854	ton	spelling
 tOn	1967	tun	pronunciation
 tOn	2302	thun	pronunciation
+tOn	272	torn	curated
 bOntJ	1425	bonteah	pronunciation
 bAntJ	1425	banteah	spelling
 rOmlON	1426	rumlong	pronunciation
@@ -7390,6 +7398,7 @@ tlN	1873	tlng	consonants
 nEk	1874	nek	pronunciation
 nEk	1874	nuek	spelling
 nEk	1874	noek	ungegn
+nEk	1874	nirk	curated
 prOmJtQn	1875	prumeatoan	pronunciation
 prOhmOtOnd	1875	prohmotond	spelling
 prmtn	1875	prmtn	consonants
@@ -10269,3 +10278,5 @@ brO	257	bros	curated
 hz	17	hz	curated
 cOfE	1381	coffee	curated
 tknAy	25	tgnai	curated
+pmAn	455	pman	curated
+sOksbAy	3004	soksbay	curated

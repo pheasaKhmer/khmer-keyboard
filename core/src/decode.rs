@@ -315,7 +315,8 @@ impl<F: FnMut(&str, bool) -> Vec<Choice>> Decoder<'_, F> {
                 continue;
             }
             for a in 0..length {
-                for b in a + 2..=(a + settings.max_piece_length).min(length) {
+                let first = a + settings.min_piece_length;
+                for b in first..=(a + settings.max_piece_length).min(length) {
                     if a == 0 && b == length {
                         continue; // the whole word is above
                     }
