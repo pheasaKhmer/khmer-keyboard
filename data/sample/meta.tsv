@@ -17,6 +17,7 @@ settings.join	1.0
 settings.split	1.0
 settings.max_words_per_span	3
 settings.min_split_length	4
+settings.min_piece_length	1
 settings.max_piece_length	12
 settings.choices_per_span	8
 settings.beam	8

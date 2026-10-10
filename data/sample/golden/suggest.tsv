@@ -1,5 +1,5 @@
 # input	suggestions
-s	សរសើរ|consonants|0|1 ; សិស្ស|consonants|0|1 ; ឧស្សាហ៍|consonants|0|1 ; s|typed|0|1
+s	សង្សារ|curated|0|1 ; សរសើរ|consonants|0|1 ; សិស្ស|consonants|0|1 ; ឧស្សាហ៍|consonants|0|1 ; s|typed|0|1
 so	ស|pronunciation|0|2 ; សូ|ungegn|0|2 ; សូម|completion|0|2 ; សួរ|pronunciation|0|2 ; សោះ|pronunciation|0|2
 sou	ស|pronunciation|0|3 ; សូ|pronunciation|0|3 ; សូម|completion|0|3 ; សួរ|pronunciation|0|3 ; សោះ|pronunciation|0|3
 sous	ស|pronunciation|0|4 ; សួរ|pronunciation|0|4 ; សូ|pronunciation|0|4 ; សរសេរ|completion|0|4 ; សោះ|pronunciation|0|4
@@ -55,11 +55,11 @@ sok sabay t	សុខសប្បាយ|pronunciation|0|11
 sok sabay te	ទេ|curated|10|12 ; តែ|ungegn|10|12 ; ទី|pronunciation|10|12 ; តេ|pronunciation|10|12 ; ទឹក|completion|10|12
 soks	សោកស្តាយ|completion|0|4 ; សុខសប្បាយ|completion|0|4 ; សុខ|pronunciation|0|4 ; សក់|pronunciation|0|4 ; សុក្រ|pronunciation|0|4
 soksa	សិក្សា|pronunciation|0|5 ; រក្សា|spelling|0|5 ; សុខសប្បាយ|completion|0|5 ; សុខសន្តិភាព|completion|0|5 ; សុខា|spelling|0|5
-soksab	សុខសប្បាយ|completion|0|6 ; soksab|typed|0|6
+soksab	បង|curated|5|6
 soksaba	សុខសប្បាយ|completion|0|7 ; សុខសាបា|fallback|0|7 ; soksaba|typed|0|7
 soksabay	សុខសប្បាយ|pronunciation|0|8 ; សុខសាបាយ|fallback|0|8 ; soksabay|typed|0|8
 sok sabay j	សុខសប្បាយ|pronunciation|0|11
-sok sabay je	ចេញ|completion|10|12 ; ចិន|completion|10|12 ; ជើង|completion|10|12 ; ចិត្ត|completion|10|12 ; ជិត|completion|10|12
+sok sabay je	ចេះ|curated|10|12 ; ចេញ|completion|10|12 ; ចិន|completion|10|12 ; ជើង|completion|10|12 ; ចិត្ត|completion|10|12
 sok sabay jea	ជា|pronunciation|10|13 ; ជាតិ|completion|10|13 ; ជាង|completion|10|13 ; ជាមួយ|completion|10|13 ; ឈាម|completion|10|13
 sok sabay jea 	ជា|pronunciation|10|13 ; ជះ|pronunciation|10|13 ; ចៀស|pronunciation|10|13 ; jea|typed|10|13
 sok sabay jea t	ជាតិ|pronunciation|10|15 ; ជាទី|completion|10|15 ; ជាទូទៅ|completion|10|15 ; ជាតិសាសន៍|completion|10|15 ; ជាធម្មតា|completion|10|15
@@ -87,7 +87,7 @@ lea s	លា|pronunciation|0|5
 lea se	សេ|pronunciation|4|6 ; សិស្ស|pronunciation|4|6 ; សែន|completion|4|6 ; សិទ្ធិ|completion|4|6 ; ស៊ី|pronunciation|4|6
 lea sen	សែន|ungegn|4|7 ; សិន|pronunciation|4|7 ; ស៊ិន|pronunciation|4|7 ; សេនា|completion|4|7 ; សេនីយ៍|completion|4|7
 lea sen 	សែន|ungegn|4|7 ; សិន|pronunciation|4|7 ; ស៊ិន|pronunciation|4|7 ; មិន|pronunciation|4|7 ; ចិន|pronunciation|4|7
-lea sen h	វិញ|pronunciation|4|9 ; សែន|ungegn|4|9 ; ទិញ|pronunciation|4|9 ; ចេញ|pronunciation|4|9 ; ពេញ|pronunciation|4|9
+lea sen h	សែន|ungegn|4|9 ; សិន|pronunciation|4|9 ; សេនា|pronunciation|4|9 ; ស៊ិន|pronunciation|4|9 ; សេនីយ៍|spelling|4|9
 lea sen ho	ហើយ|completion|8|10 ; ហូ|ungegn|8|10 ; ហ៊ុន|completion|8|10 ; ហូរ|pronunciation|8|10 ; ហ|pronunciation|8|10
 lea sen hoy	ហើយ|curated|8|11 ; ឱ្យ|curated|8|11 ; ដោយ|pronunciation|8|11 ; មួយ|pronunciation|8|11 ; អោយ|pronunciation|8|11
 som	សូម|ungegn|0|3 ; សុំ|pronunciation|0|3 ; សម|pronunciation|0|3 ; សំ|pronunciation|0|3 ; សម្រាប់|completion|0|3
@@ -109,7 +109,7 @@ chas	ចាស់|spelling|0|4 ; ចាស|curated|0|4 ; ច|spelling|0|4 ; ឆ�
 b	បង|curated|0|1 ; បែប|consonants|0|1 ; បាប|consonants|0|1 ; b|typed|0|1
 ba	ប|spelling|0|2 ; បាន|completion|0|2 ; បា|pronunciation|0|2 ; បន្ត|completion|0|2 ; បាញ់|completion|0|2
 bat	បាទ|curated|0|3 ; បទ|spelling|0|3 ; បាត់|pronunciation|0|3 ; បាត|pronunciation|0|3 ; បត់|spelling|0|3
-ot t	អត់|curated|0|4 ; ឧទាហរណ៍|completion|0|4 ; ឧត្តម|completion|0|4 ; ឧទ្យាន|completion|0|4 ; អត់ធ្មត់|completion|0|4
+ot t	អត់|curated|0|4 ; ថត|pronunciation|0|4 ; ទូត|pronunciation|0|4
 ot te	ទេ|curated|3|5 ; តែ|ungegn|3|5 ; ទី|pronunciation|3|5 ; តេ|pronunciation|3|5 ; ទឹក|completion|3|5
 n	នានា|consonants|0|1 ; នរណា|consonants|0|1 ; n|typed|0|1
 nh	ខ្ញុំ|curated|0|2 ; នេះ|consonants|0|2 ; នោះ|consonants|0|2 ; ណាស់|consonants|0|2 ; នៃ|consonants|0|2
@@ -152,7 +152,7 @@ t	ទៀត|consonants|0|1 ; អតីត|consonants|0|1 ; អាទិត្យ
 to	ទៅ|ungegn|0|2 ; ទ|spelling|0|2 ; តុ|spelling|0|2 ; ទទួល|completion|0|2 ; ត|pronunciation|0|2
 tov	ទៅ|pronunciation|0|3 ; តវ៉ា|completion|0|3 ; ទៅជា|completion|0|3 ; ទៅវិញ|completion|0|3 ; ទៅទៀត|completion|0|3
 tov 	ទៅ|pronunciation|0|3 ; នៅ|pronunciation|0|3 ; តទៅ|minor|0|3 ; ត្រូវ|ungegn|0|3 ; នូវ|pronunciation|0|3
-tov n	ទៅ|pronunciation|0|5 ; ទន់|spelling|0|5 ; តវ៉ា|pronunciation|0|5 ; តោន|pronunciation|0|5 ; ធន់|pronunciation|0|5
+tov n	ទៅ|pronunciation|0|5 ; ទាន់|curated|0|5 ; ទន់|spelling|0|5 ; តវ៉ា|pronunciation|0|5 ; តោន|pronunciation|0|5
 tov nh	ខ្ញុំ|curated|4|6 ; នេះ|consonants|4|6 ; នោះ|consonants|4|6 ; ណាស់|consonants|4|6 ; នៃ|consonants|4|6
 tov nha	តវ៉ា|pronunciation|0|7
 tov nham	ញ៉ាំ|curated|4|8 ; ខ្ញុំ|curated|4|8 ; តាម|pronunciation|4|8 ; ចំ|spelling|4|8 ; ចាំ|pronunciation|4|8
@@ -209,7 +209,7 @@ chong t	ចង់|curated|0|7 ; ចុង|pronunciation|0|7 ; ចង|pronunciati
 chong to	ទៅ|ungegn|6|8 ; ទ|spelling|6|8 ; តុ|spelling|6|8 ; ទទួល|completion|6|8 ; ត|pronunciation|6|8
 chong tov	ទៅ|pronunciation|6|9 ; តវ៉ា|completion|6|9 ; ទៅជា|completion|6|9 ; ទៅវិញ|completion|6|9 ; ទៅទៀត|completion|6|9
 chong tov 	ទៅ|pronunciation|6|9 ; នៅ|pronunciation|6|9 ; តទៅ|minor|6|9 ; ធ្វើ|consonants|6|9 ; ត្រូវ|ungegn|6|9
-chong tov n	ទៅ|pronunciation|6|11 ; ទន់|spelling|6|11 ; តវ៉ា|pronunciation|6|11 ; តោន|pronunciation|6|11 ; ធន់|pronunciation|6|11
+chong tov n	ទៅ|pronunciation|6|11 ; ទាន់|curated|6|11 ; ទន់|spelling|6|11 ; តវ៉ា|pronunciation|6|11 ; តោន|pronunciation|6|11
 chong tov na	ណា|pronunciation|10|12 ; អ្នក|completion|10|12 ; ណ|spelling|10|12 ; ណាស់|pronunciation|10|12 ; ណាមួយ|completion|10|12
 tov na	ណា|pronunciation|4|6 ; អ្នក|completion|4|6 ; ណ|spelling|4|6 ; ណាស់|pronunciation|4|6 ; ណាមួយ|completion|4|6
 mo	មក|curated|0|2 ; ម|spelling|0|2 ; មួយ|completion|0|2 ; មុន|completion|0|2 ; មុខ|completion|0|2
@@ -317,7 +317,7 @@ min deng t	ទៀត|consonants|9|10 ; អតីត|consonants|9|10 ; អាទ�
 min deng te	ទេ|curated|9|11 ; តែ|ungegn|9|11 ; ទី|pronunciation|9|11 ; តេ|pronunciation|9|11 ; ទឹក|completion|9|11
 ban	បាន|pronunciation|0|3 ; ប័ណ្ណ|pronunciation|0|3 ; បន្ត|completion|0|3 ; បណ្ណ|pronunciation|0|3 ; បន្ថែម|completion|0|3
 ban 	បាន|pronunciation|0|3 ; ប័ណ្ណ|pronunciation|0|3 ; បណ្ណ|pronunciation|0|3 ; បន្ត|spelling|0|3 ; កាន់|pronunciation|0|3
-ban h	បាញ់|pronunciation|0|5 ; បញ្ហា|completion|0|5 ; បញ្ជាក់|completion|0|5 ; បញ្ចប់|completion|0|5 ; បញ្ជា|completion|0|5
+ban h	បាន|pronunciation|0|5 ; បន្ត|spelling|0|5 ; ប័ណ្ណ|pronunciation|0|5 ; បណ្ណ|pronunciation|0|5
 ban ho	ហើយ|completion|4|6 ; ហៅ|spelling|4|6 ; ហូ|ungegn|4|6 ; ហ៊ុន|completion|4|6 ; ហូរ|pronunciation|4|6
 ban hoy	ហើយ|curated|4|7 ; ឱ្យ|curated|4|7 ; អោយ|pronunciation|4|7 ; ជួយ|pronunciation|4|7 ; ដោយ|pronunciation|4|7
 ot b	បង|curated|3|4 ; បែប|consonants|3|4 ; បាប|consonants|3|4 ; b|typed|3|4
@@ -502,7 +502,7 @@ tlai n	ថ្លៃ|pronunciation|0|6
 tlai na	ណា|pronunciation|5|7 ; អ្នក|completion|5|7 ; ណ|spelling|5|7 ; ណាស់|pronunciation|5|7 ; ណាមួយ|completion|5|7
 tlai nas	ណាស់|spelling|5|8 ; ណា|pronunciation|5|8 ; ណ|spelling|5|8 ; នរណា|minor|5|8 ; nas|typed|5|8
 th	តេស្ត|consonants|0|2 ; ទោស|consonants|0|2 ; ទោះ|consonants|0|2 ; ទិស|consonants|0|2 ; ទៀត|consonants|0|2
-tho	ទៅ|completion|0|3 ; ធ|spelling|0|3 ; ទទួល|completion|0|3 ; ធំ|completion|0|3 ; តូច|completion|0|3
+tho	ទៅ|completion|0|3 ; ធ|spelling|0|3 ; ទទួល|completion|0|3 ; ធំ|completion|0|3 ; ទាន់|completion|0|3
 thok	តុ|pronunciation|0|4 ; ថោក|pronunciation|0|4 ; ទុក|pronunciation|0|4 ; ទុក្ខ|pronunciation|0|4 ; ទូក|pronunciation|0|4
 kom t	កុំ|curated|0|5 ; កម្ទេច|completion|0|5 ; កុមារ|pronunciation|0|5 ; កូដ|pronunciation|0|5 ; កំ|pronunciation|0|5
 kom tl	ថ្លៃ|completion|4|6 ; តុលា|consonants|4|6 ; ថ្លែង|completion|4|6 ; ធ្លាប់|completion|4|6 ; ទទួល|consonants|4|6
@@ -520,8 +520,8 @@ chnga	ឆ្ងាយ|completion|0|5 ; ឆ្ងាញ់|completion|0|5 ; ឆ�
 chngay	ឆ្ងាយ|pronunciation|0|6 ; ថ្ងៃ|pronunciation|0|6 ; ច្នៃ|pronunciation|0|6 ; ចំណាយ|minor|0|6 ; ឆ្ងាញ់|pronunciation|0|6
 srok	ស្រុក|pronunciation|0|4 ; ស្រក|pronunciation|0|4 ; រក|pronunciation|0|4 ; ស្រុកកំណើត|completion|0|4 ; ស្រប|pronunciation|0|4
 srok 	ស្រុក|pronunciation|0|4 ; ស្រក|pronunciation|0|4 ; រក|pronunciation|0|4 ; ស្រប|pronunciation|0|4 ; សុខ|pronunciation|0|4
-srok k	ស្រុក|pronunciation|0|6 ; ស្រក|pronunciation|0|6 ; ស្រុកកំណើត|completion|0|6 ; រក|pronunciation|0|6 ; ស្រប|pronunciation|0|6
-srok kh	ស្រុក|pronunciation|0|7 ; ស្រក|pronunciation|0|7 ; ស្រុកកំណើត|completion|0|7 ; សុខ|spelling|0|7 ; រក|pronunciation|0|7
+srok k	ស្រុក|pronunciation|0|6 ; ស្រក|pronunciation|0|6
+srok kh	ខឹង|curated|5|7 ; ឱកាស|consonants|5|7 ; ខាង|consonants|5|7 ; កោះ|consonants|5|7 ; អាកាស|consonants|5|7
 srok khm	កម្ពុជា|completion|5|8 ; ឃុំ|consonants|5|8 ; គ្មាន|completion|5|8 ; ខ្មែរ|completion|5|8 ; កំពុង|completion|5|8
 srok khme	ខ្មែរ|ungegn|5|9 ; ក្មេង|completion|5|9 ; ខែ|pronunciation|5|9 ; គឺ|ungegn|5|9 ; ខ្មែរក្រហម|completion|5|9
 srok khmer	ខ្មែរ|ungegn|5|10 ; ខែ|pronunciation|5|10 ; គឺ|pronunciation|5|10 ; គេ|pronunciation|5|10 ; ខ្សែ|ungegn|5|10
@@ -573,8 +573,8 @@ niyay kh	ខឹង|curated|6|8 ; ឱកាស|consonants|6|8 ; ខាង|consona
 niyay khm	កម្ពុជា|completion|6|9 ; ឃុំ|consonants|6|9 ; គ្មាន|completion|6|9 ; ខ្មែរ|completion|6|9 ; កំពុង|completion|6|9
 niyay khme	ខ្មែរ|ungegn|6|10 ; ក្មេង|completion|6|10 ; ខែ|pronunciation|6|10 ; គឺ|ungegn|6|10 ; ខ្មែរក្រហម|completion|6|10
 niyay khmer	ខ្មែរ|ungegn|6|11 ; ខែ|pronunciation|6|11 ; គឺ|pronunciation|6|11 ; គេ|pronunciation|6|11 ; ខ្សែ|ungegn|6|11
-ches	ចេះ|pronunciation|0|4 ; ជឿ|pronunciation|0|4 ; ឈើ|pronunciation|0|4 ; ឈឺ|pronunciation|0|4 ; ជិះ|pronunciation|0|4
-ches 	ចេះ|pronunciation|0|4 ; ជឿ|pronunciation|0|4 ; ឈើ|pronunciation|0|4 ; ឈឺ|pronunciation|0|4 ; ជិះ|pronunciation|0|4
+ches	ចេះ|curated|0|4 ; ជឿ|pronunciation|0|4 ; ឈើ|pronunciation|0|4 ; ឈឺ|pronunciation|0|4 ; ជិះ|pronunciation|0|4
+ches 	ចេះ|curated|0|4 ; ជឿ|pronunciation|0|4 ; ឈើ|pronunciation|0|4 ; ឈឺ|pronunciation|0|4 ; ជិះ|pronunciation|0|4
 ches n	ចិន|pronunciation|0|6
 ches ni	នេះ|curated|5|7 ; និង|completion|5|7 ; នឹង|completion|5|7 ; នី|pronunciation|5|7 ; នៃ|completion|5|7
 ches niy	នៃ|pronunciation|5|8 ; ន័យ|pronunciation|5|8 ; និយាយ|completion|5|8 ; នេះ|curated|5|8 ; និយម|completion|5|8
@@ -592,8 +592,8 @@ ches niyay khmer te	ទេ|curated|17|19 ; តែ|ungegn|17|19 ; ទី|pronunci
 ot c	អត់|curated|0|4 ; តូច|ungegn|0|4 ; ពិតជា|consonants|0|4 ; តេជោ|consonants|0|4 ; ទូច|pronunciation|0|4
 ot ch	អត់|curated|0|5 ; តូច|ungegn|0|5 ; ពិតជា|consonants|0|5 ; តេជោ|consonants|0|5 ; តិច|consonants|0|5
 ot che	ចេញ|completion|3|6 ; ចេះ|pronunciation|3|6 ; ជឿ|pronunciation|3|6 ; ជេរ|pronunciation|3|6 ; ចិន|completion|3|6
-ot ches	ចេះ|pronunciation|3|7 ; ជឿ|pronunciation|3|7 ; ឈើ|pronunciation|3|7 ; ឈឺ|pronunciation|3|7 ; ជិះ|pronunciation|3|7
-ot ches 	ចេះ|pronunciation|3|7 ; ជឿ|pronunciation|3|7 ; ឈើ|pronunciation|3|7 ; ឈឺ|pronunciation|3|7 ; ជិះ|pronunciation|3|7
+ot ches	ចេះ|curated|3|7 ; ជឿ|pronunciation|3|7 ; ឈើ|pronunciation|3|7 ; ឈឺ|pronunciation|3|7 ; ជិះ|pronunciation|3|7
+ot ches 	ចេះ|curated|3|7 ; ជឿ|pronunciation|3|7 ; ឈើ|pronunciation|3|7 ; ឈឺ|pronunciation|3|7 ; ជិះ|pronunciation|3|7
 ot ches t	ចិត្ត|pronunciation|3|9 ; ជិត|pronunciation|3|9 ; តេស្ត|spelling|3|9
 ot ches te	ទេ|curated|8|10 ; តែ|ungegn|8|10 ; ទី|pronunciation|8|10 ; តេ|pronunciation|8|10 ; ទឹក|completion|8|10
 bong p	បងប្អូន|completion|0|6 ; បង់ពន្ធ|completion|0|6 ; បង|curated|0|6 ; បង់|pronunciation|0|6 ; បង្អស់|pronunciation|0|6
@@ -625,22 +625,22 @@ song	សង្ឃ|pronunciation|0|4 ; សង|pronunciation|0|4 ; សង់|pronu
 songs	សង្ស័យ|completion|0|5 ; សង្សារ|completion|0|5 ; សង្ឃ|pronunciation|0|5 ; សង|pronunciation|0|5 ; សង់|pronunciation|0|5
 songsa	សង្សារ|pronunciation|0|6 ; សង្ស័យ|completion|0|6 ; សង្ហា|pronunciation|0|6 ; សងសា|fallback|0|6 ; songsa|typed|0|6
 saa	ស|spelling|0|3 ; សារ|pronunciation|0|3 ; សា|pronunciation|0|3 ; សត្វ|completion|0|3 ; សម្រាប់|completion|0|3
-saat	សត្វ|pronunciation|0|4 ; ស្អាត|pronunciation|0|4 ; សាធារណៈ|completion|0|4 ; សារធាតុ|completion|0|4 ; សត្រូវ|completion|0|4
+saat	ស្អាត|curated|0|4 ; សត្វ|pronunciation|0|4 ; សាធារណៈ|completion|0|4 ; សារធាតុ|completion|0|4 ; សត្រូវ|completion|0|4
 sre	ស្រែ|ungegn|0|3 ; ស្រី|completion|0|3 ; ស្រូវ|completion|0|3 ; ស្រេច|completion|0|3 ; ស្រែក|completion|0|3
 srey	ស្រី|pronunciation|0|4 ; សរីរាង្គ|completion|0|4 ; ស្ត្រី|pronunciation|0|4 ; ត្រី|pronunciation|0|4 ; សេរី|pronunciation|0|4
 srey 	ស្រី|pronunciation|0|4 ; ស្ត្រី|pronunciation|0|4 ; ត្រី|pronunciation|0|4 ; សេរី|pronunciation|0|4 ; ព្រៃ|pronunciation|0|4
 srey s	ស្រី|pronunciation|0|6
 srey sa	ស្អាត|completion|5|7 ; ស|spelling|5|7 ; សារ|pronunciation|5|7 ; សា|pronunciation|5|7 ; សត្វ|completion|5|7
 srey saa	ស្អាត|completion|5|8 ; ស|spelling|5|8 ; សារ|pronunciation|5|8 ; សា|pronunciation|5|8 ; សត្វ|completion|5|8
-srey saat	ស្អាត|pronunciation|5|9 ; សត្វ|pronunciation|5|9 ; សាធារណៈ|completion|5|9 ; សារធាតុ|completion|5|9 ; សត្រូវ|completion|5|9
-saat 	សត្វ|pronunciation|0|4 ; ស្អាត|pronunciation|0|4 ; ស្លត|spelling|0|4 ; ស|spelling|0|4 ; កាត់|pronunciation|0|4
-saat n	សត្វ|pronunciation|0|6 ; ស្អាត|pronunciation|0|6 ; សាន|pronunciation|0|6 ; សាន់|pronunciation|0|6 ; ស្ថាន|pronunciation|0|6
+srey saat	ស្អាត|curated|5|9 ; សត្វ|pronunciation|5|9 ; សាធារណៈ|completion|5|9 ; សារធាតុ|completion|5|9 ; សត្រូវ|completion|5|9
+saat 	ស្អាត|curated|0|4 ; សត្វ|pronunciation|0|4 ; ស្លត|spelling|0|4 ; ស|spelling|0|4 ; កាត់|pronunciation|0|4
+saat n	ស្អាត|curated|0|6 ; សត្វ|pronunciation|0|6 ; សាន|pronunciation|0|6 ; សាន់|pronunciation|0|6 ; ស្ថាន|pronunciation|0|6
 saat na	ណា|pronunciation|5|7 ; អ្នក|completion|5|7 ; ណ|spelling|5|7 ; ណាស់|pronunciation|5|7 ; ណាមួយ|completion|5|7
 saat nas	ណាស់|spelling|5|8 ; ណា|pronunciation|5|8 ; ណ|spelling|5|8 ; នរណា|minor|5|8 ; nas|typed|5|8
 lo	ល|spelling|0|2 ; លោក|completion|0|2 ; ល្អ|pronunciation|0|2 ; ឡូ|ungegn|0|2 ; លក់|completion|0|2
 lor	ល្អ|pronunciation|0|3 ; ល|pronunciation|0|3 ; ឡ|pronunciation|0|3 ; ឡូ|pronunciation|0|3 ; លុះ|pronunciation|0|3
 lor 	ល្អ|pronunciation|0|3 ; ល|pronunciation|0|3 ; ឡ|pronunciation|0|3 ; ឡូ|pronunciation|0|3 ; លុះ|pronunciation|0|3
-lor n	ល្អណាស់|completion|0|5 ; ល្អ|pronunciation|0|5 ; លោក|pronunciation|0|5 ; ពណ៌|spelling|0|5 ; ល|pronunciation|0|5
+lor n	ល្អណាស់|completion|0|5 ; ទាន់|curated|0|5 ; ល្អ|pronunciation|0|5 ; លោក|pronunciation|0|5 ; ពណ៌|spelling|0|5
 lor na	ល្អណាស់|pronunciation|0|6 ; នរណា|spelling|0|6 ; គណៈ|ungegn|0|6 ; វណ្ណៈ|ungegn|0|6 ; ប៉ុណ្ណា|pronunciation|0|6
 lor nas	ល្អណាស់|pronunciation|0|7 ; នរណា|spelling|0|7 ; ពណ៌ស|spelling|0|7 ; គណៈ|ungegn|0|7 ; វណ្ណៈ|ungegn|0|7
 ot l	អត់|curated|0|4 ; ទទួល|consonants|0|4 ; ទល់|spelling|0|4 ; ផ្ទាល់|consonants|0|4 ; តុលា|consonants|0|4
@@ -653,8 +653,8 @@ chk	ចាក់|consonants|0|3 ; ចែក|consonants|0|3 ; ចង់|curated|0
 chku	ឆ្កួត|completion|0|4 ; ឈ្មោះ|pronunciation|0|4 ; ចុះ|pronunciation|0|4 ; ចូរ|pronunciation|0|4 ; ចៅ|spelling|0|4
 chkuo	ឆ្កួត|completion|0|5 ; ឈ្មោះ|pronunciation|0|5 ; គួរ|pronunciation|0|5 ; ជួរ|pronunciation|0|5 ; ចុះ|pronunciation|0|5
 chkuot	ឆ្កួត|pronunciation|0|6 ; ឈុត|pronunciation|0|6 ; ឆ្នោត|pronunciation|0|6 ; ចោទ|pronunciation|0|6 ; ជូត|pronunciation|0|6
-chos	ចុះ|pronunciation|0|4 ; ច|pronunciation|0|4 ; ជ|pronunciation|0|4 ; ចូរ|pronunciation|0|4 ; ឈរ|pronunciation|0|4
-chos 	ចុះ|pronunciation|0|4 ; ច|pronunciation|0|4 ; ជ|pronunciation|0|4 ; ចូរ|pronunciation|0|4 ; ឈរ|pronunciation|0|4
+chos	ចុះ|curated|0|4 ; ច|pronunciation|0|4 ; ជ|pronunciation|0|4 ; ចូរ|pronunciation|0|4 ; ឈរ|pronunciation|0|4
+chos 	ចុះ|curated|0|4 ; ច|pronunciation|0|4 ; ជ|pronunciation|0|4 ; ចូរ|pronunciation|0|4 ; ឈរ|pronunciation|0|4
 chos a	អា|pronunciation|5|6 ; អ|spelling|5|6 ; អារ|pronunciation|5|6 ; អស់|spelling|5|6 ; a|typed|5|6
 chos ae	ឯ|pronunciation|5|7 ; អេ|pronunciation|5|7 ; អ៊ី|pronunciation|5|7 ; អេស|pronunciation|5|7 ; ae|typed|5|7
 chos aen	អ៊ិន|pronunciation|5|8 ; ឥណ្ឌា|completion|5|8 ; ឥណទាន|completion|5|8 ; អ៊ីនធឺ|completion|5|8 ; អ៊ីនធឺណិត|completion|5|8
@@ -756,11 +756,11 @@ ok b	បង|curated|3|4 ; បែប|consonants|3|4 ; បាប|consonants|3|4 ; 
 ok bo	ប|pronunciation|3|5 ; បូ|ungegn|3|5 ; បោះ|pronunciation|3|5 ; បទ|completion|3|5 ; បុណ្យ|completion|3|5
 ok bon	បុណ្យ|pronunciation|3|6 ; បួន|pronunciation|3|6 ; បន្ត|completion|3|6 ; បន្ថែម|completion|3|6 ; ប៊ុន|pronunciation|3|6
 ok bong	បង|curated|3|7 ; បង់|pronunciation|3|7 ; បង្ហាញ|completion|3|7 ; បង្ក|completion|3|7 ; បង្កើត|completion|3|7
-sousdeyb	សួស្តី|curated|0|8 ; sousdeyb|typed|0|8
+sousdeyb	បង|curated|7|8
 sousdeybo	ប|pronunciation|7|9 ; បូ|ungegn|7|9 ; បោះ|pronunciation|7|9 ; បទ|completion|7|9 ; បុណ្យ|completion|7|9
 sousdeybon	បុណ្យ|pronunciation|7|10 ; បួន|pronunciation|7|10 ; បន្ត|completion|7|10 ; បន្ថែម|completion|7|10 ; ប៊ុន|pronunciation|7|10
 sousdeybong	បង|curated|7|11 ; បង់|pronunciation|7|11 ; បង្ហាញ|completion|7|11 ; បង្ក|completion|7|11 ; បង្កើត|completion|7|11
-arkunb	អរគុណ|spelling|0|6 ; arkunb|typed|0|6
+arkunb	បង|curated|5|6
 arkunbo	ប|pronunciation|5|7 ; បូ|ungegn|5|7 ; បោះ|pronunciation|5|7 ; បទ|completion|5|7 ; បុណ្យ|completion|5|7
 arkunbon	បុណ្យ|pronunciation|5|8 ; បួន|pronunciation|5|8 ; បន្ត|completion|5|8 ; បន្ថែម|completion|5|8 ; ប៊ុន|pronunciation|5|8
 arkunbong	បង|curated|5|9 ; បង់|pronunciation|5|9 ; បង្ហាញ|completion|5|9 ; បង្ក|completion|5|9 ; បង្កើត|completion|5|9
@@ -773,7 +773,7 @@ orkunchraen	ច្រើន|pronunciation|5|11 ; ច្រើនណាស់|com
 soksabayt	សុខសប្បាយ|pronunciation|0|9 ; soksabayt|typed|0|9
 soksabayte	ទេ|curated|8|10 ; តែ|ungegn|8|10 ; ទី|pronunciation|8|10 ; តេ|pronunciation|8|10 ; ទឹក|completion|8|10
 soksabayj	សុខសប្បាយ|pronunciation|0|9 ; soksabayj|typed|0|9
-soksabayje	ចេញ|completion|8|10 ; ចិន|completion|8|10 ; ជើង|completion|8|10 ; ចិត្ត|completion|8|10 ; ជិត|completion|8|10
+soksabayje	ចេះ|curated|8|10 ; ចេញ|completion|8|10 ; ចិន|completion|8|10 ; ជើង|completion|8|10 ; ចិត្ត|completion|8|10
 soksabayjea	ជា|pronunciation|8|11 ; ជាតិ|completion|8|11 ; ជាង|completion|8|11 ; ជាមួយ|completion|8|11 ; ឈាម|completion|8|11
 soksabayjeat	ជាតិ|pronunciation|8|12 ; ជាទី|completion|8|12 ; ជាទូទៅ|completion|8|12 ; ជាតិសាសន៍|completion|8|12 ; ជាធម្មតា|completion|8|12
 soksabayjeate	ជាតិ|spelling|8|13 ; ជាទី|pronunciation|8|13 ; ជាតិសាសន៍|completion|8|13
@@ -782,7 +782,7 @@ knhomso	សូម|completion|5|7 ; ស|pronunciation|5|7 ; សូ|ungegn|5|7 ; �
 knhomsok	សុខ|pronunciation|5|8 ; សក់|pronunciation|5|8 ; សុក្រ|pronunciation|5|8 ; សុខភាព|completion|5|8 ; សុខា|completion|5|8
 knhomsoks	ឱកាស|consonants|7|9 ; ខ្សែ|consonants|7|9 ; កាស៊ីណូ|completion|7|9 ; ឯកសារ|consonants|7|9 ; កសាង|completion|7|9
 knhomsoksa	ស|spelling|8|10 ; សារ|pronunciation|8|10 ; សា|pronunciation|8|10 ; សត្វ|completion|8|10 ; សម្រាប់|completion|8|10
-knhomsoksab	knhomsoksab|typed|0|11
+knhomsoksab	បង|curated|10|11
 knhomsoksaba	ខ្ញុំសុខសាបា|fallback|0|12 ; knhomsoksaba|typed|0|12
 knhomsoksabay	សុខសប្បាយ|pronunciation|5|13
 leas	លា|pronunciation|0|4 ; leas|typed|0|4
@@ -810,7 +810,7 @@ nhambayhoy	ហើយ|curated|7|10
 nhambayhoyn	nhambayhoyn|typed|0|11
 nhambayhoyno	នៅ|ungegn|10|12 ; នោះ|curated|10|12 ; ន|spelling|10|12 ; នៅពេល|completion|10|12 ; នូវ|completion|10|12
 nhambayhoynov	នៅ|pronunciation|10|13 ; នូវ|pronunciation|10|13 ; នៅពេល|completion|10|13 ; នៅលើ|completion|10|13 ; នៅតែ|completion|10|13
-kleanb	ឃ្លាន|pronunciation|0|6 ; kleanb|typed|0|6
+kleanb	បង|curated|5|6
 kleanba	ប|spelling|5|7 ; បាន|completion|5|7 ; បា|pronunciation|5|7 ; បន្ត|completion|5|7 ; បាញ់|completion|5|7
 kleanbai	បៃ|spelling|5|8 ; បាយ|pronunciation|5|8 ; បៃតង|completion|5|8
 chhnganhn	ឆ្ងាញ់|spelling|0|9 ; chhnganhn|typed|0|9
@@ -818,11 +818,11 @@ chhnganhna	ណា|pronunciation|8|10 ; អ្នក|completion|8|10 ; ណ|spelli
 chhnganhnas	ណាស់|spelling|8|11 ; ណា|pronunciation|8|11 ; ណ|spelling|8|11 ; នរណា|minor|8|11
 nhame	ញ៉ាំ|curated|0|5 ; ជ្ញាមេ|fallback|0|5 ; nhame|typed|0|5
 nhamey	អី|curated|4|6 ; ឥឡូវ|completion|4|6 ; អើយ|pronunciation|4|6
-tovn	ទៅ|pronunciation|0|4 ; ទន់|spelling|0|4 ; តវ៉ា|pronunciation|0|4 ; តោន|pronunciation|0|4 ; ធន់|pronunciation|0|4
+tovn	ទៅ|pronunciation|0|4 ; ទាន់|curated|0|4 ; ទន់|spelling|0|4 ; តវ៉ា|pronunciation|0|4 ; តោន|pronunciation|0|4
 tovnh	ខ្ញុំ|curated|3|5 ; នេះ|consonants|3|5 ; នោះ|consonants|3|5 ; ណាស់|consonants|3|5 ; នៃ|consonants|3|5
 tovnha	តវ៉ា|pronunciation|0|6 ; ទៅជ្ញា|fallback|0|6 ; tovnha|typed|0|6
 tovnham	ញ៉ាំ|curated|3|7
-tovnhamb	tovnhamb|typed|0|8
+tovnhamb	បង|curated|7|8
 tovnhamba	ប|spelling|7|9 ; បាន|completion|7|9 ; បា|pronunciation|7|9 ; បន្ត|completion|7|9 ; បាញ់|completion|7|9
 tovnhambai	បៃ|spelling|7|10 ; បាយ|pronunciation|7|10 ; បៃតង|completion|7|10
 bayc	បាយ|pronunciation|0|4 ; បៃ|pronunciation|0|4 ; bayc|typed|0|4
@@ -896,13 +896,13 @@ bongsrol	ស្រួល|pronunciation|4|8 ; ស្រឡាញ់|completion|4|
 bongsrola	បងស្រឡា|fallback|0|9 ; bongsrola|typed|0|9
 bongsrolan	បងស្រឡាន|fallback|0|10 ; bongsrolan|typed|0|10
 bongsrolanh	ស្រឡាញ់|pronunciation|4|11
-bongsrolanho	បងស្រឡាញ|fallback|0|12 ; bongsrolanho|typed|0|12
+bongsrolanho	អូន|curated|11|12
 bongsrolanhou	បងស្រឡាញ|fallback|0|13 ; bongsrolanhou|typed|0|13
 bongsrolanhoun	អូន|curated|11|14 ; អនឡាញ|completion|11|14 ; អន្តរជាតិ|completion|11|14 ; អន្តរ|completion|11|14 ; អន្តរាគមន៍|completion|11|14
 neko	ក៏|pronunciation|2|4 ; កូ|ungegn|2|4 ; គ|spelling|2|4 ; គួរ|pronunciation|2|4 ; ក|pronunciation|2|4
 nekou	ក៏|pronunciation|2|5 ; កូ|pronunciation|2|5 ; គោ|pronunciation|2|5 ; គួរ|pronunciation|2|5 ; ក|pronunciation|2|5
 nekoun	កូន|pronunciation|2|6 ; គុណ|pronunciation|2|6 ; គុន|pronunciation|2|6 ; គណ|pronunciation|2|6 ; កន្លែង|completion|2|6
-nekb	នឹក|pronunciation|0|4 ; នៅក្បែរ|consonants|0|4 ; nekb|typed|0|4
+nekb	បង|curated|3|4
 nekbo	បើកបរ|pronunciation|0|5 ; ណែកបុ|fallback|0|5 ; nekbo|typed|0|5
 nekbon	បុណ្យ|pronunciation|3|6 ; បួន|pronunciation|3|6 ; បន្ត|completion|3|6 ; បន្ថែម|completion|3|6 ; ប៊ុន|pronunciation|3|6
 nekbong	បង|curated|3|7 ; បង់|pronunciation|3|7 ; បង្ហាញ|completion|3|7 ; បង្ក|completion|3|7 ; បង្កើត|completion|3|7
@@ -1009,7 +1009,7 @@ sabayc	សប្បាយ|pronunciation|0|6 ; sabayc|typed|0|6
 sabaych	សប្បាយ|pronunciation|0|7 ; sabaych|typed|0|7
 sabayche	ចិត្ត|completion|5|8 ; ចេញ|completion|5|8 ; ចេះ|pronunciation|5|8 ; ជឿ|pronunciation|5|8 ; ជេរ|pronunciation|5|8
 sabaychet	ចិត្ត|pronunciation|5|9 ; ជិត|pronunciation|5|9 ; ចេតនា|completion|5|9 ; ជិតខាង|completion|5|9 ; ជិតស្និទ្ធ|completion|5|9
-oteyteb	ទើប|spelling|4|7 ; ទើបតែ|completion|4|7 ; ទីបី|completion|4|7 ; ទីបំផុត|completion|4|7 ; ទីបញ្ចប់|completion|4|7
+oteyteb	បង|curated|6|7
 oteytebo	ប|pronunciation|6|8 ; បូ|ungegn|6|8 ; បោះ|pronunciation|6|8 ; បទ|completion|6|8 ; បុណ្យ|completion|6|8
 oteytebon	បុណ្យ|pronunciation|6|9 ; បួន|pronunciation|6|9 ; បន្ត|completion|6|9 ; បន្ថែម|completion|6|9 ; ប៊ុន|pronunciation|6|9
 oteytebong	បង|curated|6|10 ; បង់|pronunciation|6|10 ; បង្ហាញ|completion|6|10 ; បង្ក|completion|6|10 ; បង្កើត|completion|6|10
@@ -1057,7 +1057,7 @@ chesni	នេះ|curated|4|6 ; និង|completion|4|6 ; នឹង|completion|4
 chesniy	នៃ|pronunciation|4|7 ; ន័យ|pronunciation|4|7 ; និយាយ|completion|4|7 ; និយម|completion|4|7 ; និយោជិត|completion|4|7
 chesniya	ជីស្នើយា|fallback|0|8 ; chesniya|typed|0|8
 chesniyay	អាយ|pronunciation|7|9 ; អាយុ|completion|7|9 ; អយ្យការ|completion|7|9 ; អាយុកាល|completion|7|9 ; អាយុជីវិត|completion|7|9
-chesniyayk	chesniyayk|typed|0|10
+chesniyayk	យក|consonants|8|10 ; យ៉ាងណា|completion|8|10 ; យើង|consonants|8|10 ; យោងតាម|completion|8|10 ; យកចិត្ត|completion|8|10
 chesniyaykh	chesniyaykh|typed|0|11
 chesniyaykhm	chesniyaykhm|typed|0|12
 chesniyaykhme	chesniyaykhme|typed|0|13
@@ -1067,7 +1067,7 @@ chesniyaykhmerte	chesniyaykhmerte|typed|0|16
 otc	អត់|curated|0|3 ; តូច|ungegn|0|3 ; ពិតជា|consonants|0|3 ; តេជោ|consonants|0|3 ; ទូច|pronunciation|0|3
 otch	អត់|curated|0|4 ; តូច|ungegn|0|4 ; ពិតជា|consonants|0|4 ; តេជោ|consonants|0|4 ; តិច|consonants|0|4
 otche	ចេញ|completion|2|5 ; ចេះ|pronunciation|2|5 ; ជឿ|pronunciation|2|5 ; ជេរ|pronunciation|2|5 ; ចិន|completion|2|5
-otches	ចេះ|pronunciation|2|6 ; ជឿ|pronunciation|2|6 ; ឈើ|pronunciation|2|6 ; ឈឺ|pronunciation|2|6 ; ជិះ|pronunciation|2|6
+otches	ចេះ|curated|2|6 ; ជឿ|pronunciation|2|6 ; ឈើ|pronunciation|2|6 ; ឈឺ|pronunciation|2|6 ; ជិះ|pronunciation|2|6
 otchest	សត្វ|consonants|5|7 ; សិទ្ធិ|consonants|5|7 ; ស្ត្រី|completion|5|7 ; ស្អាត|consonants|5|7 ; សុទ្ធតែ|consonants|5|7
 otcheste	ទេ|curated|6|8 ; តែ|ungegn|6|8 ; ទី|pronunciation|6|8 ; តេ|pronunciation|6|8 ; ទឹក|completion|6|8
 bongp	បងប្អូន|completion|0|5 ; បង់ពន្ធ|completion|0|5 ; បង|curated|0|5 ; បង់|pronunciation|0|5 ; បង្អស់|pronunciation|0|5
@@ -1087,11 +1087,11 @@ mitpheak	មិត្តភក្តិ|pronunciation|0|8 ; មិត្តព�
 sreys	ស្រី|pronunciation|0|5 ; sreys|typed|0|5
 sreysa	ស្អាត|completion|4|6 ; ស|spelling|4|6 ; សារ|pronunciation|4|6 ; សា|pronunciation|4|6 ; សត្វ|completion|4|6
 sreysaa	ស្អាត|completion|4|7 ; ស|spelling|4|7 ; សារ|pronunciation|4|7 ; សា|pronunciation|4|7 ; សត្វ|completion|4|7
-sreysaat	ស្អាត|pronunciation|4|8 ; សត្វ|pronunciation|4|8 ; សាធារណៈ|completion|4|8 ; សារធាតុ|completion|4|8 ; សត្រូវ|completion|4|8
-saatn	សត្វ|pronunciation|0|5 ; ស្អាត|pronunciation|0|5 ; សាន|pronunciation|0|5 ; សាន់|pronunciation|0|5 ; ស្ថាន|pronunciation|0|5
+sreysaat	ស្អាត|curated|4|8 ; សត្វ|pronunciation|4|8 ; សាធារណៈ|completion|4|8 ; សារធាតុ|completion|4|8 ; សត្រូវ|completion|4|8
+saatn	ស្អាត|curated|0|5 ; សត្វ|pronunciation|0|5 ; សាន|pronunciation|0|5 ; សាន់|pronunciation|0|5 ; ស្ថាន|pronunciation|0|5
 saatna	ណា|pronunciation|4|6 ; អ្នក|completion|4|6 ; ណ|spelling|4|6 ; ណាស់|pronunciation|4|6 ; ណាមួយ|completion|4|6
 saatnas	ណាស់|spelling|4|7 ; ណា|pronunciation|4|7 ; ណ|spelling|4|7 ; នរណា|minor|4|7
-lorn	ល្អណាស់|completion|0|4 ; ល្អ|pronunciation|0|4 ; លោក|pronunciation|0|4 ; ពណ៌|spelling|0|4 ; ល|pronunciation|0|4
+lorn	ល្អណាស់|completion|0|4 ; ទាន់|curated|0|4 ; ល្អ|pronunciation|0|4 ; លោក|pronunciation|0|4 ; ពណ៌|spelling|0|4
 lorna	ល្អណាស់|pronunciation|0|5 ; នរណា|spelling|0|5 ; គណៈ|ungegn|0|5 ; វណ្ណៈ|ungegn|0|5 ; ប៉ុណ្ណា|pronunciation|0|5
 lornas	ល្អណាស់|pronunciation|0|6 ; នរណា|spelling|0|6 ; ពណ៌ស|spelling|0|6 ; គណៈ|ungegn|0|6 ; វណ្ណៈ|ungegn|0|6
 otl	អត់|curated|0|3 ; ទទួល|consonants|0|3 ; ទល់|spelling|0|3 ; ផ្ទាល់|consonants|0|3 ; តុលា|consonants|0|3
@@ -1100,7 +1100,7 @@ otlor	ល្អ|pronunciation|2|5 ; ល|pronunciation|2|5 ; ឡ|pronunciation|2|
 otlort	ឡូត|pronunciation|2|6 ; លោត|pronunciation|2|6 ; លទ្ធផល|completion|2|6 ; លូតលាស់|completion|2|6 ; លទ្ធភាព|completion|2|6
 otlorte	ទេ|curated|5|7 ; តែ|ungegn|5|7 ; ទី|pronunciation|5|7 ; តេ|pronunciation|5|7 ; ទឹក|completion|5|7
 chosa	ស|spelling|3|5 ; សារ|pronunciation|3|5 ; សា|pronunciation|3|5 ; សត្វ|completion|3|5 ; សម្រាប់|completion|3|5
-chosae	កាហ្វេ|curated|0|6 ; សរសើរ|pronunciation|0|6 ; សរសេរ|pronunciation|0|6 ; រុស្ស៊ី|spelling|0|6 ; ចុះស៊ី|fallback|0|6
+chosae	ឯ|pronunciation|4|6 ; អេ|pronunciation|4|6 ; អ៊ី|pronunciation|4|6 ; អេស|pronunciation|4|6
 chosaen	សែន|pronunciation|3|7 ; សិន|pronunciation|3|7 ; ស៊ិន|pronunciation|3|7 ; សេនា|completion|3|7 ; សេនីយ៍|completion|3|7
 chosaeng	ឯង|pronunciation|4|8
 otmeanl	otmeanl|typed|0|7
@@ -1157,7 +1157,7 @@ tngais	ថ្ងៃ|pronunciation|0|6 ; tngais|typed|0|6
 tngaisa	សៅរ៍|completion|5|7 ; ស|spelling|5|7 ; សារ|pronunciation|5|7 ; សា|pronunciation|5|7 ; សត្វ|completion|5|7
 tngaisae	ថ្ងៃនេះ|spelling|0|8 ; ថ្ងៃស៊ី|fallback|0|8 ; tngaisae|typed|0|8
 tngaisaek	ស្អែក|pronunciation|5|9 ; សិក្សា|completion|5|9 ; ស៊ីហ្គេម|completion|5|9 ; សិក្ខាសាលា|completion|5|9
-otmeanw	នៅលើ|completion|5|7 ; នៅ|consonants|5|7 ; នៅពេល|completion|5|7 ; នៅតែ|completion|5|7 ; អនុវត្ត|completion|5|7
+otmeanw	នៅ|curated|5|7 ; នៅលើ|completion|5|7 ; នៅពេល|completion|5|7 ; នៅតែ|completion|5|7 ; អនុវត្ត|completion|5|7
 otmeanwi	អ្វី|completion|6|8 ; វ័យ|completion|6|8 ; វិធី|completion|6|8 ; វីដេអូ|completion|6|8 ; វិញ|completion|6|8
 otmeanwif	otmeanwif|typed|0|9
 otmeanwifi	អត់មានវិហ្វេស|fallback|0|10 ; otmeanwifi|typed|0|10
@@ -1209,16 +1209,16 @@ knhom ch	ខ្ញុំ|pronunciation|0|8
 knhom chm	ជាមួយ|completion|6|9 ; ចំនួន|completion|6|9 ; ឈ្មោះ|completion|6|9 ; ចំពោះ|completion|6|9 ; ជំងឺ|completion|6|9
 knhom chmo	ឈ្មោះ|pronunciation|6|10 ; ឈ្មួញ|completion|6|10 ; មក|curated|6|10 ; ចំ|pronunciation|6|10 ; ចុះ|pronunciation|6|10
 knhom chmou	ឈ្មោះ|pronunciation|6|11 ; ឈ្មួញ|completion|6|11 ; មក|curated|6|11 ; ចុះ|pronunciation|6|11 ; ចូរ|pronunciation|6|11
-knhom chmous	ឈ្មោះ|pronunciation|6|12 ; មក|curated|6|12 ; ចុះ|pronunciation|6|12 ; ចូរ|pronunciation|6|12 ; ច|pronunciation|6|12
-knhom chmous 	ឈ្មោះ|pronunciation|6|12 ; មក|curated|6|12 ; ចុះ|pronunciation|6|12 ; ចូរ|pronunciation|6|12 ; ច|pronunciation|6|12
-knhom chmous s	ឈ្មោះ|pronunciation|6|14 ; ឈ្មួញ|pronunciation|6|14 ; ជម្រើស|consonants|6|14 ; ជំនួស|consonants|6|14 ; ចំណាស់|consonants|6|14
+knhom chmous	ឈ្មោះ|pronunciation|6|12 ; មក|curated|6|12 ; ចុះ|curated|6|12 ; ចូរ|pronunciation|6|12 ; ច|pronunciation|6|12
+knhom chmous 	ឈ្មោះ|pronunciation|6|12 ; មក|curated|6|12 ; ចុះ|curated|6|12 ; ចូរ|pronunciation|6|12 ; ច|pronunciation|6|12
+knhom chmous s	សង្សារ|curated|13|14 ; សរសើរ|consonants|13|14 ; សិស្ស|consonants|13|14 ; ឧស្សាហ៍|consonants|13|14 ; s|typed|13|14
 knhom chmous sr	ស|consonants|13|15 ; ស្រី|consonants|13|15 ; ស្រុក|completion|13|15 ; សួរ|consonants|13|15 ; សារ|consonants|13|15
 knhom chmous sre	ស្រែ|ungegn|13|16 ; ស្រី|completion|13|16 ; ស្រូវ|completion|13|16 ; ស្រេច|completion|13|16 ; ស្រែក|completion|13|16
 knhom chmous srey	ស្រី|pronunciation|13|17 ; សរីរាង្គ|completion|13|17 ; ស្ត្រី|pronunciation|13|17 ; ត្រី|pronunciation|13|17 ; សេរី|pronunciation|13|17
 knhom chmous sreym	ស្រី|pronunciation|13|18 ; sreym|typed|13|18
 knhom chmous sreymo	មក|curated|17|19 ; ម|spelling|17|19 ; មួយ|completion|17|19 ; មុន|completion|17|19 ; មុខ|completion|17|19
 knhom chmous sreymom	ស្រីមុំ|fallback|13|20 ; sreymom|typed|13|20
-x	សិស្ស|consonants|0|1 ; សរសើរ|consonants|0|1 ; ឧស្សាហ៍|consonants|0|1 ; x|typed|0|1
+x	ចុះ|consonants|0|1 ; ចាស់|consonants|0|1 ; ជិះ|consonants|0|1 ; ចេះ|consonants|0|1 ; ចុច|consonants|0|1
 xy	សីហា|completion|0|2 ; សីហនុ|completion|0|2 ; អាសយដ្ឋាន|completion|0|2 ; សីតុណ្ហភាព|completion|0|2 ; សាយ|consonants|0|2
 xyz	សីហា|consonants|0|3 ; សាយ|consonants|0|3 ; សី|consonants|0|3 ; សរសៃ|consonants|0|3 ; xyz|typed|0|3
 xyzq	xyzq|typed|0|4
@@ -1231,7 +1231,7 @@ or 	អ|pronunciation|0|2 ; អូរ|ungegn|0|2 ; អូន|curated|0|2 ; អ�
 or k	ឱកាស|completion|0|4 ; ឧកញ៉ា|completion|0|4 ; អរគុណ|completion|0|4 ; អ៊ុក|pronunciation|0|4 ; ឧក្រិដ្ឋកម្ម|completion|0|4
 or ku	គូ|pronunciation|3|5 ; គួរ|pronunciation|3|5 ; កូ|pronunciation|3|5 ; គូរ|pronunciation|3|5 ; កូន|completion|3|5
 or kun	អរគុណ|curated|0|6 ; កូន|pronunciation|0|6 ; គុណ|pronunciation|0|6 ; គុន|pronunciation|0|6 ; គណ|pronunciation|0|6
-orkunb	អរគុណ|curated|0|6 ; orkunb|typed|0|6
+orkunb	បង|curated|5|6
 orkunbo	ប|pronunciation|5|7 ; បូ|ungegn|5|7 ; បោះ|pronunciation|5|7 ; បទ|completion|5|7 ; បុណ្យ|completion|5|7
 orkunbon	បុណ្យ|pronunciation|5|8 ; បួន|pronunciation|5|8 ; បន្ត|completion|5|8 ; បន្ថែម|completion|5|8 ; ប៊ុន|pronunciation|5|8
 orkunbong	បង|curated|5|9 ; បង់|pronunciation|5|9 ; បង្ហាញ|completion|5|9 ; បង្ក|completion|5|9 ; បង្កើត|completion|5|9
@@ -1251,7 +1251,7 @@ l'	l'|typed|0|2
 l'o	ល|spelling|0|3 ; លោក|completion|0|3 ; ល្អ|pronunciation|0|3 ; ឡូ|ungegn|0|3 ; លក់|completion|0|3
 l'or	ល្អ|pronunciation|0|4 ; ល|pronunciation|0|4 ; ឡ|pronunciation|0|4 ; ឡូ|pronunciation|0|4 ; លុះ|pronunciation|0|4
 l'or 	ល្អ|pronunciation|0|4 ; ល|pronunciation|0|4 ; ឡ|pronunciation|0|4 ; ឡូ|pronunciation|0|4 ; លុះ|pronunciation|0|4
-l'or n	ល្អណាស់|completion|0|6 ; ល្អ|pronunciation|0|6 ; លោក|pronunciation|0|6 ; ពណ៌|spelling|0|6 ; ល|pronunciation|0|6
+l'or n	ល្អណាស់|completion|0|6 ; ទាន់|curated|0|6 ; ល្អ|pronunciation|0|6 ; លោក|pronunciation|0|6 ; ពណ៌|spelling|0|6
 l'or na	ល្អណាស់|pronunciation|0|7 ; នរណា|spelling|0|7 ; គណៈ|ungegn|0|7 ; វណ្ណៈ|ungegn|0|7 ; ប៉ុណ្ណា|pronunciation|0|7
 l'or nas	ល្អណាស់|pronunciation|0|8 ; នរណា|spelling|0|8 ; ពណ៌ស|spelling|0|8 ; គណៈ|ungegn|0|8 ; វណ្ណៈ|ungegn|0|8
 1	
@@ -1275,7 +1275,7 @@ hell	ហើយ|curated|0|4 ; ដែល|ungegn|0|4 ; ហែលទឹក|completio
 hello	hello|english|0|5 ; ហេតុ|spelling|0|5 ; គីឡូ|ungegn|0|5 ; ហិឡូ|fallback|0|5
 hello?	hello|english|0|5 ; ហេតុ|spelling|0|5 ; គីឡូ|ungegn|0|5 ; ហិឡូ|fallback|0|5
 jg tov 	ទៅ|pronunciation|3|6 ; នៅ|pronunciation|3|6 ; តទៅ|minor|3|6 ; ធ្វើ|consonants|3|6 ; ត្រូវ|ungegn|3|6
-jg tov n	ទៅ|pronunciation|3|8 ; ទន់|spelling|3|8 ; តវ៉ា|pronunciation|3|8 ; តោន|pronunciation|3|8 ; ធន់|pronunciation|3|8
+jg tov n	ទៅ|pronunciation|3|8 ; ទាន់|curated|3|8 ; ទន់|spelling|3|8 ; តវ៉ា|pronunciation|3|8 ; តោន|pronunciation|3|8
 jg tov na	ណា|pronunciation|7|9 ; អ្នក|completion|7|9 ; ណ|spelling|7|9 ; ណាស់|pronunciation|7|9 ; ណាមួយ|completion|7|9
 sous dey bong, sok sabay te?	ទេ|curated|25|27 ; តែ|ungegn|25|27 ; ទី|pronunciation|25|27 ; តេ|pronunciation|25|27 ; តើ|pronunciation|25|27
 nham bai 	បៃ|spelling|5|8 ; បាយ|pronunciation|5|8 ; បាន|pronunciation|5|8 ; ប|spelling|5|8 ; បាទ|curated|5|8
@@ -1303,19 +1303,19 @@ jam t	ចន្ទ|spelling|0|5 ; ច័ន្ទ|spelling|0|5 ; ចំ|spelling
 jam ti	ទី|pronunciation|4|6 ; ទេ|curated|4|6 ; តែ|curated|4|6 ; ទឹក|completion|4|6 ; ទើប|completion|4|6
 jam tic	បន្តិច|curated|4|7 ; តេជោ|completion|4|7 ; តិច|pronunciation|4|7 ; តិចតួច|completion|4|7 ; ទី|pronunciation|4|7
 sar	សារ|spelling|0|3 ; ស|spelling|0|3 ; សរ|spelling|0|3 ; សា|pronunciation|0|3 ; សហ|spelling|0|3
-sart	សត្វ|pronunciation|0|4 ; ស្អាត|pronunciation|0|4 ; សាធារណៈ|completion|0|4 ; សារធាតុ|completion|0|4 ; សត្រូវ|completion|0|4
-sart 	សត្វ|pronunciation|0|4 ; ស្អាត|pronunciation|0|4 ; សារ|spelling|0|4 ; ស|spelling|0|4 ; កាត់|pronunciation|0|4
-sart n	សត្វ|pronunciation|0|6 ; ស្អាត|pronunciation|0|6 ; សាន|pronunciation|0|6 ; សាន់|pronunciation|0|6 ; ស្ថាន|pronunciation|0|6
+sart	ស្អាត|curated|0|4 ; សត្វ|pronunciation|0|4 ; សាធារណៈ|completion|0|4 ; សារធាតុ|completion|0|4 ; សត្រូវ|completion|0|4
+sart 	ស្អាត|curated|0|4 ; សត្វ|pronunciation|0|4 ; សារ|spelling|0|4 ; ស|spelling|0|4 ; កាត់|pronunciation|0|4
+sart n	ស្អាត|curated|0|6 ; សត្វ|pronunciation|0|6 ; សាន|pronunciation|0|6 ; សាន់|pronunciation|0|6 ; ស្ថាន|pronunciation|0|6
 sart na	ណា|pronunciation|5|7 ; អ្នក|completion|5|7 ; ណ|spelling|5|7 ; ណាស់|pronunciation|5|7 ; ណាមួយ|completion|5|7
 sart nas	ណាស់|spelling|5|8 ; ណា|pronunciation|5|8 ; ណ|spelling|5|8 ; នរណា|minor|5|8 ; nas|typed|5|8
 pj	ភ្ជាប់|completion|0|2 ; បច្ចុប្បន្ន|completion|0|2 ; បច្ចេកទេស|completion|0|2 ; ពេជ្រ|completion|0|2 ; ពិចារណា|completion|0|2
-pjo	បច្ចុប្បន្ន|completion|0|3 ; ភ្ជុំបិណ្ឌ|completion|0|3 ; ព|spelling|0|3 ; បច្ចុប្បន្នភាព|completion|0|3 ; ប្រុស|pronunciation|0|3
-pjos	ប្រុស|spelling|0|4 ; ព្រោះ|pronunciation|0|4 ; ព|pronunciation|0|4 ; ចុះ|pronunciation|0|4 ; ផុស|spelling|0|4
-pjos 	ប្រុស|spelling|0|4 ; ព្រោះ|pronunciation|0|4 ; ព|pronunciation|0|4 ; ចុះ|pronunciation|0|4 ; ផុស|spelling|0|4
+pjo	បច្ចុប្បន្ន|completion|0|3 ; ភ្ជុំបិណ្ឌ|completion|0|3 ; ចុះ|curated|0|3 ; ព|spelling|0|3 ; បច្ចុប្បន្នភាព|completion|0|3
+pjos	ចុះ|curated|0|4 ; ប្រុស|spelling|0|4 ; ព្រោះ|pronunciation|0|4 ; ព|pronunciation|0|4 ; ផុស|spelling|0|4
+pjos 	ចុះ|curated|0|4 ; ប្រុស|spelling|0|4 ; ព្រោះ|pronunciation|0|4 ; ព|pronunciation|0|4 ; ផុស|spelling|0|4
 pjos t	ទៀត|consonants|5|6 ; អតីត|consonants|5|6 ; អាទិត្យ|consonants|5|6 ; តេស្ត|consonants|5|6 ; ទោស|consonants|5|6
 pjos to	ទៅ|ungegn|5|7 ; ទ|spelling|5|7 ; តុ|spelling|5|7 ; ទទួល|completion|5|7 ; ត|pronunciation|5|7
-pjos tom	ធំ|pronunciation|5|8 ; ទំ|pronunciation|5|8 ; ធម៌|spelling|5|8 ; ទំព័រ|completion|5|8 ; ទំហំ|completion|5|8
-pjos toml	ទម្លាប់|completion|5|9 ; ទម្លាក់|completion|5|9 ; ទម្លាយ|completion|5|9 ; ទល់|spelling|5|9 ; ធំ|pronunciation|5|9
+pjos tom	ធំ|pronunciation|5|8 ; ទៅ|ungegn|5|8 ; ទំ|pronunciation|5|8 ; ធម៌|spelling|5|8 ; ទំព័រ|completion|5|8
+pjos toml	មើល|consonants|7|9 ; មូលដ្ឋាន|completion|7|9 ; អ៊ីមែល|consonants|7|9 ; មូលហេតុ|completion|7|9 ; អ៊ីម៉ែល|consonants|7|9
 pjos tomla	តុលា|pronunciation|5|10 ; ទំឡា|fallback|5|10 ; tomla|typed|5|10
 pjos tomlai	តម្លៃ|pronunciation|5|11 ; ទម្លាយ|spelling|5|11 ; តំលៃ|pronunciation|5|11 ; ទំល័យ|fallback|5|11 ; tomlai|typed|5|11
 pjos tomlai 	តម្លៃ|pronunciation|5|11 ; ទម្លាយ|spelling|5|11 ; តំលៃ|pronunciation|5|11 ; ទំល័យ|fallback|5|11 ; tomlai|typed|5|11
@@ -1325,7 +1325,7 @@ pjos tomlai ban	បាន|pronunciation|12|15 ; ប័ណ្ណ|pronunciation|12
 pjos tomlai ban 	បាន|pronunciation|12|15 ; ប័ណ្ណ|pronunciation|12|15 ; បណ្ណ|pronunciation|12|15 ; បន្ត|spelling|12|15 ; កាន់|pronunciation|12|15
 pjos tomlai ban t	បន្ត|spelling|12|17 ; បន្ថែម|completion|12|17 ; បន្ទាប់|completion|12|17 ; បន្ថយ|completion|12|17 ; បន្ទប់|completion|12|17
 pjos tomlai ban te	ទេ|curated|16|18 ; តែ|ungegn|16|18 ; ទិញ|completion|16|18 ; ទី|pronunciation|16|18 ; តេ|pronunciation|16|18
-je	ចេញ|completion|0|2 ; ចិន|completion|0|2 ; ជើង|completion|0|2 ; ចិត្ត|completion|0|2 ; ជិត|completion|0|2
+je	ចេះ|curated|0|2 ; ចេញ|completion|0|2 ; ចិន|completion|0|2 ; ជើង|completion|0|2 ; ចិត្ត|completion|0|2
 jea	ជា|pronunciation|0|3 ; ជាតិ|completion|0|3 ; ជាង|completion|0|3 ; ជាមួយ|completion|0|3 ; ឈាម|completion|0|3
 jea 	ជា|pronunciation|0|3 ; ជះ|pronunciation|0|3 ; ចៀស|pronunciation|0|3 ; jea|typed|0|3
 jea m	ជាមួយ|completion|0|5 ; ឈាម|pronunciation|0|5 ; ជាមួយនឹង|completion|0|5 ; ជាមុន|completion|0|5 ; ជាមួយគ្នា|completion|0|5
@@ -1355,17 +1355,17 @@ tv sa	ស|spelling|3|5 ; សារ|pronunciation|3|5 ; សា|pronunciation|3|5 
 tv sal	សល់|spelling|3|6 ; សាល|pronunciation|3|6 ; សាលា|completion|3|6 ; ដល់|spelling|3|6 ; សាលារៀន|completion|3|6
 tv sala	សាលា|pronunciation|3|7 ; សាលារៀន|completion|3|7 ; សាលាដំបូង|completion|3|7 ; សល់|spelling|3|7 ; សហ|pronunciation|3|7
 nh 	ខ្ញុំ|curated|0|2 ; នេះ|consonants|0|2 ; នោះ|consonants|0|2 ; ណាស់|consonants|0|2 ; នៃ|consonants|0|2
-nh s	សរសើរ|consonants|3|4 ; សិស្ស|consonants|3|4 ; ឧស្សាហ៍|consonants|3|4 ; s|typed|3|4
+nh s	សង្សារ|curated|3|4 ; សរសើរ|consonants|3|4 ; សិស្ស|consonants|3|4 ; ឧស្សាហ៍|consonants|3|4 ; s|typed|3|4
 nh so	សូម|completion|3|5 ; ស|pronunciation|3|5 ; សូ|ungegn|3|5 ; សួរ|pronunciation|3|5 ; សោះ|pronunciation|3|5
 nh sok	សុខ|pronunciation|3|6 ; សក់|pronunciation|3|6 ; សុក្រ|pronunciation|3|6 ; សូម|ungegn|3|6 ; សុខភាព|completion|3|6
 nh sok 	សុខ|pronunciation|3|6 ; សក់|pronunciation|3|6 ; សុក្រ|pronunciation|3|6 ; សូម|ungegn|3|6 ; មក|pronunciation|3|6
 nh sok s	សោកស្តាយ|completion|3|8 ; សុខសប្បាយ|completion|3|8 ; សុខ|pronunciation|3|8 ; សក់|pronunciation|3|8 ; សុក្រ|pronunciation|3|8
 nh sok sb	សប្តាហ៍|completion|7|9 ; ស្បែក|completion|7|9 ; សប្បាយ|completion|7|9 ; សុបិន|completion|7|9 ; សាប៊ូ|consonants|7|9
-nh sok sba	សប្បាយ|completion|7|10 ; របស់|minor|7|10 ; សំបក|completion|7|10 ; ស|spelling|7|10 ; ប|spelling|7|10
-nh sok sbay	សប្បាយ|minor|7|11 ; បាយ|pronunciation|7|11 ; ស្វាយ|pronunciation|7|11 ; សាយ|pronunciation|7|11 ; ស្តាយ|pronunciation|7|11
+nh sok sba	សុខសប្បាយ|completion|3|10
+nh sok sbay	សុខសប្បាយ|curated|3|11 ; សោកស្តាយ|pronunciation|3|11
 jg tv	ទៅ|curated|3|5 ; ធ្វើ|consonants|3|5 ; ធ្វើការ|completion|3|5 ; ធ្វើឱ្យ|completion|3|5 ; ថវិកា|completion|3|5
 jg tv 	ទៅ|curated|3|5 ; ធ្វើ|consonants|3|5 ; តវ៉ា|consonants|3|5 ; ទ្វារ|consonants|3|5 ; ទិវា|consonants|3|5
-jg tv n	ទៅ|curated|3|7 ; តៃវ៉ាន់|consonants|3|7 ; ធ្វើ|pronunciation|3|7 ; ធ្វើការ|consonants|3|7 ; ទាន់|pronunciation|3|7
+jg tv n	ទៅ|curated|3|7 ; តៃវ៉ាន់|consonants|3|7 ; ធ្វើ|pronunciation|3|7 ; ធ្វើការ|consonants|3|7 ; ទាន់|curated|3|7
 jg tv na	ណា|pronunciation|6|8 ; អ្នក|completion|6|8 ; ណ|spelling|6|8 ; ណាស់|pronunciation|6|8 ; ណាមួយ|completion|6|8
 yy	និយាយ|curated|0|2 ; យាយ|consonants|0|2 ; yy|typed|0|2
 yy 	និយាយ|curated|0|2 ; យាយ|consonants|0|2 ; yy|typed|0|2
@@ -1413,7 +1413,7 @@ pleang	ភ្លៀង|pronunciation|0|6 ; ភ្លៀងធ្លាក់|com
 pleang 	ភ្លៀង|pronunciation|0|6 ; ភ្លើង|pronunciation|0|6 ; ភ្លាម|pronunciation|0|6 ; លាង|pronunciation|0|6 ; ផ្ទាំង|pronunciation|0|6
 pleang h	ភ្លៀង|pronunciation|0|8
 pleang hz	ហើយ|curated|7|9 ; hz|typed|7|9
-tv n	តៃវ៉ាន់|consonants|0|4 ; ទៅ|curated|0|4 ; ធ្វើ|pronunciation|0|4 ; ទាន់|pronunciation|0|4 ; ធ្វើការ|consonants|0|4
+tv n	តៃវ៉ាន់|consonants|0|4 ; ទៅ|curated|0|4 ; ទាន់|curated|0|4 ; ធ្វើ|pronunciation|0|4 ; ធ្វើការ|consonants|0|4
 tv nh	ខ្ញុំ|curated|3|5 ; នេះ|consonants|3|5 ; នោះ|consonants|3|5 ; ណាស់|consonants|3|5 ; នៃ|consonants|3|5
 tv nha	ទៅវិញ|consonants|0|6 ; តវ៉ា|minor|0|6
 tv nham	ញ៉ាំ|curated|3|7 ; ខ្ញុំ|curated|3|7 ; តាម|pronunciation|3|7 ; ចំ|spelling|3|7 ; ចាំ|pronunciation|3|7
@@ -1424,20 +1424,20 @@ tv nham bay	បាយ|pronunciation|8|11 ; បៃ|pronunciation|8|11 ; បាន
 pit	ពិត|spelling|0|3 ; ពិធី|completion|0|3 ; ភេទ|pronunciation|0|3 ; ពិតជា|completion|0|3 ; ពេទ្យ|pronunciation|0|3
 pit 	ពិត|spelling|0|3 ; ភេទ|pronunciation|0|3 ; ពេទ្យ|pronunciation|0|3 ; ពី|pronunciation|0|3 ; គិត|spelling|0|3
 pit j	ពិតជា|completion|0|5 ; ពិត|spelling|0|5 ; ពិធី|pronunciation|0|5 ; ពេទ្យ|spelling|0|5 ; ភេទ|pronunciation|0|5
-pit je	ពិធី|pronunciation|0|6 ; ពិតជា|spelling|0|6
+pit je	ចេះ|curated|4|6 ; ចេញ|completion|4|6 ; ចិន|completion|4|6 ; ជើង|completion|4|6 ; ចិត្ត|completion|4|6
 pit jea	ពិតជា|spelling|0|7
 pit jea 	ពិតជា|spelling|0|7
 pit jea s	ពិតជា|spelling|0|9
 pit jea sa	ស|spelling|8|10 ; សារ|pronunciation|8|10 ; សា|pronunciation|8|10 ; សត្វ|completion|8|10 ; សម្រាប់|completion|8|10
 pit jea sar	សារ|spelling|8|11 ; ស|spelling|8|11 ; សរ|spelling|8|11 ; សា|pronunciation|8|11 ; សហ|spelling|8|11
-pit jea sart	សត្វ|pronunciation|8|12 ; ស្អាត|pronunciation|8|12 ; សាធារណៈ|completion|8|12 ; សារធាតុ|completion|8|12 ; សត្រូវ|completion|8|12
-pit jea sart 	សត្វ|pronunciation|8|12 ; ស្អាត|pronunciation|8|12 ; សារ|spelling|8|12 ; ស|spelling|8|12 ; កាត់|pronunciation|8|12
-pit jea sart n	សត្វ|pronunciation|8|14 ; ស្អាត|pronunciation|8|14 ; សាន|pronunciation|8|14 ; សាន់|pronunciation|8|14 ; ស្ថាន|pronunciation|8|14
+pit jea sart	ស្អាត|curated|8|12 ; សត្វ|pronunciation|8|12 ; សាធារណៈ|completion|8|12 ; សារធាតុ|completion|8|12 ; សត្រូវ|completion|8|12
+pit jea sart 	ស្អាត|curated|8|12 ; សត្វ|pronunciation|8|12 ; សារ|spelling|8|12 ; ស|spelling|8|12 ; កាត់|pronunciation|8|12
+pit jea sart n	ស្អាត|curated|8|14 ; សត្វ|pronunciation|8|14 ; សាន|pronunciation|8|14 ; សាន់|pronunciation|8|14 ; ស្ថាន|pronunciation|8|14
 pit jea sart na	ណា|pronunciation|13|15 ; អ្នក|completion|13|15 ; ណ|spelling|13|15 ; ណាស់|pronunciation|13|15 ; ណាមួយ|completion|13|15
 pit jea sart nas	ណាស់|spelling|13|16 ; ណា|pronunciation|13|16 ; ណ|spelling|13|16 ; នរណា|minor|13|16 ; nas|typed|13|16
-co	ជួយ|completion|0|2 ; ជន|completion|0|2 ; ចុះ|pronunciation|0|2 ; ចូល|completion|0|2 ; ចង់|completion|0|2
-cof	កាហ្វេ|completion|0|3 ; ចង់|curated|0|3 ; ជន|spelling|0|3 ; ចុះ|pronunciation|0|3 ; ចូល|ungegn|0|3
-coff	កាហ្វេ|completion|0|4 ; ចង់|curated|0|4 ; ចូល|pronunciation|0|4 ; ជន|pronunciation|0|4 ; ចុះ|pronunciation|0|4
+co	ចុះ|curated|0|2 ; ជួយ|completion|0|2 ; ជន|completion|0|2 ; ចូល|completion|0|2 ; ចង់|completion|0|2
+cof	កាហ្វេ|completion|0|3 ; ចង់|curated|0|3 ; ចុះ|curated|0|3 ; ជន|spelling|0|3 ; ចូល|ungegn|0|3
+coff	កាហ្វេ|completion|0|4 ; ចង់|curated|0|4 ; ចុះ|curated|0|4 ; ចូល|pronunciation|0|4 ; ជន|pronunciation|0|4
 coffe	កាហ្វេ|curated|0|5 ; ចុះហ្វេស|fallback|0|5 ; coffe|typed|0|5
 coffee	កាហ្វេ|curated|0|6 ; ចុះហ្វេស|fallback|0|6 ; coffee|typed|0|6
 somtu	សុំទោស|pronunciation|0|5 ; សំណួរ|pronunciation|0|5 ; សម្បូរ|pronunciation|0|5 ; សំបូរ|pronunciation|0|5 ; សន្ទុះ|pronunciation|0|5
@@ -1476,9 +1476,9 @@ nh klean bay 	បាយ|pronunciation|9|12 ; បៃ|pronunciation|9|12 ; បា�
 nh klean bay h	បាយ|pronunciation|9|14 ; បៃ|pronunciation|9|14
 nh klean bay hz	ហើយ|curated|13|15 ; hz|typed|13|15
 ot tor	ទៅ|ungegn|3|6 ; ត|pronunciation|3|6 ; ទ|pronunciation|3|6 ; ធ|pronunciation|3|6 ; តុ|spelling|3|6
-ot torn	ទន់|spelling|3|7 ; តោន|pronunciation|3|7 ; ទន្លេ|completion|3|7 ; ធន់|pronunciation|3|7 ; ធនាគារ|completion|3|7
-ot torn 	ទន់|spelling|3|7 ; តោន|pronunciation|3|7 ; ធន់|pronunciation|3|7 ; ទុន|pronunciation|3|7 ; ធុន|pronunciation|3|7
-ot torn t	ធនធាន|completion|3|9 ; ទន្ទឹម|completion|3|9 ; ធនធានទឹក|completion|3|9 ; ទន់|spelling|3|9 ; ថត|pronunciation|3|9
+ot torn	ទាន់|curated|3|7 ; ទន់|spelling|3|7 ; តោន|pronunciation|3|7 ; ទន្លេ|completion|3|7 ; ធន់|pronunciation|3|7
+ot torn 	ទាន់|curated|3|7 ; ទន់|spelling|3|7 ; តោន|pronunciation|3|7 ; ធន់|pronunciation|3|7 ; ទុន|pronunciation|3|7
+ot torn t	ធនធាន|completion|3|9 ; ទន្ទឹម|completion|3|9 ; ទាន់|curated|3|9 ; ធនធានទឹក|completion|3|9 ; ទន់|spelling|3|9
 ot torn te	ទេ|curated|8|10 ; តែ|ungegn|8|10 ; ទី|pronunciation|8|10 ; តេ|pronunciation|8|10 ; ទឹក|completion|8|10
 ot j	អត់|curated|0|4 ; តូច|ungegn|0|4 ; ពិតជា|consonants|0|4 ; ទូច|pronunciation|0|4 ; តេជោ|consonants|0|4
 ot ja	ចង់|completion|3|5 ; ចាប់|completion|3|5 ; ចាក់|completion|3|5 ; ចំពោះ|completion|3|5 ; ចំ|completion|3|5
@@ -1487,11 +1487,11 @@ ot jam 	ចំ|spelling|3|6 ; ចាំ|pronunciation|3|6 ; តាម|pronunciat
 ot jam t	ចន្ទ|spelling|3|8 ; ច័ន្ទ|spelling|3|8 ; ចំ|spelling|3|8 ; ចាំ|pronunciation|3|8 ; ចាត់|pronunciation|3|8
 ot jam te	ទេ|curated|7|9 ; តែ|ungegn|7|9 ; ទី|pronunciation|7|9 ; តេ|pronunciation|7|9 ; ទឹក|completion|7|9
 sok sb	សប្តាហ៍|completion|4|6 ; ស្បែក|completion|4|6 ; សប្បាយ|completion|4|6 ; សុបិន|completion|4|6 ; សាប៊ូ|consonants|4|6
-sok sba	សប្បាយ|completion|4|7 ; របស់|minor|4|7 ; សំបក|completion|4|7 ; ស|spelling|4|7 ; ប|spelling|4|7
-sok sbay	សប្បាយ|minor|4|8 ; បាយ|pronunciation|4|8 ; ស្វាយ|pronunciation|4|8 ; សាយ|pronunciation|4|8 ; ស្តាយ|pronunciation|4|8
-sok sbay 	សប្បាយ|minor|4|8 ; បាយ|pronunciation|4|8 ; ស្វាយ|pronunciation|4|8 ; សាយ|pronunciation|4|8 ; ស្តាយ|pronunciation|4|8
-sok sbay j	សប្បាយ|minor|4|10
-sok sbay je	ចេញ|completion|9|11 ; ចិន|completion|9|11 ; ជើង|completion|9|11 ; ចិត្ត|completion|9|11 ; ជិត|completion|9|11
+sok sba	សុខសប្បាយ|completion|0|7
+sok sbay	សុខសប្បាយ|curated|0|8 ; សោកស្តាយ|pronunciation|0|8
+sok sbay 	សុខសប្បាយ|curated|0|8 ; សោកស្តាយ|pronunciation|0|8
+sok sbay j	សុខសប្បាយ|curated|0|10
+sok sbay je	ចេះ|curated|9|11 ; ចេញ|completion|9|11 ; ចិន|completion|9|11 ; ជើង|completion|9|11 ; ចិត្ត|completion|9|11
 sok sbay jea	ជា|pronunciation|9|12 ; ជាតិ|completion|9|12 ; ជាង|completion|9|12 ; ជាមួយ|completion|9|12 ; ឈាម|completion|9|12
 sok sbay jea 	ជា|pronunciation|9|12 ; ជះ|pronunciation|9|12 ; ចៀស|pronunciation|9|12 ; jea|typed|9|12
 sok sbay jea t	ជាតិ|pronunciation|9|14 ; ជាទី|completion|9|14 ; ជាទូទៅ|completion|9|14 ; ជាតិសាសន៍|completion|9|14 ; ជាធម្មតា|completion|9|14
@@ -1508,15 +1508,15 @@ som apei 	អ្វី|curated|4|8 ; អត់អី|spelling|4|8 ; ភ័យ|pr
 som apei t	អភ័យទោស|completion|4|10 ; អតីត|spelling|4|10
 som apei tu	អភ័យទោស|pronunciation|4|11
 som apei tus	អភ័យទោស|spelling|4|12
-ot je	ចេញ|completion|3|5 ; ចិន|completion|3|5 ; ជើង|completion|3|5 ; ចិត្ត|completion|3|5 ; ជិត|completion|3|5
-ot jes	ចេះ|pronunciation|3|6 ; ជឿ|pronunciation|3|6 ; ឈើ|pronunciation|3|6 ; ឈឺ|pronunciation|3|6 ; ជិះ|pronunciation|3|6
-ot jes 	ចេះ|pronunciation|3|6 ; ជឿ|pronunciation|3|6 ; ឈើ|pronunciation|3|6 ; ឈឺ|pronunciation|3|6 ; ជិះ|pronunciation|3|6
-ot jes t	តេស្ត|spelling|3|8 ; ចិត្ត|spelling|3|8 ; ជិត|pronunciation|3|8
+ot je	ចេះ|curated|3|5 ; ចេញ|completion|3|5 ; ចិន|completion|3|5 ; ជើង|completion|3|5 ; ចិត្ត|completion|3|5
+ot jes	ចេះ|curated|3|6 ; ជឿ|pronunciation|3|6 ; ឈើ|pronunciation|3|6 ; ឈឺ|pronunciation|3|6 ; ជិះ|pronunciation|3|6
+ot jes 	ចេះ|curated|3|6 ; ជឿ|pronunciation|3|6 ; ឈើ|pronunciation|3|6 ; ឈឺ|pronunciation|3|6 ; ជិះ|pronunciation|3|6
+ot jes t	ទៀត|consonants|7|8 ; អតីត|consonants|7|8 ; អាទិត្យ|consonants|7|8 ; តេស្ត|consonants|7|8 ; ទោស|consonants|7|8
 ot jes te	ទេ|curated|7|9 ; តែ|ungegn|7|9 ; ទី|pronunciation|7|9 ; តេ|pronunciation|7|9 ; ទឹក|completion|7|9
 nham bay hz	ហើយ|curated|9|11 ; hz|typed|9|11
 nham bay hz 	ហើយ|curated|9|11 ; hz|typed|9|11
 nham bay hz n	ហើយ|curated|9|13 ; ហ៊ុន|pronunciation|9|13 ; ហ៊ាន|pronunciation|9|13 ; ហ្វេន|consonants|9|13
-nham bay hz nv	នៅ|consonants|12|14 ; នៅពេល|completion|12|14 ; នូវ|consonants|12|14 ; នៅលើ|completion|12|14 ; នៅតែ|completion|12|14
+nham bay hz nv	នៅ|curated|12|14 ; នៅពេល|completion|12|14 ; នូវ|consonants|12|14 ; នៅលើ|completion|12|14 ; នៅតែ|completion|12|14
 nh m	ញ៉ាំ|consonants|0|4 ; និយម|consonants|0|4 ; ញញឹម|consonants|0|4
 nh mo	មក|curated|3|5 ; ម|spelling|3|5 ; មួយ|completion|3|5 ; មុន|completion|3|5 ; មុខ|completion|3|5
 nh mor	មក|curated|3|6 ; ម|pronunciation|3|6 ; ម៉ូ|pronunciation|3|6 ; ម៉ៅ|spelling|3|6 ; mor|typed|3|6
@@ -1581,14 +1581,14 @@ nh rvol tic	បន្តិច|curated|8|11 ; តេជោ|completion|8|11 ; ត
 men	មិន|pronunciation|0|3 ; មែន|ungegn|0|3 ; ម៉ឺន|pronunciation|0|3 ; ម៉ែន|ungegn|0|3 ; មីន|pronunciation|0|3
 men 	មិន|pronunciation|0|3 ; មែន|ungegn|0|3 ; ម៉ឺន|pronunciation|0|3 ; ម៉ែន|ungegn|0|3 ; មីន|pronunciation|0|3
 men d	មិនដែល|completion|0|5 ; មិន|curated|0|5 ; មែន|ungegn|0|5 ; ម៉ឺន|pronunciation|0|5 ; ម៉ែន|ungegn|0|5
-men dg	ដឹង|consonants|4|6 ; ដឹងថា|completion|4|6 ; ដង|consonants|4|6 ; ដឹកនាំ|completion|4|6 ; ដួង|consonants|4|6
-men dg 	ដឹង|consonants|4|6 ; ដង|consonants|4|6 ; ដួង|consonants|4|6 ; ដាក់|consonants|4|6 ; ដូង|consonants|4|6
-men dg t	ដឹងថា|consonants|4|8 ; ដឹងទេ|consonants|4|8 ; ដឹង|consonants|4|8 ; ដកហូត|consonants|4|8 ; ដុត|pronunciation|4|8
+men dg	ដឹង|curated|4|6 ; ដឹងថា|completion|4|6 ; ដង|consonants|4|6 ; ដឹកនាំ|completion|4|6 ; ដួង|consonants|4|6
+men dg 	ដឹង|curated|4|6 ; ដង|consonants|4|6 ; ដួង|consonants|4|6 ; ដាក់|consonants|4|6 ; ដូង|consonants|4|6
+men dg t	ដឹងថា|consonants|4|8 ; ដឹង|curated|4|8 ; ដឹងទេ|consonants|4|8 ; ដកហូត|consonants|4|8 ; ដុត|pronunciation|4|8
 men dg te	ទេ|curated|7|9 ; តែ|ungegn|7|9 ; ទី|pronunciation|7|9 ; តេ|pronunciation|7|9 ; ទឹក|completion|7|9
 tv nham c	ញ៉ាំ|curated|3|9
-tv nham co	ជួយ|completion|8|10 ; ជន|completion|8|10 ; ចុះ|pronunciation|8|10 ; ចូល|completion|8|10 ; ចង់|completion|8|10
-tv nham cof	កាហ្វេ|completion|8|11 ; ចង់|curated|8|11 ; ជន|spelling|8|11 ; ចុះ|pronunciation|8|11 ; ចូល|ungegn|8|11
-tv nham coff	កាហ្វេ|completion|8|12 ; ចង់|curated|8|12 ; ចូល|pronunciation|8|12 ; ជន|pronunciation|8|12 ; ចុះ|pronunciation|8|12
+tv nham co	ចុះ|curated|8|10 ; ជួយ|completion|8|10 ; ជន|completion|8|10 ; ចូល|completion|8|10 ; ចង់|completion|8|10
+tv nham cof	កាហ្វេ|completion|8|11 ; ចង់|curated|8|11 ; ចុះ|curated|8|11 ; ជន|spelling|8|11 ; ចូល|ungegn|8|11
+tv nham coff	កាហ្វេ|completion|8|12 ; ចង់|curated|8|12 ; ចុះ|curated|8|12 ; ចូល|pronunciation|8|12 ; ជន|pronunciation|8|12
 tv nham coffe	កាហ្វេ|curated|8|13 ; ចុះហ្វេស|fallback|8|13 ; coffe|typed|8|13
 tv nham coffee	កាហ្វេ|curated|8|14 ; ចុះហ្វេស|fallback|8|14 ; coffee|typed|8|14
 tv nham coffee 	កាហ្វេ|curated|8|14 ; ចុះហ្វេស|fallback|8|14 ; coffee|typed|8|14
@@ -1599,15 +1599,15 @@ jam te 	ទេ|curated|4|6 ; តែ|ungegn|4|6 ; ទី|pronunciation|4|6 ; ត�
 jam te t	ទីតាំង|completion|4|8 ; ថែទាំ|completion|4|8 ; ទេ|curated|4|8 ; ទៀត|pronunciation|4|8 ; ទិដ្ឋភាព|completion|4|8
 jam te tv	ទៅ|curated|7|9 ; ធ្វើ|consonants|7|9 ; ធ្វើការ|completion|7|9 ; ធ្វើឱ្យ|completion|7|9 ; ថវិកា|completion|7|9
 jam te tv 	ទៅ|curated|7|9 ; ធ្វើ|consonants|7|9 ; តវ៉ា|consonants|7|9 ; ទ្វារ|consonants|7|9 ; ទិវា|consonants|7|9
-jam te tv v	ទៅ|curated|7|11 ; ធ្វើ|completion|7|11 ; ធ្វើការ|completion|7|11 ; ធ្វើឱ្យ|completion|7|11 ; ថវិកា|completion|7|11
-jam te tv vi	ធ្វើ|pronunciation|7|12 ; ធ្វើការ|completion|7|12 ; ធ្វើឱ្យ|completion|7|12 ; ថវិកា|completion|7|12 ; ធ្វើជា|completion|7|12
+jam te tv v	ទៅ|curated|7|11 ; ធ្វើ|pronunciation|7|11 ; ត្រូវ|consonants|7|11 ; ធ្វើការ|consonants|7|11 ; ទ្វេ|pronunciation|7|11
+jam te tv vi	វី|pronunciation|10|12 ; អ្វី|completion|10|12 ; វិញ|completion|10|12 ; វ័យ|completion|10|12 ; វិធី|completion|10|12
 jam te tv vin	វេន|pronunciation|10|13 ; មិន|curated|10|13 ; វិនិយោគ|completion|10|13 ; វិន័យ|completion|10|13 ; វិនាទី|completion|10|13
 jam te tv vinh	វិញ|spelling|10|14 ; ទិញ|spelling|10|14 ; វិញ្ញាណ|completion|10|14 ; ចេញ|pronunciation|10|14 ; វី|pronunciation|10|14
 chm	ជាមួយ|completion|0|3 ; ចំនួន|completion|0|3 ; ឈ្មោះ|completion|0|3 ; ចំពោះ|completion|0|3 ; ជំងឺ|completion|0|3
 chmo	ឈ្មោះ|pronunciation|0|4 ; ឈ្មួញ|completion|0|4 ; មក|curated|0|4 ; ចំ|pronunciation|0|4 ; ចុះ|pronunciation|0|4
 chmou	ឈ្មោះ|pronunciation|0|5 ; ឈ្មួញ|completion|0|5 ; មក|curated|0|5 ; ចុះ|pronunciation|0|5 ; ចូរ|pronunciation|0|5
-chmous	ឈ្មោះ|pronunciation|0|6 ; មក|curated|0|6 ; ចុះ|pronunciation|0|6 ; ចូរ|pronunciation|0|6 ; ច|pronunciation|0|6
-chmous 	ឈ្មោះ|pronunciation|0|6 ; មក|curated|0|6 ; ចុះ|pronunciation|0|6 ; ចូរ|pronunciation|0|6 ; ច|pronunciation|0|6
+chmous	ឈ្មោះ|pronunciation|0|6 ; មក|curated|0|6 ; ចុះ|curated|0|6 ; ចូរ|pronunciation|0|6 ; ច|pronunciation|0|6
+chmous 	ឈ្មោះ|pronunciation|0|6 ; មក|curated|0|6 ; ចុះ|curated|0|6 ; ចូរ|pronunciation|0|6 ; ច|pronunciation|0|6
 chmous a	អា|pronunciation|7|8 ; អ|spelling|7|8 ; អារ|pronunciation|7|8 ; អស់|spelling|7|8 ; a|typed|7|8
 chmous av	អាវ|pronunciation|7|9 ; ឳ|pronunciation|7|9 ; អ្វី|completion|7|9 ; អាវុធ|completion|7|9 ; អវកាស|completion|7|9
 chmous ave	អ្វី|completion|7|10 ; ធ្វើ|pronunciation|7|10 ; អវិជ្ជមាន|completion|7|10 ; អាវ|pronunciation|7|10 ; វី|pronunciation|7|10
@@ -1616,9 +1616,9 @@ chmous avey 	អ្វី|curated|7|11 ; វ័យ|pronunciation|7|11 ; កៅ�
 chmous avey d	អ្វី|curated|7|13
 chmous avey da	ដ៏|spelling|12|14 ; ដ|spelling|12|14 ; ដល់|completion|12|14 ; ដា|pronunciation|12|14 ; ដាក់|completion|12|14
 chmous avey dae	ដែល|completion|12|15 ; ដែរ|pronunciation|12|15 ; ដើរ|pronunciation|12|15 ; ដឹង|completion|12|15 ; ដី|completion|12|15
-jam m	ចំពោះ|completion|0|5 ; ចំនួន|completion|0|5 ; ចំណុច|completion|0|5 ; ចំណែក|completion|0|5 ; ចំណាយ|completion|0|5
+jam m	ចំ|spelling|0|5 ; ចាំ|pronunciation|0|5
 jam me	មេ|pronunciation|4|6 ; មិន|completion|4|6 ; ម៉ែ|ungegn|4|6 ; មើល|completion|4|6 ; ម៉ឺន|completion|4|6
-jam mer	ចំ|spelling|0|7 ; ចាំ|pronunciation|0|7 ; ចាប់ពី|pronunciation|0|7
+jam mer	មេ|pronunciation|4|7 ; ម៉ែ|ungegn|4|7 ; មេរោគ|completion|4|7 ; មី|pronunciation|4|7 ; មេរៀន|completion|4|7
 jam merl	មើល|pronunciation|4|8 ; មើលទៅ|completion|4|8 ; មើលឃើញ|completion|4|8 ; មើលថែ|completion|4|8 ; ដែល|ungegn|4|8
 jam merl 	មើល|pronunciation|4|8 ; ដែល|ungegn|4|8 ; មិន|curated|4|8 ; ពេល|pronunciation|4|8 ; ម៉ឺន|pronunciation|4|8
 jam merl s	មើល|pronunciation|4|10 ; ម៉ាឡេស៊ី|consonants|4|10
@@ -1644,13 +1644,13 @@ phseng phse	ផ្សេង|completion|7|11 ; ផ្សិត|completion|7|11 ; 
 phseng phsen	ផ្សេង|spelling|7|12 ; សែន|ungegn|7|12 ; ផ្សិត|spelling|7|12 ; ផែន|pronunciation|7|12 ; សិន|pronunciation|7|12
 phseng phseng	ផ្សេង|spelling|7|13 ; ភ្លើង|spelling|7|13 ; ប្រេង|pronunciation|7|13 ; ប្តឹង|pronunciation|7|13 ; ផ្សិត|spelling|7|13
 tou	ទៅ|ungegn|0|3 ; ទោ|pronunciation|0|3 ; ទទួល|completion|0|3 ; ត|pronunciation|0|3 ; តូ|pronunciation|0|3
-touc	តូច|pronunciation|0|4 ; ទៅជា|completion|0|4 ; ទូច|pronunciation|0|4 ; ទៅ|ungegn|0|4 ; ទទូច|minor|0|4
+touc	តូច|pronunciation|0|4 ; ទៅជា|completion|0|4 ; ទូច|pronunciation|0|4 ; ទៅ|ungegn|0|4 ; ទាន់|curated|0|4
 touch	តូច|pronunciation|0|5 ; ទៅជា|completion|0|5 ; ទូច|pronunciation|0|5 ; ទទូច|minor|0|5 ; ទៅ|ungegn|0|5
 touch 	តូច|pronunciation|0|5 ; ទូច|pronunciation|0|5 ; ទទូច|minor|0|5 ; ទៅ|ungegn|0|5 ; ដូច|pronunciation|0|5
 touch t	តូច|pronunciation|0|7 ; ទៅជា|ungegn|0|7 ; ទូច|pronunciation|0|7 ; ថត|pronunciation|0|7 ; ទឹកចិត្ត|consonants|0|7
 touch to	ទៅ|ungegn|6|8 ; ទ|spelling|6|8 ; តុ|spelling|6|8 ; ទទួល|completion|6|8 ; ត|pronunciation|6|8
 touch tou	ទៅ|ungegn|6|9 ; ទោ|pronunciation|6|9 ; ទទួល|completion|6|9 ; ត|pronunciation|6|9 ; តូ|pronunciation|6|9
-touch touc	តូច|pronunciation|6|10 ; ទៅជា|completion|6|10 ; ទូច|pronunciation|6|10 ; ទៅ|ungegn|6|10 ; ទទូច|minor|6|10
+touch touc	តូច|pronunciation|6|10 ; ទៅជា|completion|6|10 ; ទូច|pronunciation|6|10 ; ទៅ|ungegn|6|10 ; ទាន់|curated|6|10
 touch touch	តូច|pronunciation|6|11 ; ទៅជា|completion|6|11 ; ទូច|pronunciation|6|11 ; ទទូច|minor|6|11 ; ទៅ|ungegn|6|11
 sabai	សប្បាយ|pronunciation|0|5 ; សរសៃ|spelling|0|5 ; សម័យ|pronunciation|0|5 ; សាបាយ|fallback|0|5 ; sabai|typed|0|5
 sabaii	សប្បាយ|pronunciation|0|6 ; សម័យ|pronunciation|0|6 ; សរសៃ|spelling|0|6 ; សាបាយ|fallback|0|6 ; sabaii|typed|0|6
@@ -1667,3 +1667,350 @@ tae	តែ|curated|0|3 ; ទេ|curated|0|3 ; តើ|pronunciation|0|3 ; ទី|
 kha	ការ|pronunciation|0|3 ; ក៏|spelling|0|3 ; ខ|spelling|0|3 ; ខាង|completion|0|3 ; ក|spelling|0|3
 khan	ខណ្ឌ|pronunciation|0|4 ; កាន់|pronunciation|0|4 ; ខាន|pronunciation|0|4 ; ខណៈ|completion|0|4 ; កាន់តែ|completion|0|4
 khang	ខាង|pronunciation|0|5 ; កង់|spelling|0|5 ; ការងារ|completion|0|5 ; កង|spelling|0|5 ; កងទ័ព|completion|0|5
+nv	នៅ|curated|0|2 ; នូវ|consonants|0|2 ; នៅលើ|completion|0|2 ; នៅពេល|completion|0|2 ; នៅតែ|completion|0|2
+nv 	នៅ|curated|0|2 ; នូវ|consonants|0|2 ; នៅឯ|consonants|0|2 ; នាវា|consonants|0|2 ; nv|typed|0|2
+nv n	នៅ|curated|0|4 ; នូវ|consonants|0|4 ; នៅលើ|consonants|0|4 ; នៅតែ|consonants|0|4 ; អនុវត្ត|consonants|0|4
+nv na	ណា|pronunciation|3|5 ; អ្នក|completion|3|5 ; ណ|spelling|3|5 ; ណាស់|pronunciation|3|5 ; ណាមួយ|completion|3|5
+nh t	នោះទេ|consonants|0|4 ; ញាតិ|consonants|0|4
+nh tv	ទៅ|curated|3|5 ; ធ្វើ|consonants|3|5 ; ធ្វើការ|completion|3|5 ; ធ្វើឱ្យ|completion|3|5 ; ថវិកា|completion|3|5
+nh tv 	ទៅ|curated|3|5 ; ធ្វើ|consonants|3|5 ; តវ៉ា|consonants|3|5 ; ទ្វារ|consonants|3|5 ; ទិវា|consonants|3|5
+nh tv p	ទៅ|curated|3|7 ; ទ្វីប|consonants|3|7 ; ធ្វើ|pronunciation|3|7 ; ទើប|pronunciation|3|7 ; ធ្វើការ|consonants|3|7
+nh tv pt	ផ្ទះ|completion|6|8 ; ពិត|consonants|6|8 ; ពិតជា|completion|6|8 ; ផ្ទាល់|completion|6|8 ; ពេទ្យ|consonants|6|8
+nh tv pte	ផ្ទេរ|pronunciation|6|9 ; ផ្ទៃ|completion|6|9 ; ទេ|curated|6|9 ; ផ្ទះ|pronunciation|6|9 ; ផ្ទៃពោះ|completion|6|9
+nh tv ptea	ផ្ទះ|pronunciation|6|10 ; ផ្ទាំង|completion|6|10 ; ព្រះ|pronunciation|6|10 ; ផ្ទះបាយ|completion|6|10 ; ផ្ទៀងផ្ទាត់|completion|6|10
+nh tv pteas	ផ្ទះ|pronunciation|6|11 ; ព្រះ|pronunciation|6|11 ; ផ្ទេរ|pronunciation|6|11 ; ផ្ទាំង|pronunciation|6|11 ; ទា|pronunciation|6|11
+b t	បិទ|consonants|0|3 ; បទ|consonants|0|3 ; បាត់|consonants|0|3 ; បាត់បង់|completion|0|3 ; បាត|consonants|0|3
+b tv	ទៅ|curated|2|4 ; ធ្វើ|consonants|2|4 ; ធ្វើការ|completion|2|4 ; ធ្វើឱ្យ|completion|2|4 ; ថវិកា|completion|2|4
+b tve	ធ្វើ|pronunciation|2|5 ; ទ្វេ|pronunciation|2|5 ; ធ្វើការ|completion|2|5 ; ធ្វើឱ្យ|completion|2|5 ; ថវិកា|completion|2|5
+b tver	ធ្វើ|pronunciation|2|6 ; ទ្វេ|pronunciation|2|6 ; ទៅ|curated|2|6 ; ទេ|curated|2|6 ; តែ|curated|2|6
+b tver 	ធ្វើ|pronunciation|2|6 ; ទ្វេ|pronunciation|2|6 ; ទៅ|curated|2|6 ; ទេ|curated|2|6 ; តែ|curated|2|6
+b tver k	ធ្វើការ|completion|2|8 ; ថវិកា|completion|2|8 ; ធ្វើ|pronunciation|2|8 ; ទឹក|pronunciation|2|8 ; ទ្វេ|pronunciation|2|8
+b tver ka	ធ្វើការ|pronunciation|2|9 ; ថវិកា|minor|2|9
+b tver ka 	ធ្វើការ|pronunciation|2|9 ; ថវិកា|minor|2|9
+b tver ka n	កាន់|pronunciation|7|11 ; ខណ្ឌ|pronunciation|7|11 ; ខណៈ|completion|7|11 ; ខាន|pronunciation|7|11 ; កាន់តែ|completion|7|11
+b tver ka nv	នៅ|curated|10|12 ; នូវ|consonants|10|12 ; នៅលើ|completion|10|12 ; នៅពេល|completion|10|12 ; នៅតែ|completion|10|12
+b tver ka nv 	នៅ|curated|10|12 ; នូវ|consonants|10|12 ; នៅឯ|consonants|10|12 ; នាវា|consonants|10|12 ; nv|typed|10|12
+b tver ka nv n	នៅ|curated|10|14 ; នូវ|consonants|10|14 ; នៅលើ|consonants|10|14 ; នៅតែ|consonants|10|14 ; អនុវត្ត|consonants|10|14
+b tver ka nv na	ណា|pronunciation|13|15 ; អ្នក|completion|13|15 ; ណ|spelling|13|15 ; ណាស់|pronunciation|13|15 ; ណាមួយ|completion|13|15
+eng n	ឯង|ungegn|0|5 ; អ៊ិន|pronunciation|0|5
+eng nh	ខ្ញុំ|curated|4|6 ; នេះ|consonants|4|6 ; នោះ|consonants|4|6 ; ណាស់|consonants|4|6 ; នៃ|consonants|4|6
+eng nha	ញ៉ាំ|completion|4|7 ; ជ្ញា|fallback|4|7 ; nha|typed|4|7
+eng nham	ញ៉ាំ|curated|4|8 ; ខ្ញុំ|curated|4|8 ; តាម|pronunciation|4|8 ; ចំ|spelling|4|8 ; ចាំ|pronunciation|4|8
+eng nham 	ញ៉ាំ|curated|4|8 ; ខ្ញុំ|curated|4|8 ; តាម|pronunciation|4|8 ; ចំ|spelling|4|8 ; ចាំ|pronunciation|4|8
+eng nham e	ឯ|ungegn|9|10 ; អេ|pronunciation|9|10 ; អេស|pronunciation|9|10 ; អ៊ី|pronunciation|9|10 ; e|typed|9|10
+eng nham ey	អី|curated|9|11 ; ឥឡូវ|completion|9|11 ; អើយ|pronunciation|9|11 ; ey|typed|9|11
+eng nham ey 	អី|curated|9|11 ; អើយ|pronunciation|9|11 ; ey|typed|9|11
+eng nham ey n	អី|curated|9|13 ; អ៊ិន|pronunciation|9|13 ; យន្ត|consonants|9|13 ; ឧទ្យាន|consonants|9|13 ; យួន|consonants|9|13
+eng nham ey ng	ហ្នឹង|curated|12|14 ; និង|consonants|12|14 ; នឹង|consonants|12|14 ; នាង|consonants|12|14 ; ng|typed|12|14
+tv na	ណា|pronunciation|3|5 ; អ្នក|completion|3|5 ; ណ|spelling|3|5 ; ណាស់|pronunciation|3|5 ; ណាមួយ|completion|3|5
+tv na 	ណា|pronunciation|3|5 ; ណ|spelling|3|5 ; ណាស់|pronunciation|3|5 ; នរណា|minor|3|5 ; na|typed|3|5
+tv na n	កាន់|pronunciation|3|7 ; បាន|pronunciation|3|7 ; អ្នក|spelling|3|7 ; ណា|pronunciation|3|7 ; ណាស់|pronunciation|3|7
+tv na ng	ហ្នឹង|curated|6|8 ; និង|consonants|6|8 ; នឹង|consonants|6|8 ; នាង|consonants|6|8 ; ng|typed|6|8
+nh o	ញ|spelling|0|4 ; ខ្ញុំ|completion|0|4 ; នយោបាយ|completion|0|4 ; ញញឹម|completion|0|4 ; ញុះញង់|completion|0|4
+nh ot	អត់|curated|3|5 ; ឧទាហរណ៍|completion|3|5 ; ឧត្តម|completion|3|5 ; ឧទ្យាន|completion|3|5 ; អត់ធ្មត់|completion|3|5
+nh ot 	អត់|curated|3|5 ; ot|typed|3|5
+nh ot d	អត់|curated|3|7 ; ឧត្តម|completion|3|7 ; ឧត្តមសេនីយ៍|completion|3|7 ; ឧត្តរមានជ័យ|completion|3|7 ; កត្តា|consonants|3|7
+nh ot dg	ដឹង|curated|6|8 ; ដឹងថា|completion|6|8 ; ដង|consonants|6|8 ; ដឹកនាំ|completion|6|8 ; ដួង|consonants|6|8
+nh ot dg 	ដឹង|curated|6|8 ; ដង|consonants|6|8 ; ដួង|consonants|6|8 ; ដាក់|consonants|6|8 ; ដូង|consonants|6|8
+nh ot dg t	ដឹងថា|consonants|6|10 ; ដឹងទេ|consonants|6|10 ; ដឹង|curated|6|10 ; ដកហូត|consonants|6|10 ; ដុត|pronunciation|6|10
+nh ot dg te	ទេ|curated|9|11 ; តែ|ungegn|9|11 ; ទី|pronunciation|9|11 ; តេ|pronunciation|9|11 ; ទឹក|completion|9|11
+dg	ដឹង|curated|0|2 ; ដឹងថា|completion|0|2 ; ដង|consonants|0|2 ; ដឹកនាំ|completion|0|2 ; ដួង|consonants|0|2
+dg 	ដឹង|curated|0|2 ; ដង|consonants|0|2 ; ដួង|consonants|0|2 ; ដាក់|consonants|0|2 ; ដូង|consonants|0|2
+dg t	ដឹងថា|consonants|0|4 ; ដឹងទេ|consonants|0|4 ; ដឹង|curated|0|4 ; ដកហូត|consonants|0|4 ; ដុត|pronunciation|0|4
+dg te	ទេ|curated|3|5 ; តែ|ungegn|3|5 ; ទី|pronunciation|3|5 ; តេ|pronunciation|3|5 ; ទឹក|completion|3|5
+nh me	មិន|completion|3|5 ; មេ|pronunciation|3|5 ; ម៉ែ|ungegn|3|5 ; មើល|completion|3|5 ; ម៉ឺន|completion|3|5
+nh men	មិន|pronunciation|3|6 ; មែន|ungegn|3|6 ; ម៉ឺន|pronunciation|3|6 ; ម៉ែន|ungegn|3|6 ; មាន|pronunciation|3|6
+nh men 	មិន|pronunciation|3|6 ; មែន|ungegn|3|6 ; ម៉ឺន|pronunciation|3|6 ; ម៉ែន|ungegn|3|6 ; មាន|pronunciation|3|6
+nh men j	មិន|curated|3|8 ; មិនចង់|completion|3|8 ; មែន|ungegn|3|8 ; ម៉ឺន|pronunciation|3|8 ; ម៉ែន|ungegn|3|8
+nh men je	ចេះ|curated|7|9 ; ចេញ|completion|7|9 ; ជឿ|pronunciation|7|9 ; ចិន|completion|7|9 ; ជើង|completion|7|9
+nh men jes	ចេះ|curated|7|10 ; ជឿ|pronunciation|7|10 ; ឈើ|pronunciation|7|10 ; ឈឺ|pronunciation|7|10 ; ជិះ|pronunciation|7|10
+nh men jes 	ចេះ|curated|7|10 ; ជឿ|pronunciation|7|10 ; ឈើ|pronunciation|7|10 ; ឈឺ|pronunciation|7|10 ; ជិះ|pronunciation|7|10
+nh men jes t	ទៀត|consonants|11|12 ; អតីត|consonants|11|12 ; អាទិត្យ|consonants|11|12 ; តេស្ត|consonants|11|12 ; ទោស|consonants|11|12
+nh men jes te	ទេ|curated|11|13 ; តែ|ungegn|11|13 ; ទី|pronunciation|11|13 ; តេ|pronunciation|11|13 ; ទឹក|completion|11|13
+jo	ចុះ|curated|0|2 ; ជួយ|completion|0|2 ; ជន|completion|0|2 ; ចូល|completion|0|2 ; ចង់|completion|0|2
+jos	ចុះ|curated|0|3 ; ច|pronunciation|0|3 ; ជ|pronunciation|0|3 ; ជួសជុល|completion|0|3 ; ចូរ|pronunciation|0|3
+jos 	ចុះ|curated|0|3 ; ច|pronunciation|0|3 ; ជ|pronunciation|0|3 ; ចូរ|pronunciation|0|3 ; ឈរ|pronunciation|0|3
+jos e	ឯ|ungegn|4|5 ; អេ|pronunciation|4|5 ; អេស|pronunciation|4|5 ; អ៊ី|pronunciation|4|5 ; e|typed|4|5
+jos en	អ៊ិន|pronunciation|4|6 ; ឥណ្ឌា|completion|4|6 ; ឥណទាន|completion|4|6 ; អ៊ីនធឺ|completion|4|6 ; អ៊ីនធឺណិត|completion|4|6
+jos eng	ឯង|ungegn|4|7 ; eng|typed|4|7
+jos eng 	ឯង|ungegn|4|7 ; eng|typed|4|7
+jos eng v	ឯង|ungegn|4|9
+jos eng vi	វី|pronunciation|8|10 ; អ្វី|completion|8|10 ; វិញ|completion|8|10 ; វ័យ|completion|8|10 ; វិធី|completion|8|10
+jos eng vin	វេន|pronunciation|8|11 ; មិន|curated|8|11 ; វិនិយោគ|completion|8|11 ; វិន័យ|completion|8|11 ; វិនាទី|completion|8|11
+jos eng vinh	វិញ|spelling|8|12 ; វិញ្ញាណ|completion|8|12 ; ទិញ|spelling|8|12 ; ចេញ|pronunciation|8|12 ; វី|pronunciation|8|12
+ss	សង្សារ|curated|0|2 ; សរសើរ|consonants|0|2 ; ឧស្សាហ៍|consonants|0|2 ; សិស្ស|consonants|0|2 ; ss|typed|0|2
+moa	មាត់|completion|0|3 ; មាន់|completion|0|3 ; មាស់|fallback|0|3 ; moa|typed|0|3
+moan	មាន់|pronunciation|0|4 ; មាន|pronunciation|0|4 ; មិន|curated|0|4 ; ទាន់|pronunciation|0|4 ; ម៉ឺន|ungegn|0|4
+moang	ម៉ោង|pronunciation|0|5 ; មាន់|pronunciation|0|5 ; មាត់|pronunciation|0|5 ; ម៉ុង|pronunciation|0|5 ; ម៉េង|pronunciation|0|5
+moang 	ម៉ោង|pronunciation|0|5 ; មាន់|pronunciation|0|5 ; មាត់|pronunciation|0|5 ; ម៉ុង|pronunciation|0|5 ; ម៉េង|pronunciation|0|5
+moang p	ភាព|consonants|6|7 ; ប៉ុស្តិ៍|consonants|6|7 ; ពិភព|consonants|6|7 ; ប៉ះ|consonants|6|7 ; ពហុ|consonants|6|7
+moang p'	ភាព|consonants|6|8 ; ប៉ុស្តិ៍|consonants|6|8 ; ពិភព|consonants|6|8 ; ប៉ះ|consonants|6|8 ; ពហុ|consonants|6|8
+moang p'm	ពុំ|consonants|6|9 ; ប៉ុន្មាន|completion|6|9 ; ភូមិ|consonants|6|9 ; ពីមុន|completion|6|9 ; ផ្អែម|consonants|6|9
+moang p'ma	ប៉ុន្មាន|completion|6|10 ; ផ្សារ|pronunciation|6|10 ; ម៉ា|pronunciation|6|10 ; ផ្កា|pronunciation|6|10 ; ប៉ា|pronunciation|6|10
+moang p'man	ប៉ុន្មាន|curated|6|11 ; ប្លន់|spelling|6|11 ; ពីមុន|consonants|6|11 ; ពុំទាន់|consonants|6|11 ; p'man|typed|6|11
+ay	អាយ|pronunciation|0|2 ; អាយុ|completion|0|2 ; អយ្យការ|completion|0|2 ; អាយុកាល|completion|0|2 ; អាយុជីវិត|completion|0|2
+ayu	អាយុ|pronunciation|0|3 ; អយ្យការ|completion|0|3 ; អាយុកាល|completion|0|3 ; អាយុជីវិត|completion|0|3 ; យូរ|pronunciation|0|3
+ayuk	អយ្យការ|completion|0|4 ; អាយុកាល|completion|0|4 ; អាយុ|pronunciation|0|4 ; យក|pronunciation|0|4 ; អាយក|fallback|0|4
+ayuk 	អាយុ|pronunciation|0|4 ; យក|pronunciation|0|4 ; អយ្យការ|spelling|0|4 ; អាយក|fallback|0|4 ; ayuk|typed|0|4
+ayuk p	អយ្យការ|spelling|0|6
+ayuk pu	ពូ|pronunciation|5|7 ; ពួកគេ|completion|5|7 ; ភូមិ|completion|5|7 ; ពួក|completion|5|7 ; ផង|completion|5|7
+ayuk pun	ពន្ធ|pronunciation|5|8 ; ប្អូន|pronunciation|5|8 ; ប៉ុន្តែ|completion|5|8 ; ប៉ុណ្ណោះ|completion|5|8 ; ពណ៌|spelling|5|8
+ayuk punm	ប៉ុន្មាន|completion|5|9 ; ពុំ|pronunciation|5|9 ; ភ្នំ|pronunciation|5|9 ; ភូមិ|pronunciation|5|9 ; ពន្ធ|pronunciation|5|9
+ayuk punma	ប៉ុន្មាន|completion|5|10 ; ពន្ធដារ|pronunciation|5|10 ; ប៉ុណ្ណា|pronunciation|5|10 ; ពណ៌ស|spelling|5|10 ; ពន្ធម៉ា|fallback|5|10
+ayuk punman	ប៉ុន្មាន|pronunciation|5|11 ; ពន្ធមាណ|fallback|5|11 ; punman|typed|5|11
+ayuk punman 	ប៉ុន្មាន|pronunciation|5|11 ; ពន្ធមាណ|fallback|5|11 ; punman|typed|5|11
+ayuk punman h	ប៉ុន្មាន|pronunciation|5|13
+ayuk punman hz	ហើយ|curated|12|14 ; hz|typed|12|14
+nir	នេះ|curated|0|3 ; នី|pronunciation|0|3 ; និរន្តរភាព|completion|0|3 ; និ|fallback|0|3 ; nir|typed|0|3
+nirk	នឹក|curated|0|4 ; នេះ|curated|0|4 ; និង|spelling|0|4 ; អ្នក|spelling|0|4 ; នឹកស្មាន|completion|0|4
+nirk 	នឹក|curated|0|4 ; នេះ|curated|0|4 ; និង|spelling|0|4 ; អ្នក|spelling|0|4 ; នាក់|pronunciation|0|4
+nirk b	បង|curated|5|6 ; បែប|consonants|5|6 ; បាប|consonants|5|6 ; b|typed|5|6
+nirk b 	បង|curated|5|6 ; បែប|consonants|5|6 ; បាប|consonants|5|6 ; b|typed|5|6
+nirk b n	បាន|consonants|5|8 ; បន្ត|completion|5|8 ; បុណ្យ|consonants|5|8 ; បន្ថែម|completion|5|8 ; បន្ទាប់ពី|completion|5|8
+nirk b na	ណា|pronunciation|7|9 ; អ្នក|completion|7|9 ; ណ|spelling|7|9 ; ណាស់|pronunciation|7|9 ; ណាមួយ|completion|7|9
+nirk b nas	ណាស់|spelling|7|10 ; ណា|pronunciation|7|10 ; ណ|spelling|7|10 ; នរណា|minor|7|10 ; nas|typed|7|10
+nirk o	អូន|curated|5|6 ; អូ|ungegn|5|6 ; ឧ|spelling|5|6 ; ឱ្យ|spelling|5|6 ; អស់|pronunciation|5|6
+nirk ou	អូ|pronunciation|5|7 ; អូរ|pronunciation|5|7 ; អូន|curated|5|7 ; អស់|pronunciation|5|7 ; អ|pronunciation|5|7
+nirk oun	អូន|curated|5|8 ; អនឡាញ|completion|5|8 ; អន្តរជាតិ|completion|5|8 ; អន្តរ|completion|5|8 ; អន្តរាគមន៍|completion|5|8
+srey sar	សារ|spelling|5|8 ; ស|spelling|5|8 ; សរ|spelling|5|8 ; សា|pronunciation|5|8 ; សហ|spelling|5|8
+srey sart	ស្អាត|curated|5|9 ; សត្វ|pronunciation|5|9 ; សាធារណៈ|completion|5|9 ; សារធាតុ|completion|5|9 ; សត្រូវ|completion|5|9
+b s	បើសិន|completion|0|3 ; ឧបសគ្គ|completion|0|3 ; បួស|consonants|0|3 ; អប្សរា|completion|0|3 ; បេសកកម្ម|completion|0|3
+b so	ស|pronunciation|2|4 ; សូ|ungegn|2|4 ; សូម|completion|2|4 ; សួរ|pronunciation|2|4 ; សោះ|pronunciation|2|4
+b sok	សុខ|pronunciation|2|5 ; សក់|pronunciation|2|5 ; សុក្រ|pronunciation|2|5 ; សុខភាព|completion|2|5 ; សុខា|completion|2|5
+b sok 	សុខ|pronunciation|2|5 ; សក់|pronunciation|2|5 ; សុក្រ|pronunciation|2|5 ; មក|pronunciation|2|5 ; លោក|pronunciation|2|5
+b sok s	សោកស្តាយ|completion|2|7 ; សុខសប្បាយ|completion|2|7 ; សុខ|pronunciation|2|7 ; សក់|pronunciation|2|7 ; សុក្រ|pronunciation|2|7
+b sok sb	សប្តាហ៍|completion|6|8 ; ស្បែក|completion|6|8 ; សប្បាយ|completion|6|8 ; សុបិន|completion|6|8 ; សាប៊ូ|consonants|6|8
+b sok sba	សុខសប្បាយ|completion|2|9
+b sok sbay	សុខសប្បាយ|curated|2|10 ; សោកស្តាយ|pronunciation|2|10
+b sok sbay 	សុខសប្បាយ|curated|2|10 ; សោកស្តាយ|pronunciation|2|10
+b sok sbay j	សុខសប្បាយ|curated|2|12
+b sok sbay je	ចេះ|curated|11|13 ; ចេញ|completion|11|13 ; ចិន|completion|11|13 ; ជើង|completion|11|13 ; ចិត្ត|completion|11|13
+b sok sbay jea	ជា|pronunciation|11|14 ; ជាតិ|completion|11|14 ; ជាង|completion|11|14 ; ជាមួយ|completion|11|14 ; ឈាម|completion|11|14
+b sok sbay jea 	ជា|pronunciation|11|14 ; ជះ|pronunciation|11|14 ; ចៀស|pronunciation|11|14 ; jea|typed|11|14
+b sok sbay jea t	ជាតិ|pronunciation|11|16 ; ជាទី|completion|11|16 ; ជាទូទៅ|completion|11|16 ; ជាតិសាសន៍|completion|11|16 ; ជាធម្មតា|completion|11|16
+b sok sbay jea te	ជាតិ|spelling|11|17 ; ជាទី|pronunciation|11|17 ; ជាតិសាសន៍|completion|11|17 ; មតិ|pronunciation|11|17 ; នាទី|pronunciation|11|17
+kom plex	ភ្លេច|pronunciation|4|8 ; ផ្លែឈើ|completion|4|8 ; ផ្លូវ|pronunciation|4|8 ; ប្លែក|ungegn|4|8 ; ភ្លឺ|pronunciation|4|8
+kom plex 	ភ្លេច|pronunciation|4|8 ; ផ្លូវ|pronunciation|4|8 ; ប្លែក|ungegn|4|8 ; ភ្លឺ|pronunciation|4|8 ; ភ្លើង|pronunciation|4|8
+kom plex n	ភ្លេច|pronunciation|4|10 ; ផ្លែឈើ|pronunciation|4|10
+kom plex na	ណា|pronunciation|9|11 ; អ្នក|completion|9|11 ; ណ|spelling|9|11 ; ណាស់|pronunciation|9|11 ; ណាមួយ|completion|9|11
+kom pli	ភ្លេច|completion|4|7 ; ផ្លូវ|completion|4|7 ; ផលិត|completion|4|7 ; ភ្លើង|completion|4|7 ; ផ្លែ|pronunciation|4|7
+kom plix	ភ្លេច|pronunciation|4|8 ; ផ្លែឈើ|completion|4|8 ; ផ្លូវ|pronunciation|4|8 ; ផ្លែ|pronunciation|4|8 ; ប្លែក|ungegn|4|8
+mix	មិន|curated|0|3 ; ម៉េច|pronunciation|0|3 ; បន្តិច|curated|0|3 ; មី|pronunciation|0|3 ; មីន|pronunciation|0|3
+mix 	មិន|curated|0|3 ; ម៉េច|pronunciation|0|3 ; បន្តិច|curated|0|3 ; មី|pronunciation|0|3 ; មីន|pronunciation|0|3
+mix k	មេឃ|pronunciation|0|5 ; ម៉េច|pronunciation|0|5 ; មិនចង់|consonants|0|5
+mix ko	មិនគួរ|spelling|0|6
+mix kor	ក៏|pronunciation|4|7 ; ក|pronunciation|4|7 ; គ|pronunciation|4|7 ; គួរ|spelling|4|7 ; គោរព|completion|4|7
+mix kor 	ក៏|pronunciation|4|7 ; ក|pronunciation|4|7 ; គ|pronunciation|4|7 ; គួរ|spelling|4|7 ; កូ|pronunciation|4|7
+mix kor m	កុំ|curated|4|9 ; ឃុំ|pronunciation|4|9 ; កំពុង|completion|4|9 ; កុមារ|completion|4|9 ; កំ|pronunciation|4|9
+mix kor me	មិន|completion|8|10 ; មេ|pronunciation|8|10 ; ម៉ែ|ungegn|8|10 ; មើល|completion|8|10 ; ម៉ឺន|completion|8|10
+mix kor men	មិន|pronunciation|8|11 ; មែន|ungegn|8|11 ; មាន|pronunciation|8|11 ; ម៉ឺន|pronunciation|8|11 ; ម៉ែន|ungegn|8|11
+mix kor men 	មិន|pronunciation|8|11 ; មែន|ungegn|8|11 ; មាន|pronunciation|8|11 ; ម៉ឺន|pronunciation|8|11 ; ម៉ែន|ungegn|8|11
+mix kor men c	មិន|curated|8|13 ; មិនចង់|completion|8|13 ; មែន|ungegn|8|13 ; ម៉ឺន|pronunciation|8|13 ; ម៉ែន|ungegn|8|13
+mix kor men ch	ចេះ|consonants|12|14 ; ចុះ|consonants|12|14 ; ចាស់|consonants|12|14 ; ជិះ|consonants|12|14 ; ចុច|consonants|12|14
+mix kor men chh	ចេះ|consonants|12|15 ; ចុះ|consonants|12|15 ; ចាស់|consonants|12|15 ; ជិះ|consonants|12|15 ; ជះ|consonants|12|15
+mix kor men chhl	ចូលចិត្ត|completion|12|16 ; ចូលរួម|completion|12|16 ; ឆ្លង|completion|12|16 ; ចូល|consonants|12|16 ; ចូលទៅ|completion|12|16
+mix kor men chhlo	ឆ្លង|completion|12|17 ; ឈ្លោះ|spelling|12|17 ; ឆ្លងកាត់|completion|12|17 ; ឆ្លងដែន|completion|12|17 ; ចូល|ungegn|12|17
+mix kor men chhloe	ឆ្លើយ|completion|12|18 ; ឆ្លើយតប|completion|12|18 ; ជឿ|spelling|12|18 ; ឈឺ|ungegn|12|18 ; លើ|pronunciation|12|18
+mix kor men chhloey	ឆ្លើយ|spelling|12|19 ; ឆ្លើយតប|completion|12|19 ; ឡើយ|pronunciation|12|19 ; ខ្លី|pronunciation|12|19 ; ជ័យ|pronunciation|12|19
+yy y	និយាយ|curated|3|4 ; យាយ|consonants|3|4 ; y|typed|3|4
+yy yu	យូរ|pronunciation|3|5 ; យូ|pronunciation|3|5 ; យក|completion|3|5 ; យប់|completion|3|5 ; យល់|completion|3|5
+yy yue	យើង|completion|3|6 ; យឺត|completion|3|6 ; យីហោ|completion|3|6 ; យេស៊ូវ|completion|3|6 ; យី|fallback|3|6
+yy yuet	យឺត|spelling|3|7 ; គិត|pronunciation|3|7 ; យើង|pronunciation|3|7 ; ឥត|pronunciation|3|7 ; ខេត្ត|pronunciation|3|7
+yy yuet 	យឺត|spelling|3|7 ; គិត|pronunciation|3|7 ; យើង|pronunciation|3|7 ; ឥត|pronunciation|3|7 ; ខេត្ត|pronunciation|3|7
+yy yuet y	និយាយ|curated|8|9 ; យាយ|consonants|8|9 ; y|typed|8|9
+yy yuet yu	យូរ|pronunciation|8|10 ; យូ|pronunciation|8|10 ; យក|completion|8|10 ; យប់|completion|8|10 ; យល់|completion|8|10
+yy yuet yue	យើង|completion|8|11 ; យឺត|completion|8|11 ; យីហោ|completion|8|11 ; យេស៊ូវ|completion|8|11 ; យី|fallback|8|11
+yy yuet yuet	យឺត|spelling|8|12 ; គិត|pronunciation|8|12 ; យើង|pronunciation|8|12 ; ឥត|pronunciation|8|12 ; ខេត្ត|pronunciation|8|12
+C	ចុះ|consonants|0|1 ; ចាស់|consonants|0|1 ; ជិះ|consonants|0|1 ; ចេះ|consonants|0|1 ; ចុច|consonants|0|1
+Ch	ចុះ|consonants|0|2 ; ចាស់|consonants|0|2 ; ជិះ|consonants|0|2 ; ចេះ|consonants|0|2 ; ចុច|consonants|0|2
+Chn	ឆ្នាំ|completion|0|3 ; ជន|consonants|0|3 ; ចិន|consonants|0|3 ; ជូន|consonants|0|3 ; ចំនួន|completion|0|3
+Chng	ជំងឺ|completion|0|4 ; ឆ្ងាយ|completion|0|4 ; ឆ្នាំង|consonants|0|4 ; ឆ្ងាញ់|completion|0|4 ; ចង្អុល|completion|0|4
+Chnga	ឆ្ងាយ|completion|0|5 ; ឆ្ងាញ់|completion|0|5 ; ឆ្ងល់|completion|0|5 ; ចង់|spelling|0|5 ; ច|spelling|0|5
+Chngan	ឆ្ងាយ|pronunciation|0|6 ; ឆ្ងាញ់|pronunciation|0|6 ; ចន្ទ|pronunciation|0|6 ; ច័ន្ទ|pronunciation|0|6 ; ចាន់|pronunciation|0|6
+Chnganh	ឆ្ងាញ់|pronunciation|0|7 ; ឆ្ងាយ|pronunciation|0|7 ; ចាញ់|pronunciation|0|7 ; ឆ្ងល់|spelling|0|7 ; Chnganh|typed|0|7
+Chnganh 	ឆ្ងាញ់|pronunciation|0|7 ; ឆ្ងាយ|pronunciation|0|7 ; ចាញ់|pronunciation|0|7 ; ឆ្ងល់|spelling|0|7 ; Chnganh|typed|0|7
+Chnganh m	ឆ្ងាញ់|pronunciation|0|9
+Chnganh me	មេ|pronunciation|8|10 ; មិន|completion|8|10 ; ម៉ែ|ungegn|8|10 ; មើល|completion|8|10 ; ម៉ឺន|completion|8|10
+Chnganh men	មិន|pronunciation|8|11 ; មែន|ungegn|8|11 ; ម៉ឺន|pronunciation|8|11 ; ម៉ែន|ungegn|8|11 ; មីន|pronunciation|8|11
+Chnganh men 	មិន|pronunciation|8|11 ; មែន|ungegn|8|11 ; ម៉ឺន|pronunciation|8|11 ; ម៉ែន|ungegn|8|11 ; មីន|pronunciation|8|11
+Chnganh men t	មិន|curated|8|13 ; មែនទែន|completion|8|13 ; មែន|ungegn|8|13 ; មិត្ត|pronunciation|8|13 ; ម៉ឺន|pronunciation|8|13
+Chnganh men te	ទេ|curated|12|14 ; តែ|ungegn|12|14 ; ទី|pronunciation|12|14 ; តេ|pronunciation|12|14 ; ទឹក|completion|12|14
+Chnganh men ten	មែនទែន|ungegn|8|15 ; មិនមែន|pronunciation|8|15
+sbay reek reay tgnaii komnart	កំណាត់|pronunciation|22|29 ; កំណើត|pronunciation|22|29 ; កំណត់|spelling|22|29 ; គំនិត|pronunciation|22|29 ; កម្ចាត់|pronunciation|22|29
+oka	ឱកាស|pronunciation|0|3 ; ការ|pronunciation|0|3 ; ក៏|spelling|0|3 ; ក|spelling|0|3 ; អង្គការ|pronunciation|0|3
+okay	okay|english|0|4 ; ឱកាស|pronunciation|0|4 ; កាយ|pronunciation|0|4 ; ផ្កាយ|pronunciation|0|4 ; ឧកាយ|fallback|0|4
+okay 	okay|english|0|4 ; ឱកាស|pronunciation|0|4 ; កាយ|pronunciation|0|4 ; ផ្កាយ|pronunciation|0|4 ; ឧកាយ|fallback|0|4
+okay c	ចុះ|consonants|5|6 ; ចាស់|consonants|5|6 ; ជិះ|consonants|5|6 ; ចេះ|consonants|5|6 ; ចុច|consonants|5|6
+okay ch	ចុះ|consonants|5|7 ; ចាស់|consonants|5|7 ; ជិះ|consonants|5|7 ; ចេះ|consonants|5|7 ; ចុច|consonants|5|7
+okay cha	ច|spelling|5|8 ; ចាស់|pronunciation|5|8 ; ចង់|completion|5|8 ; ចាប់|completion|5|8 ; ចាក់|completion|5|8
+okay cham	ចំ|spelling|5|9 ; ចាំ|pronunciation|5|9 ; ចំពោះ|completion|5|9 ; ចំនួន|completion|5|9 ; ចំណុច|completion|5|9
+okay cham 	ចំ|spelling|5|9 ; ចាំ|pronunciation|5|9 ; ឆ្នាំ|pronunciation|5|9 ; ញ៉ាំ|curated|5|9 ; តាម|pronunciation|5|9
+okay cham j	ចំ|spelling|5|11 ; ចាំ|pronunciation|5|11 ; ចោមចៅ|consonants|5|11
+okay cham jo	ចុះ|curated|10|12 ; ជួយ|completion|10|12 ; ជន|completion|10|12 ; ចូល|completion|10|12 ; ចង់|completion|10|12
+okay cham jou	ចុះ|curated|10|13 ; ជួយ|completion|10|13 ; ជន|completion|10|13 ; ចូល|completion|10|13 ; ចង់|completion|10|13
+okay cham joub	ជួប|spelling|10|14 ; ជួបជុំ|completion|10|14 ; ឈប់|spelling|10|14 ; ចុះ|curated|10|14 ; ជប់លៀង|completion|10|14
+okay cham joub 	ជួប|spelling|10|14 ; ឈប់|spelling|10|14 ; ចុះ|curated|10|14 ; ចង់|curated|10|14 ; រូប|spelling|10|14
+okay cham joub k	ជួប|spelling|10|16 ; ជក់|pronunciation|10|16 ; ឆក់|pronunciation|10|16 ; ឈប់|spelling|10|16 ; ចម្បង|consonants|10|16
+okay cham joub kn	គ្នា|consonants|15|17 ; ក្នុង|completion|15|17 ; កូន|consonants|15|17 ; កាន់|consonants|15|17 ; កាន់តែ|completion|15|17
+okay cham joub kne	គ្នា|pronunciation|15|18 ; គំនិត|completion|15|18 ; កំណើត|completion|15|18 ; កំណើន|completion|15|18 ; កំណែ|minor|15|18
+okay cham joub knea	គ្នា|pronunciation|15|19 ; នា|pronunciation|15|19 ; ឈ្នះ|pronunciation|15|19 ; គ្រា|pronunciation|15|19 ; ឃ្លា|pronunciation|15|19
+mdg	ម្តង|consonants|0|3 ; ម្តងទៀត|completion|0|3 ; មេដឹកនាំ|completion|0|3 ; ដឹង|curated|0|3 ; មក|pronunciation|0|3
+mdg 	ម្តង|consonants|0|3 ; ដឹង|curated|0|3 ; មក|pronunciation|0|3 ; មុខ|pronunciation|0|3 ; ម៉ោង|consonants|0|3
+mdg t	ម្តងទៀត|consonants|0|5 ; ម្តង|consonants|0|5 ; ដឹងថា|consonants|0|5 ; ដឹងទេ|consonants|0|5 ; ម្យ៉ាងទៀត|consonants|0|5
+mdg tt	ម្តងទៀត|consonants|0|6 ; ដឹងថា|consonants|0|6 ; ម្យ៉ាងទៀត|consonants|0|6 ; ម្តង|consonants|0|6 ; ដឹងទេ|consonants|0|6
+phg	ផងដែរ|completion|0|3 ; ផង|consonants|0|3 ; ពាក្យ|completion|0|3 ; ឧបករណ៍|completion|0|3 ; ពាក់ព័ន្ធ|completion|0|3
+phgn	ផ្ញើ|completion|0|4 ; ពាក់កណ្តាល|completion|0|4 ; ភាគហ៊ុន|consonants|0|4 ; ផងដែរ|consonants|0|4 ; ពណ៌|spelling|0|4
+phgne	ផ្ញើ|curated|0|5 ; ពីនេះ|spelling|0|5 ; ភាគហ៊ុន|consonants|0|5 ; កំណែ|minor|0|5 ; phgne|typed|0|5
+phgneu	ផ្ញើ|curated|0|6 ; ពីនេះ|spelling|0|6 ; ភាគហ៊ុន|consonants|0|6 ; កំណែ|minor|0|6 ; phgneu|typed|0|6
+phgneu 	ផ្ញើ|curated|0|6 ; ពីនេះ|spelling|0|6 ; ភាគហ៊ុន|consonants|0|6 ; កំណែ|minor|0|6 ; phgneu|typed|0|6
+phgneu r	ផ្ញើ|curated|0|8 ; ពីនេះ|spelling|0|8 ; ភាគហ៊ុន|consonants|0|8 ; កំណែ|minor|0|8
+phgneu ru	របស់|completion|7|9 ; រូ|pronunciation|7|9 ; រ|spelling|7|9 ; រូប|completion|7|9 ; រក|completion|7|9
+phgneu rub	រូប|spelling|7|10 ; របស់|completion|7|10 ; របួស|completion|7|10 ; របៀប|completion|7|10 ; រូបនេះ|completion|7|10
+phgneu rub 	រូប|spelling|7|10 ; របស់|spelling|7|10 ; គ្រប់|spelling|7|10 ; រត់|pronunciation|7|10 ; រន្ធ|pronunciation|7|10
+phgneu rub m	រូបមន្ត|completion|7|12 ; របស់|spelling|7|12 ; រូប|spelling|7|12 ; រួម|pronunciation|7|12 ; រំ|pronunciation|7|12
+phgneu rub mo	មក|curated|11|13 ; ម|spelling|11|13 ; មួយ|completion|11|13 ; មុន|completion|11|13 ; មុខ|completion|11|13
+phgneu rub mor	មក|curated|11|14 ; ម|pronunciation|11|14 ; ម៉ូ|pronunciation|11|14 ; ម៉ៅ|spelling|11|14 ; mor|typed|11|14
+jet	ចិត្ត|pronunciation|0|3 ; ជិត|pronunciation|0|3 ; ចេតនា|completion|0|3 ; ជិតខាង|completion|0|3 ; ជិតស្និទ្ធ|completion|0|3
+jol	ចូល|ungegn|0|3 ; ចូលរួម|completion|0|3 ; ចូលទៅ|completion|0|3 ; ចោល|pronunciation|0|3 ; ចូលចិត្ត|completion|0|3
+jol 	ចូល|ungegn|0|3 ; ចោល|pronunciation|0|3 ; ជួល|pronunciation|0|3 ; ជល់|spelling|0|3 ; ចុះ|curated|0|3
+jol j	ចូលចិត្ត|completion|0|5 ; ចូលឆ្នាំ|completion|0|5 ; ចូល|ungegn|0|5 ; ចោល|pronunciation|0|5 ; ចុច|pronunciation|0|5
+jol je	ចេះ|curated|4|6 ; ចេញ|completion|4|6 ; ចិន|completion|4|6 ; ជើង|completion|4|6 ; ចិត្ត|completion|4|6
+jol jet	ចូលចិត្ត|pronunciation|0|7
+chnay	ច្នៃ|pronunciation|0|5 ; ចំណាយ|minor|0|5 ; ឆ្នាំ|pronunciation|0|5 ; ច្នៃប្រឌិត|completion|0|5 ; ឆ្ងាយ|pronunciation|0|5
+bs	បើសិន|completion|0|2 ; ឧបសគ្គ|completion|0|2 ; បួស|consonants|0|2 ; អប្សរា|completion|0|2 ; បេសកកម្ម|completion|0|2
+bsr	អប្សរា|consonants|0|3 ; ស|consonants|0|3 ; បុរស|consonants|0|3 ; ស្រី|consonants|0|3 ; ប|consonants|0|3
+bsre	ស្រី|completion|1|4 ; ស្រែ|ungegn|1|4 ; ស្រូវ|completion|1|4 ; ស្រេច|completion|1|4 ; ស្រែក|completion|1|4
+bsrey	ស្រី|pronunciation|1|5 ; សរីរាង្គ|completion|1|5
+bp	បំផុត|completion|0|2 ; បែប|consonants|0|2 ; បែបនេះ|completion|0|2 ; បំពេញ|completion|0|2 ; បូព៌ា|consonants|0|2
+bpr	បូព៌ា|consonants|0|3 ; ប្រើ|consonants|0|3 ; ពីរ|consonants|0|3 ; ប|consonants|0|3 ; ឧបករណ៍|consonants|0|3
+bpro	ប្រុស|pronunciation|1|4 ; ប្រទេស|completion|1|4 ; ព្រោះ|pronunciation|1|4 ; ប្រជា|completion|1|4 ; ប្រកាស|completion|1|4
+bpros	ប្រុស|spelling|1|5 ; ព្រោះ|pronunciation|1|5 ; ប្រសើរ|completion|1|5 ; ប្រសាសន៍|completion|1|5 ; ប្រសិនបើ|completion|1|5
+sour	ស|pronunciation|0|4 ; សួរ|spelling|0|4 ; សៅរ៍|ungegn|0|4 ; សូ|pronunciation|0|4 ; សរ|pronunciation|0|4
+sours	ស|pronunciation|0|5 ; សួរ|spelling|0|5 ; សរសេរ|completion|0|5 ; សៅរ៍|ungegn|0|5 ; សរសើរ|completion|0|5
+soursd	សួស្តី|completion|0|6 ; សរសេរ|pronunciation|0|6 ; សរសើរ|pronunciation|0|6 ; soursd|typed|0|6
+soursde	សួស្តី|completion|0|7 ; សរសេរ|pronunciation|0|7 ; ប៉ុស្តិ៍|ungegn|0|7 ; សរសើរ|pronunciation|0|7 ; soursde|typed|0|7
+soursdey	សួស្តី|curated|0|8 ; សម្តី|pronunciation|0|8 ; soursdey|typed|0|8
+soursdeyb	បង|curated|8|9
+bsl	ស្រឡាញ់|curated|0|3 ; បាល់|pronunciation|0|3 ; សាលា|consonants|0|3 ; បុគ្គល|consonants|0|3 ; រសៀល|consonants|0|3
+bslo	ល|spelling|2|4 ; លោក|completion|2|4 ; ល្អ|pronunciation|2|4 ; ឡូ|ungegn|2|4 ; លក់|completion|2|4
+nirkb	នឹក|curated|0|5 ; នៅក្បែរ|consonants|0|5 ; nirkb|typed|0|5
+nirkbn	ក៏បាន|consonants|3|6 ; ក្បួន|consonants|3|6
+nirkbna	ណា|pronunciation|5|7 ; អ្នក|completion|5|7 ; ណ|spelling|5|7 ; ណាស់|pronunciation|5|7 ; ណាមួយ|completion|5|7
+nirkbnas	អស់|spelling|6|8 ; អា|pronunciation|6|8 ; អ|spelling|6|8 ; អាស៊ី|completion|6|8 ; អាស៊ាន|completion|6|8
+bt	បិទ|consonants|0|2 ; បទ|consonants|0|2 ; បាត់|consonants|0|2 ; បាត់បង់|completion|0|2 ; បាត|consonants|0|2
+btv	ទៅ|curated|0|3 ; ធ្វើ|consonants|0|3 ; សត្វ|consonants|0|3 ; បិទ|consonants|0|3 ; បទ|consonants|0|3
+btve	ធ្វើ|pronunciation|1|4 ; ទ្វេ|pronunciation|1|4 ; ធ្វើការ|completion|1|4 ; ធ្វើឱ្យ|completion|1|4 ; ថវិកា|completion|1|4
+btver	ធ្វើ|pronunciation|0|5 ; ទ្វេ|pronunciation|0|5 ; btver|typed|0|5
+btverk	ឯក|ungegn|3|6 ; ឯកសារ|completion|3|6 ; ឯកជន|completion|3|6 ; ឯកឧត្តម|completion|3|6 ; អេក្រង់|completion|3|6
+btverka	ធ្វើការ|pronunciation|0|7 ; ថវិកា|minor|0|7 ; btverka|typed|0|7
+btverkan	កាន់|pronunciation|5|8 ; ខណ្ឌ|pronunciation|5|8 ; ខណៈ|completion|5|8 ; ខាន|pronunciation|5|8 ; កាន់តែ|completion|5|8
+btverkanv	នៅ|curated|7|9 ; នូវ|consonants|7|9 ; នៅលើ|completion|7|9 ; នៅពេល|completion|7|9 ; នៅតែ|completion|7|9
+btverkanvn	btverkanvn|typed|0|10
+btverkanvna	ណា|pronunciation|9|11 ; អ្នក|completion|9|11 ; ណ|spelling|9|11 ; ណាស់|pronunciation|9|11 ; ណាមួយ|completion|9|11
+yyy	និយាយ|curated|0|3 ; យាយ|consonants|0|3 ; yyy|typed|0|3
+yyyu	យក|completion|0|4 ; យប់|completion|0|4 ; យល់|completion|0|4 ; យូរ|pronunciation|0|4 ; យោធា|completion|0|4
+yyyue	ឯ|pronunciation|3|5 ; អេ|pronunciation|3|5 ; អ៊ី|pronunciation|3|5 ; អេស|pronunciation|3|5
+yyyuet	យឺត|pronunciation|0|6 ; យើង|pronunciation|0|6 ; ខេត្ត|pronunciation|0|6 ; គិត|pronunciation|0|6 ; ឥត|pronunciation|0|6
+yyyuety	ពេទ្យ|spelling|0|7 ; យឺត|pronunciation|0|7 ; yyyuety|typed|0|7
+yyyuetyu	វិទ្យុ|pronunciation|0|8 ; យឺតយោ|fallback|0|8 ; yyyuetyu|typed|0|8
+yyyuetyue	យឺតយី|fallback|0|9 ; yyyuetyue|typed|0|9
+yyyuetyuet	យឺត|spelling|6|10
+mixk	មេឃ|pronunciation|0|4 ; មេសា|pronunciation|0|4 ; mixk|typed|0|4
+mixko	មិនគួរ|spelling|0|5 ; ម៉េចករ|fallback|0|5 ; mixko|typed|0|5
+mixkor	មិនគួរ|spelling|0|6 ; ម៉េចករ|fallback|0|6 ; mixkor|typed|0|6
+mixkorm	មេឃុំ|pronunciation|0|7 ; ម៉េចកំ|fallback|0|7 ; mixkorm|typed|0|7
+mixkorme	ម៉េចកំអ៊ី|fallback|0|8 ; mixkorme|typed|0|8
+mixkormen	មិន|pronunciation|6|9 ; មែន|ungegn|6|9 ; ម៉ឺន|pronunciation|6|9 ; ម៉ែន|ungegn|6|9 ; មីន|pronunciation|6|9
+mixkormenc	mixkormenc|typed|0|10
+mixkormench	ចេះ|consonants|9|11 ; ចុះ|consonants|9|11 ; ចាស់|consonants|9|11 ; ជិះ|consonants|9|11 ; ចុច|consonants|9|11
+mixkormenchh	ចេះ|consonants|9|12 ; ចុះ|consonants|9|12 ; ចាស់|consonants|9|12 ; ជិះ|consonants|9|12 ; ជះ|consonants|9|12
+mixkormenchhl	mixkormenchhl|typed|0|13
+mixkormenchhlo	ម៉េចកំអ៊ីនឆ្លុះ|fallback|0|14 ; mixkormenchhlo|typed|0|14
+mixkormenchhloe	ម៉េចកំអ៊ីនឆ្លុះអ៊ី|fallback|0|15 ; mixkormenchhloe|typed|0|15
+mixkormenchhloey	ម៉េចកំអ៊ីនឆ្លើយ|fallback|0|16 ; mixkormenchhloey|typed|0|16
+jes	ចេះ|curated|0|3 ; ជឿ|pronunciation|0|3 ; ឈើ|pronunciation|0|3 ; ឈឺ|pronunciation|0|3 ; ជិះ|pronunciation|0|3
+jes 	ចេះ|curated|0|3 ; ជឿ|pronunciation|0|3 ; ឈើ|pronunciation|0|3 ; ឈឺ|pronunciation|0|3 ; ជិះ|pronunciation|0|3
+jes y	និយាយ|curated|4|5 ; យាយ|consonants|4|5 ; y|typed|4|5
+jes yy	និយាយ|curated|4|6 ; យាយ|consonants|4|6 ; yy|typed|4|6
+jes yy 	និយាយ|curated|4|6 ; យាយ|consonants|4|6 ; yy|typed|4|6
+jes yy k	យក|consonants|4|8 ; យ៉ាងណា|completion|4|8 ; យោងតាម|completion|4|8 ; យកចិត្ត|completion|4|8 ; អ៊ុយក្រែន|completion|4|8
+jes yy kh	យ៉ាងណា|completion|4|9 ; យោងតាម|completion|4|9 ; យកចិត្ត|completion|4|9 ; យក|consonants|4|9 ; អ៊ុយក្រែន|completion|4|9
+jes yy khm	កម្ពុជា|completion|7|10 ; ឃុំ|consonants|7|10 ; គ្មាន|completion|7|10 ; ខ្មែរ|completion|7|10 ; កំពុង|completion|7|10
+jes yy khme	ខ្មែរ|ungegn|7|11 ; ក្មេង|completion|7|11 ; ខែ|pronunciation|7|11 ; គឺ|ungegn|7|11 ; ខ្មែរក្រហម|completion|7|11
+jes yy khmer	ខ្មែរ|ungegn|7|12 ; ខែ|pronunciation|7|12 ; គឺ|pronunciation|7|12 ; គេ|pronunciation|7|12 ; ខ្សែ|ungegn|7|12
+jes yy khmer 	ខ្មែរ|ungegn|7|12 ; ខែ|pronunciation|7|12 ; គឺ|pronunciation|7|12 ; គេ|pronunciation|7|12 ; ខ្សែ|ungegn|7|12
+jes yy khmer t	ខ្មែរ|ungegn|7|14 ; ខេត្ត|pronunciation|7|14 ; គិត|pronunciation|7|14 ; កើត|pronunciation|7|14 ; ក្មេង|pronunciation|7|14
+jes yy khmer te	ទេ|curated|13|15 ; តែ|ungegn|13|15 ; ទី|pronunciation|13|15 ; តេ|pronunciation|13|15 ; ទឹក|completion|13|15
+men e	ឯ|ungegn|4|5 ; អេ|pronunciation|4|5 ; អេស|pronunciation|4|5 ; អ៊ី|pronunciation|4|5 ; e|typed|4|5
+men ey	អី|curated|4|6 ; ឥឡូវ|completion|4|6 ; អើយ|pronunciation|4|6 ; ey|typed|4|6
+men ey 	អី|curated|4|6 ; អើយ|pronunciation|4|6 ; ey|typed|4|6
+men ey t	អី|curated|4|8 ; ឥត|pronunciation|4|8 ; អេដស៍|pronunciation|4|8 ; យឺត|pronunciation|4|8 ; អើយ|pronunciation|4|8
+men ey te	ទេ|curated|7|9 ; តែ|ungegn|7|9 ; ទី|pronunciation|7|9 ; តេ|pronunciation|7|9 ; ទឹក|completion|7|9
+tv j	ទៅ|curated|0|4 ; ទៅជា|consonants|0|4 ; ធ្វើជា|consonants|0|4 ; ធ្វើ|pronunciation|0|4 ; បន្តិច|curated|0|4
+tv je	ចេះ|curated|3|5 ; ចេញ|completion|3|5 ; ចិន|completion|3|5 ; ជើង|completion|3|5 ; ចិត្ត|completion|3|5
+tv jea	ជា|pronunciation|3|6 ; ជាមួយ|completion|3|6 ; ជាតិ|completion|3|6 ; ជាង|completion|3|6 ; ឈាម|completion|3|6
+tv jea 	ជា|pronunciation|3|6 ; ជះ|pronunciation|3|6 ; ចៀស|pronunciation|3|6 ; jea|typed|3|6
+tv jea m	ជាមួយ|completion|3|8 ; ឈាម|pronunciation|3|8 ; ជាមួយនឹង|completion|3|8 ; ជាមុន|completion|3|8 ; ជាមួយគ្នា|completion|3|8
+tv jea mu	ជាមួយ|completion|3|9 ; ជាមួយនឹង|completion|3|9 ; ជាមុន|completion|3|9 ; ជាមួយគ្នា|completion|3|9 ; ជាមន្ត្រី|completion|3|9
+tv jea muy	ជាមួយ|pronunciation|3|10 ; ជាមួយនឹង|completion|3|10 ; ជាមួយគ្នា|completion|3|10 ; ជាមុន|pronunciation|3|10
+tv jea muy 	ជាមួយ|pronunciation|3|10 ; ជាមុន|pronunciation|3|10
+tv jea muy k	ជាមួយគ្នា|completion|3|12 ; ជាមួយ|pronunciation|3|12
+tv jea muy kn	កូន|consonants|11|13 ; ក្នុង|completion|11|13 ; គ្នា|consonants|11|13 ; កាន់|consonants|11|13 ; កាន់តែ|completion|11|13
+tv jea muy kne	ជាមួយគ្នា|pronunciation|3|14
+tv jea muy knea	ជាមួយគ្នា|pronunciation|3|15
+tv jea muy knea 	ជាមួយគ្នា|pronunciation|3|15
+tv jea muy knea t	គ្នា|pronunciation|11|17 ; ខ្នាត|pronunciation|11|17 ; កំណត់|minor|11|17 ; ឃាត|pronunciation|11|17 ; គំនិត|minor|11|17
+tv jea muy knea te	ទេ|curated|16|18 ; តែ|ungegn|16|18 ; ទី|pronunciation|16|18 ; តេ|pronunciation|16|18 ; ទឹក|completion|16|18
+nh n	ញៀន|consonants|0|4
+nh nv	នៅ|curated|3|5 ; នូវ|consonants|3|5 ; នៅលើ|completion|3|5 ; នៅពេល|completion|3|5 ; នៅតែ|completion|3|5
+nh nv 	នៅ|curated|3|5 ; នូវ|consonants|3|5 ; នៅឯ|consonants|3|5 ; នាវា|consonants|3|5 ; nv|typed|3|5
+nh nv p	នៅ|curated|3|7 ; នៅពេល|completion|3|7 ; នូវ|consonants|3|7 ; នៅលើ|consonants|3|7 ; នៅតែ|consonants|3|7
+nh nv pt	ផ្ទះ|completion|6|8 ; ពិត|consonants|6|8 ; ពិតជា|completion|6|8 ; ផ្ទាល់|completion|6|8 ; ពេទ្យ|consonants|6|8
+nh nv pte	ផ្ទេរ|pronunciation|6|9 ; ផ្ទៃ|completion|6|9 ; ទេ|curated|6|9 ; ផ្ទះ|pronunciation|6|9 ; ផ្ទៃពោះ|completion|6|9
+nh nv ptea	ផ្ទះ|pronunciation|6|10 ; ផ្ទាំង|completion|6|10 ; ព្រះ|pronunciation|6|10 ; ផ្ទះបាយ|completion|6|10 ; ផ្ទៀងផ្ទាត់|completion|6|10
+nh nv pteas	ផ្ទះ|pronunciation|6|11 ; ព្រះ|pronunciation|6|11 ; ផ្ទេរ|pronunciation|6|11 ; ផ្ទាំង|pronunciation|6|11 ; ទា|pronunciation|6|11
+tlai p'	ថ្លៃ|pronunciation|0|7 ; តុល្យភាព|consonants|0|7
+tlai p'm	ពុំ|consonants|5|8 ; ប៉ុន្មាន|completion|5|8 ; ភូមិ|consonants|5|8 ; ពីមុន|completion|5|8 ; ផ្អែម|consonants|5|8
+tlai p'ma	ប៉ុន្មាន|completion|5|9 ; ផ្សារ|pronunciation|5|9 ; ម៉ា|pronunciation|5|9 ; ផ្កា|pronunciation|5|9 ; ប៉ា|pronunciation|5|9
+tlai p'man	ប៉ុន្មាន|curated|5|10 ; ប្លន់|spelling|5|10 ; ពីមុន|consonants|5|10 ; ពុំទាន់|consonants|5|10 ; p'man|typed|5|10
+do	ដ៏|pronunciation|0|2 ; ដោយ|completion|0|2 ; ដល់|completion|0|2 ; ដ|pronunciation|0|2 ; ដូច|completion|0|2
+dom	ដុំ|pronunciation|0|3 ; ដំ|pronunciation|0|3 ; ដំណើរ|completion|0|3 ; តំបន់|completion|0|3 ; តម្លៃ|completion|0|3
+doml	តម្លៃ|completion|0|4 ; ដំឡើង|completion|0|4 ; តំលៃ|completion|0|4 ; ដល់|pronunciation|0|4 ; ដំឡូង|completion|0|4
+domla	តម្លៃ|completion|0|5 ; តំលៃ|completion|0|5 ; តម្លាភាព|completion|0|5 ; ដុល្លារ|pronunciation|0|5 ; ដំឡា|fallback|0|5
+domlai	តម្លៃ|pronunciation|0|6 ; តំលៃ|pronunciation|0|6 ; ដំល័យ|fallback|0|6 ; domlai|typed|0|6
+domlai 	តម្លៃ|pronunciation|0|6 ; តំលៃ|pronunciation|0|6 ; ដំល័យ|fallback|0|6 ; domlai|typed|0|6
+domlai p	តម្លៃ|pronunciation|0|8 ; តំលៃ|pronunciation|0|8
+domlai p'	តម្លៃ|pronunciation|0|9 ; តំលៃ|pronunciation|0|9
+domlai p'm	ពុំ|consonants|7|10 ; ប៉ុន្មាន|completion|7|10 ; ភូមិ|consonants|7|10 ; ពីមុន|completion|7|10 ; ផ្អែម|consonants|7|10
+domlai p'ma	ប៉ុន្មាន|completion|7|11 ; ផ្សារ|pronunciation|7|11 ; ម៉ា|pronunciation|7|11 ; ផ្កា|pronunciation|7|11 ; ប៉ា|pronunciation|7|11
+domlai p'man	ប៉ុន្មាន|curated|7|12 ; ប្លន់|spelling|7|12 ; ពីមុន|consonants|7|12 ; ពុំទាន់|consonants|7|12 ; p'man|typed|7|12
+chha	ចាស់|pronunciation|0|4 ; ច|spelling|0|4 ; ចង់|completion|0|4 ; ឆា|pronunciation|0|4 ; ចាប់|completion|0|4
+chhan	ចន្ទ|pronunciation|0|5 ; ច័ន្ទ|pronunciation|0|5 ; ចាន់|pronunciation|0|5 ; ចាន|pronunciation|0|5 ; ជំហាន|minor|0|5
+chhang	ចង់|spelling|0|6 ; ចង|spelling|0|6 ; ឆ្ងាញ់|completion|0|6 ; ចងចាំ|completion|0|6 ; ចង្អុល|completion|0|6
+chhangh	ឆ្ងាញ់|curated|0|7 ; ចង់|spelling|0|7 ; ចង|spelling|0|7 ; chhangh|typed|0|7
+chhangh 	ឆ្ងាញ់|curated|0|7 ; ចង់|spelling|0|7 ; ចង|spelling|0|7 ; chhangh|typed|0|7
+chhangh n	ឆ្ងាញ់|curated|0|9
+chhangh na	ណា|pronunciation|8|10 ; អ្នក|completion|8|10 ; ណ|spelling|8|10 ; ណាស់|pronunciation|8|10 ; ណាមួយ|completion|8|10
+chhangh nas	ណាស់|spelling|8|11 ; ណា|pronunciation|8|11 ; ណ|spelling|8|11 ; នរណា|minor|8|11 ; nas|typed|8|11
+g	ខឹង|curated|0|1 ; ការងារ|consonants|0|1 ; ខាង|consonants|0|1 ; អង្គការ|consonants|0|1 ; អង្គ|consonants|0|1
+go	កូន|completion|0|2 ; ក៏|pronunciation|0|2 ; ឃុំ|completion|0|2 ; កូ|ungegn|0|2 ; កុំ|completion|0|2
+goo	កូន|completion|0|3 ; ក៏|pronunciation|0|3 ; ឃុំ|completion|0|3 ; កុំ|completion|0|3 ; គួរ|pronunciation|0|3
+good	good|english|0|4 ; ក៏ដោយ|completion|0|4 ; ក៏ដូចជា|completion|0|4 ; កូដ|spelling|0|4 ; កុំ|curated|0|4
+good 	good|english|0|4 ; កូដ|spelling|0|4 ; កុំ|curated|0|4 ; ក៏|pronunciation|0|4 ; កូន|pronunciation|0|4
+good m	កុំ|curated|0|6 ; ឃុំ|pronunciation|0|6 ; កូដ|spelling|0|6 ; ខំ|pronunciation|0|6 ; កំ|pronunciation|0|6
+good mo	មក|curated|5|7 ; ម|spelling|5|7 ; មួយ|completion|5|7 ; មុន|completion|5|7 ; មុខ|completion|5|7
+good mor	មក|curated|5|8 ; ម|pronunciation|5|8 ; ម៉ូ|pronunciation|5|8 ; ម៉ៅ|spelling|5|8 ; mor|typed|5|8
+good morn	មនុស្ស|completion|5|9 ; មុន|pronunciation|5|9 ; មក|curated|5|9 ; មន្ទីរ|completion|5|9 ; មន្ត្រី|completion|5|9
+good morni	នេះ|curated|8|10 ; និង|completion|8|10 ; នឹង|completion|8|10 ; នី|pronunciation|8|10 ; នៃ|completion|8|10
+good mornin	អ៊ិន|spelling|9|11 ; ឥណ្ឌា|completion|9|11 ; ឥណទាន|completion|9|11 ; អ៊ីនធឺ|completion|9|11 ; អ៊ីនធឺណិត|completion|9|11
+good morning	morning|english|5|12 ; មុនឯង|fallback|5|12
+mor	មក|curated|0|3 ; ម|pronunciation|0|3 ; ម៉ូ|pronunciation|0|3 ; ម៉ៅ|spelling|0|3 ; mor|typed|0|3
+morn	មនុស្ស|completion|0|4 ; មុន|pronunciation|0|4 ; មក|curated|0|4 ; មន្ទីរ|completion|0|4 ; មន្ត្រី|completion|0|4
+morni	នេះ|curated|3|5 ; និង|completion|3|5 ; នឹង|completion|3|5 ; នី|pronunciation|3|5 ; នៃ|completion|3|5
+mornin	អ៊ិន|spelling|4|6 ; ឥណ្ឌា|completion|4|6 ; ឥណទាន|completion|4|6 ; អ៊ីនធឺ|completion|4|6 ; អ៊ីនធឺណិត|completion|4|6
+morning	morning|english|0|7 ; មុនឯង|fallback|0|7
+morning 	morning|english|0|7 ; មុនឯង|fallback|0|7
+morning b	បង|curated|8|9 ; បែប|consonants|8|9 ; បាប|consonants|8|9 ; b|typed|8|9
+morning bo	ប|pronunciation|8|10 ; បូ|ungegn|8|10 ; បោះ|pronunciation|8|10 ; បទ|completion|8|10 ; បុណ្យ|completion|8|10
+morning bon	បុណ្យ|pronunciation|8|11 ; បួន|pronunciation|8|11 ; បន្ត|completion|8|11 ; បន្ថែម|completion|8|11 ; ប៊ុន|pronunciation|8|11
+morning bong	បង|curated|8|12 ; បង់|pronunciation|8|12 ; បង្ហាញ|completion|8|12 ; បង្ក|completion|8|12 ; បង្កើត|completion|8|12

@@ -120,6 +120,11 @@ impl Engine {
             })
             .collect();
         let lower = typed.to_lowercase();
+        if !whole && typed.chars().count() == 1 {
+            // A letter inside a typed word is only a hand-written abbreviation, like the b of
+            // "bsrey": as anything else it would split too many words.
+            out.retain(|c| c.origin == Origin::Curated && c.spelling == lower);
+        }
         if whole && data.is_english(&lower) {
             out.push(Choice {
                 text: typed.to_owned(),
