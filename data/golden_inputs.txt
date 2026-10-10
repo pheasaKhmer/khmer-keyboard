@@ -297,3 +297,48 @@ tgnaii
 sook sabay
 tae
 khang
+
+# Typed by a native speaker in a second batch (khmer-engine eval/native2.tsv), some of
+# them without spaces, and the key rules and abbreviations learned from them.
+nv na
+nh tv pteas
+b tver ka nv na
+eng nham ey ng
+tv na ng
+nh ot dg te
+dg te
+nh men jes te
+jos eng vinh
+ss
+songsa
+moang p'man
+ayuk punman hz
+nirk b nas
+nirk oun
+nek
+sart
+srey sart
+ot torn
+b sok sbay jea te
+kom plex na
+kom plix
+mix kor men chhloey
+yy yuet yuet
+Chnganh men ten
+sbay reek reay tgnaii komnart
+okay cham joub knea
+mdg tt
+phgneu rub mor
+jet
+jol jet
+chnay
+bsrey
+bpros
+orkunb
+soursdeyb
+bslo
+oteyteb
+nirkbnas
+btverkanvna
+yyyuetyuet
+mixkormenchhloey

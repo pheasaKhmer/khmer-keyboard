@@ -587,6 +587,88 @@ tae	1	tE
 tae	0	tE
 khang	1	kAN
 khang	0	kAN
+nv na	1	nvnA
+nv na	0	nvnA
+nh tv pteas	1	YtvptJ
+nh tv pteas	0	YtvptJs
+b tver ka nv na	1	btvEkAnvnA
+b tver ka nv na	0	btvEkAnvnA
+eng nham ey ng	1	ENYAmEyN
+eng nham ey ng	0	ENYAmEyN
+tv na ng	1	tvnAN
+tv na ng	0	tvnAN
+nh ot dg te	1	YOtdktE
+nh ot dg te	0	YOtdktE
+dg te	1	dktE
+dg te	0	dktE
+nh men jes te	1	YmEncEstE
+nh men jes te	0	YmEncEstE
+jos eng vinh	1	cOsENvEY
+jos eng vinh	0	cOsENvEY
+ss	1	s
+ss	0	s
+moang p'man	1	mQNpmAn
+moang p'man	0	mQNpmAn
+ayuk punman hz	1	AyOkpOnmAYz
+ayuk punman hz	0	AyOkpOnmAYz
+nirk b nas	1	nEkbnA
+nirk b nas	0	nEkbnAs
+nirk oun	1	nEkOn
+nirk oun	0	nEkOn
+nek	1	nEk
+nek	0	nEk
+sart	1	sAt
+sart	0	sAt
+srey sart	1	srEysAt
+srey sart	0	srEysAt
+ot torn	1	OtOn
+ot torn	0	OtOn
+b sok sbay jea te	1	bsOksbAycJtE
+b sok sbay jea te	0	bsOksbAycJtE
+kom plex na	1	kOmplEsnA
+kom plex na	0	kOmplEsnA
+kom plix	1	kOmplE
+kom plix	0	kOmplEs
+mix kor men chhloey	1	mEskOmEnclEy
+mix kor men chhloey	0	mEskOmEnclEy
+yy yuet yuet	1	yEtyEt
+yy yuet yuet	0	yEtyEt
+Chnganh men ten	1	cNAYmEntEn
+Chnganh men ten	0	cNAYmEntEn
+sbay reek reay tgnaii komnart	1	sbAyrEkrJytknAykOmnAt
+sbay reek reay tgnaii komnart	0	sbAyrEkrJytknAykOmnAt
+okay cham joub knea	1	OkAycAmcObknJ
+okay cham joub knea	0	OkAycAmcObknJ
+mdg tt	1	mdkt
+mdg tt	0	mdkt
+phgneu rub mor	1	pknErObmO
+phgneu rub mor	0	pknErObmOr
+jet	1	cEt
+jet	0	cEt
+jol jet	1	cOlcEt
+jol jet	0	cOlcEt
+chnay	1	cnAy
+chnay	0	cnAy
+bsrey	1	bsrEy
+bsrey	0	bsrEy
+bpros	1	bprO
+bpros	0	bprOs
+orkunb	1	OkOnb
+orkunb	0	OkOnb
+soursdeyb	1	sOsdEyb
+soursdeyb	0	sOsdEyb
+bslo	1	bslO
+bslo	0	bslO
+oteyteb	1	OtEytEb
+oteyteb	0	OtEytEb
+nirkbnas	1	nEkbnA
+nirkbnas	0	nEkbnAs
+btverkanvna	1	btvEkAnvnA
+btverkanvna	0	btvEkAnvnA
+yyyuetyuet	1	yEtyEt
+yyyuetyuet	0	yEtyEt
+mixkormenchhloey	1	mEskOmEnclEy
+mixkormenchhloey	0	mEskOmEnclEy
 sous	1	sO
 sous	0	sOs
 dey	1	dEy
@@ -671,8 +753,6 @@ srolanh	1	srOlAY
 srolanh	0	srOlAY
 oun	1	On
 oun	0	On
-nek	1	nEk
-nek	0	nEk
 min	1	mEn
 min	0	mEn
 ban	1	bAn
@@ -803,8 +883,6 @@ o	1	O
 o	0	O
 tic	1	tEc
 tic	0	tEc
-sart	1	sAt
-sart	0	sAt
 pjos	1	pcO
 pjos	0	pcOs
 tomlai	1	tOmlAy
@@ -885,6 +963,56 @@ touch	1	tOc
 touch	0	tOc
 sook	1	sOk
 sook	0	sOk
+ng	1	N
+ng	0	N
+jos	1	cO
+jos	0	cOs
+moang	1	mQN
+moang	0	mQN
+p'man	1	pmAn
+p'man	0	pmAn
+ayuk	1	AyOk
+ayuk	0	AyOk
+punman	1	pOnmAn
+punman	0	pOnmAn
+nirk	1	nEk
+nirk	0	nEk
+plex	1	plE
+plex	0	plEs
+plix	1	plE
+plix	0	plEs
+mix	1	mE
+mix	0	mEs
+chhloey	1	clEy
+chhloey	0	clEy
+yuet	1	yEt
+yuet	0	yEt
+Chnganh	1	cNAY
+Chnganh	0	cNAY
+ten	1	tEn
+ten	0	tEn
+reek	1	rEk
+reek	0	rEk
+reay	1	rJy
+reay	0	rJy
+komnart	1	kOmnAt
+komnart	0	kOmnAt
+okay	1	OkAy
+okay	0	OkAy
+joub	1	cOb
+joub	0	cOb
+knea	1	knJ
+knea	0	knJ
+mdg	1	mdk
+mdg	0	mdk
+tt	1	t
+tt	0	t
+phgneu	1	pknE
+phgneu	0	pknE
+rub	1	rOb
+rub	0	rOb
+jol	1	cOl
+jol	0	cOl
 bann	1	bAn
 bann	0	bAn
 bn	1	bn
@@ -921,8 +1049,6 @@ nueng	1	nEN
 nueng	0	nEN
 noeng	1	nEN
 noeng	0	nEN
-ng	1	N
-ng	0	N
 dael	1	dEl
 dael	0	dEl
 del	1	dEl
@@ -1353,8 +1479,6 @@ khnhm	1	kYm
 khnhm	0	kYm
 theat	1	tJt
 theat	0	tJt
-tt	1	t
-tt	0	t
 tht	1	t
 tht	0	t
 th	1	t
@@ -1423,8 +1547,6 @@ thl	1	tl
 thl	0	tl
 tl	1	tl
 tl	0	tl
-knea	1	knJ
-knea	0	knJ
 kn	1	kn
 kn	0	kn
 khn	1	kn
@@ -2303,8 +2425,6 @@ nht	1	Yt
 nht	0	Yt
 rup	1	rOp
 rup	0	rOp
-rub	1	rOb
-rub	0	rOb
 rp	1	rp
 rp	0	rp
 rpphp	1	rp
@@ -4053,8 +4173,6 @@ chomnay	1	cOmnAy
 chomnay	0	cOmnAy
 chamnay	1	cAmnAy
 chamnay	0	cAmnAy
-chnay	1	cnAy
-chnay	0	cnAy
 chnai	1	cnAy
 chnai	0	cnAy
 chmny	1	cmY
@@ -5993,8 +6111,6 @@ sh	1	sh
 sh	0	sh
 mdang	1	mdAN
 mdang	0	mdAN
-mdg	1	mdk
-mdg	0	mdk
 poan	1	pQn
 poan	0	pQn
 pn	1	pn
@@ -6213,8 +6329,6 @@ sess	1	sEs
 sess	0	sEs
 sss	1	s
 sss	0	s
-ss	1	s
-ss	0	s
 ngeay	1	NJy
 ngeay	0	NJy
 gy	1	ky
@@ -15661,8 +15775,6 @@ youkyol	1	yOkyOl
 youkyol	0	yOkyOl
 ykyl	1	ykyl
 ykyl	0	ykyl
-reay	1	rJy
-reay	0	rJy
 somyut	1	sOmyOt
 somyut	0	sOmyOt
 samyutth	1	sAmyOt
