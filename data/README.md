@@ -15,7 +15,7 @@ romanizer, which spells Khmer words the lexicon does not know.
 
 ## The sample
 
-`sample/` is the export of the small lexicon bundled with khmer-engine (3,008 words). It is
+`sample/` is the export of the small lexicon bundled with khmer-engine (3,010 words). It is
 committed so the core's tests run offline. `sample/golden/` holds the engine's own answers
 for the inputs in `golden_inputs.txt` and `golden_khmer.txt`: matching keys, conversions,
 suggestions after every keystroke, romanizations of text, and the rule-based romanization
